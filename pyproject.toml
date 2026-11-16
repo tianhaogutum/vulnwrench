@@ -1,0 +1,131 @@
+[build-system]
+requires = ["hatchling>=1.27", "hatch-fancy-pypi-readme>=24.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vulnwrench"
+version = "0.1.0"
+description = "One offline CLI to merge, dedupe, diff and gate vulnerability-scanner reports (SARIF, Trivy, Grype, OSV, SBOMs) in CI."
+# README.md with repository-relative links rewritten for PyPI (see tool.hatch.metadata.hooks below).
+dynamic = ["readme"]
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY.md", "licenses/*"]
+authors = [{ name = "tianhaogutum" }]
+keywords = [
+    "vulnerability", "security", "sarif", "trivy", "grype", "osv-scanner", "sbom",
+    "cyclonedx", "spdx", "openvex", "vex", "epss", "kev", "gitleaks",
+    "openssf-scorecard", "devsecops", "ci", "supply-chain-security",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+# Every command uses the Python standard library only.
+dependencies = []
+
+[project.optional-dependencies]
+# Test runner. The suites themselves are standard-library unittest modules collected by pytest.
+test = ["pytest>=9.0.2"]
+
+[project.urls]
+Homepage = "https://github.com/tianhaogutum/vulnwrench"
+Repository = "https://github.com/tianhaogutum/vulnwrench"
+Issues = "https://github.com/tianhaogutum/vulnwrench/issues"
+Documentation = "https://github.com/tianhaogutum/vulnwrench/blob/main/docs/README.md"
+
+[project.scripts]
+vulnwrench = "vulnwrench.cli:main"
+
+# PyPI cannot resolve repository-relative links or images: rewrite them to GitHub URLs.
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.md"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# <img src>, <source srcset>: raw file URLs so the images render
+pattern = '(src|srcset)="(?!https?://)([^"]+)"'
+replacement = '\1="https://raw.githubusercontent.com/tianhaogutum/vulnwrench/main/\2"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'href="(?!https?://|#|mailto:)([^"]+)"'
+replacement = 'href="https://github.com/tianhaogutum/vulnwrench/blob/main/\1"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# Markdown images, then Markdown links to files and directories
+pattern = '!\[([^\]]*)\]\((?!https?://)([^)\s]+)\)'
+replacement = '![\1](https://raw.githubusercontent.com/tianhaogutum/vulnwrench/main/\2)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\((?!https?://|#|mailto:)([^)\s]+)\)'
+replacement = '](https://github.com/tianhaogutum/vulnwrench/blob/main/\1)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# In-page anchors: PyPI does not generate heading ids
+pattern = '\]\(#([^)\s]+)\)'
+replacement = '](https://github.com/tianhaogutum/vulnwrench#\1)'
+
+[tool.hatch.build.targets.wheel]
+# The tools read no packaged data files; the wheel holds only Python modules.
+packages = ["src/vulnwrench"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/docs",
+    "/examples",
+    "/benchmarks",
+    "/scripts",
+    "/licenses",
+    "/README.md",
+    "/LICENSE",
+    "/THIRD_PARTY.md",
+    "/pyproject.toml",
+]
+exclude = [
+    "__pycache__",
+    "*.py[cod]",
+    ".cache",
+    ".artifacts",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".DS_Store",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+# Correctness-focused set; the merged tools keep their original compact style.
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+# Test modules re-export fixtures and helpers across sibling modules and keep a compact style.
+"tests/**" = ["F401", "F811", "F841", "E402", "E701", "E702", "E731"]
+# Demo scripts keep the original tools' compact one-line style.
+"examples/**" = ["F841", "E701", "E702"]
+"scripts/**" = ["F401", "F841", "E402", "E701", "E702", "E731"]

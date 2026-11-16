@@ -1,0 +1,12 @@
+# Synthetic fixtures. This example represents a global --config override.
+[[IgnoredVulns]]
+id = "CVE-2025-0001"
+effectiveUntil = 2026-11-10
+reason = "Synthetic migration exception"
+
+[[IgnoredVulns]]
+id = "CVE-2025-9999"
+effectiveUntil = "2026-12-01"
+
+[[IgnoredVulns]]
+id = "GHSA-synthetic-alias"

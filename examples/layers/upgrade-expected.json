@@ -1,0 +1,427 @@
+{
+  "basePrefixChange": {
+    "after": [
+      "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    ],
+    "before": [
+      "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "changed": true
+  },
+  "counts": {
+    "after_only": 0,
+    "attribution_changed": 1,
+    "before_only": 0,
+    "total": 2,
+    "unchanged": 0,
+    "unknown": 1
+  },
+  "identityFields": {
+    "finding": [
+      "VulnerabilityID",
+      "PkgName",
+      "InstalledVersion",
+      "PkgPath",
+      "PkgID"
+    ],
+    "result": [
+      "Target",
+      "Class",
+      "Type"
+    ]
+  },
+  "kind": "base_upgrade_comparison",
+  "rows": [
+    {
+      "after": [
+        "#/snapshots/after/groups/base/0"
+      ],
+      "afterOrigin": "base",
+      "before": [
+        "#/snapshots/before/groups/app/0"
+      ],
+      "beforeOrigin": "app",
+      "identity": {
+        "Class": "os-pkgs",
+        "InstalledVersion": "1",
+        "PkgID": null,
+        "PkgName": "shared",
+        "PkgPath": null,
+        "Target": "synthetic-upgrade",
+        "Type": "debian",
+        "VulnerabilityID": "DEMO-MOVED"
+      },
+      "reason": "origin_changed",
+      "status": "attribution_changed"
+    },
+    {
+      "after": [
+        "#/snapshots/after/groups/unknown/0"
+      ],
+      "afterOrigin": "unknown",
+      "before": [
+        "#/snapshots/before/groups/app/1"
+      ],
+      "beforeOrigin": "app",
+      "identity": {
+        "Class": "os-pkgs",
+        "InstalledVersion": "1",
+        "PkgID": null,
+        "PkgName": "shared",
+        "PkgPath": null,
+        "Target": "synthetic-upgrade",
+        "Type": "debian",
+        "VulnerabilityID": "DEMO-LOST-EVIDENCE"
+      },
+      "reason": "insufficient_attribution_evidence",
+      "status": "unknown"
+    }
+  ],
+  "schemaVersion": 1,
+  "snapshots": {
+    "after": {
+      "ancestry": {
+        "baseLayerCount": 2,
+        "imageLayerCount": 3,
+        "reportConfigBinding": "diff_ids_consistent",
+        "verifiedPrefix": true
+      },
+      "counts": {
+        "app": 0,
+        "base": 1,
+        "total": 2,
+        "unknown": 1
+      },
+      "gate": {
+        "blockingFindings": 0,
+        "mode": "none",
+        "status": "disabled"
+      },
+      "groups": {
+        "app": [],
+        "base": [
+          {
+            "diffId": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "digest": null,
+            "finding": {
+              "InstalledVersion": "1",
+              "Layer": {
+                "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+              },
+              "PkgName": "shared",
+              "VulnerabilityID": "DEMO-MOVED"
+            },
+            "history": [
+              {
+                "createdBy": "COPY synthetic shared package into base /",
+                "historyIndex": 1,
+                "layerIndex": 1
+              }
+            ],
+            "layerIndices": [
+              1
+            ],
+            "origin": "base",
+            "proof": "exact_diff_id",
+            "reason": null,
+            "source": {
+              "findingIndex": 0,
+              "resultIndex": 0,
+              "target": "synthetic-upgrade"
+            },
+            "warnings": []
+          }
+        ],
+        "unknown": [
+          {
+            "diffId": null,
+            "digest": null,
+            "finding": {
+              "InstalledVersion": "1",
+              "PkgName": "shared",
+              "VulnerabilityID": "DEMO-LOST-EVIDENCE"
+            },
+            "history": [],
+            "layerIndices": [],
+            "origin": "unknown",
+            "proof": "unknown",
+            "reason": "missing_layer_evidence",
+            "source": {
+              "findingIndex": 1,
+              "resultIndex": 0,
+              "target": "synthetic-upgrade"
+            },
+            "warnings": []
+          }
+        ]
+      },
+      "provenance": {
+        "baseConfig": {
+          "architecture": "amd64",
+          "history": [
+            {
+              "created_by": "ADD synthetic upgraded base files /"
+            },
+            {
+              "created_by": "COPY synthetic shared package into base /"
+            }
+          ],
+          "os": "linux",
+          "rootfs": {
+            "diff_ids": [
+              "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            ],
+            "type": "layers"
+          }
+        },
+        "digestMap": {},
+        "imageConfig": {
+          "architecture": "amd64",
+          "history": [
+            {
+              "created_by": "ADD synthetic upgraded base files /"
+            },
+            {
+              "created_by": "COPY synthetic shared package into base /"
+            },
+            {
+              "created_by": "COPY synthetic app /app"
+            }
+          ],
+          "os": "linux",
+          "rootfs": {
+            "diff_ids": [
+              "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            ],
+            "type": "layers"
+          }
+        },
+        "report": {
+          "ArtifactType": "container_image",
+          "Metadata": {
+            "DiffIDs": [
+              "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            ]
+          },
+          "Results": [
+            {
+              "Class": "os-pkgs",
+              "Target": "synthetic-upgrade",
+              "Type": "debian",
+              "Vulnerabilities": [
+                {
+                  "InstalledVersion": "1",
+                  "Layer": {
+                    "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                  },
+                  "PkgName": "shared",
+                  "VulnerabilityID": "DEMO-MOVED"
+                },
+                {
+                  "InstalledVersion": "1",
+                  "PkgName": "shared",
+                  "VulnerabilityID": "DEMO-LOST-EVIDENCE"
+                }
+              ]
+            }
+          ],
+          "SchemaVersion": 2
+        }
+      },
+      "schemaVersion": 1,
+      "warnings": []
+    },
+    "before": {
+      "ancestry": {
+        "baseLayerCount": 1,
+        "imageLayerCount": 3,
+        "reportConfigBinding": "diff_ids_consistent",
+        "verifiedPrefix": true
+      },
+      "counts": {
+        "app": 2,
+        "base": 0,
+        "total": 2,
+        "unknown": 0
+      },
+      "gate": {
+        "blockingFindings": 0,
+        "mode": "none",
+        "status": "disabled"
+      },
+      "groups": {
+        "app": [
+          {
+            "diffId": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "digest": null,
+            "finding": {
+              "InstalledVersion": "1",
+              "Layer": {
+                "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+              },
+              "PkgName": "shared",
+              "VulnerabilityID": "DEMO-MOVED"
+            },
+            "history": [
+              {
+                "createdBy": "COPY synthetic app upgrade /app",
+                "historyIndex": 3,
+                "layerIndex": 1
+              }
+            ],
+            "layerIndices": [
+              1
+            ],
+            "origin": "app",
+            "proof": "exact_diff_id",
+            "reason": null,
+            "source": {
+              "findingIndex": 0,
+              "resultIndex": 0,
+              "target": "synthetic-upgrade"
+            },
+            "warnings": []
+          },
+          {
+            "diffId": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "digest": null,
+            "finding": {
+              "InstalledVersion": "1",
+              "Layer": {
+                "DiffID": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "PkgName": "shared",
+              "VulnerabilityID": "DEMO-LOST-EVIDENCE"
+            },
+            "history": [
+              {
+                "createdBy": "COPY synthetic app extras /app",
+                "historyIndex": 4,
+                "layerIndex": 2
+              }
+            ],
+            "layerIndices": [
+              2
+            ],
+            "origin": "app",
+            "proof": "exact_diff_id",
+            "reason": null,
+            "source": {
+              "findingIndex": 1,
+              "resultIndex": 0,
+              "target": "synthetic-upgrade"
+            },
+            "warnings": []
+          }
+        ],
+        "base": [],
+        "unknown": []
+      },
+      "provenance": {
+        "baseConfig": {
+          "architecture": "amd64",
+          "history": [
+            {
+              "created_by": "LABEL synthetic=true",
+              "empty_layer": true
+            },
+            {
+              "created_by": "ADD synthetic base files /"
+            }
+          ],
+          "os": "linux",
+          "rootfs": {
+            "diff_ids": [
+              "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            ],
+            "type": "layers"
+          }
+        },
+        "digestMap": {},
+        "imageConfig": {
+          "architecture": "amd64",
+          "history": [
+            {
+              "created_by": "LABEL synthetic=true",
+              "empty_layer": true
+            },
+            {
+              "created_by": "ADD synthetic base files /"
+            },
+            {
+              "created_by": "ENV MODE=example",
+              "empty_layer": true
+            },
+            {
+              "created_by": "COPY synthetic app upgrade /app"
+            },
+            {
+              "created_by": "COPY synthetic app extras /app"
+            }
+          ],
+          "os": "linux",
+          "rootfs": {
+            "diff_ids": [
+              "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            ],
+            "type": "layers"
+          }
+        },
+        "report": {
+          "ArtifactType": "container_image",
+          "Metadata": {
+            "DiffIDs": [
+              "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            ]
+          },
+          "Results": [
+            {
+              "Class": "os-pkgs",
+              "Target": "synthetic-upgrade",
+              "Type": "debian",
+              "Vulnerabilities": [
+                {
+                  "InstalledVersion": "1",
+                  "Layer": {
+                    "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                  },
+                  "PkgName": "shared",
+                  "VulnerabilityID": "DEMO-MOVED"
+                },
+                {
+                  "InstalledVersion": "1",
+                  "Layer": {
+                    "DiffID": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+                  },
+                  "PkgName": "shared",
+                  "VulnerabilityID": "DEMO-LOST-EVIDENCE"
+                }
+              ]
+            }
+          ],
+          "SchemaVersion": 2
+        }
+      },
+      "schemaVersion": 1,
+      "warnings": []
+    }
+  },
+  "warnings": [
+    {
+      "code": "comparison_does_not_establish_remediation"
+    },
+    {
+      "code": "exact_identity_matching_only"
+    }
+  ]
+}

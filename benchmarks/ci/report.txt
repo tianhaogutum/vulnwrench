@@ -1,0 +1,40 @@
+vulnwrench ci  3 reports (grype, osv, trivy) · baseline baseline.json · 2 exception files · as of 2026-11-12
+
+Noise funnel
+    37  raw findings from 3 scanners
+    14  unique after fuse (same package + advisory alias)   -23 duplicates
+     8  new since the baseline                              -6 already in baseline
+     6  not covered by an unexpired exception               -2 suppressed
+     2  exploitable: in KEV or EPSS >= 0.1                  -3 below threshold, -1 no exploit data
+
+Needs action (2)
+  ✗ pkg:npm/acme-router@4.2.0  CVE-2099-2001  HIGH  in KEV  fix 4.2.3
+     seen by grype, osv, trivy · package-lock.json
+     vulnwrench fuse explain --trivy trivy.json --grype grype.json --osv osv.json --advisory CVE-2099-2001 --package pkg:npm/acme-router@4.2.0
+  ✗ pkg:npm/acme-session@1.8.0  CVE-2099-2002  CRITICAL  EPSS 0.62  fix 1.8.4, 1.9.0 (scanners disagree)
+     seen by grype, osv, trivy · package-lock.json
+     vulnwrench fuse explain --trivy trivy.json --grype grype.json --osv osv.json --advisory CVE-2099-2002 --package pkg:npm/acme-session@1.8.0
+
+No exploit data (1)  map non-CVE IDs with --aliases, refresh old snapshots, or review by hand
+  ? pkg:npm/acme-color@0.3.0  GHSA-w2bb-c4hq-2005  MEDIUM  no CVE ID  fix 0.3.1
+     seen by grype, osv · package-lock.json
+     vulnwrench fuse explain --trivy trivy.json --grype grype.json --osv osv.json --advisory GHSA-w2bb-c4hq-2005 --package pkg:npm/acme-color@0.3.0
+
+Stale exceptions (3)
+  ! .trivyignore line:2  CVE-2099-1004  expired 2026-10-31; no longer suppresses pkg:pypi/acme-xml@0.9.1 (already in baseline)
+     vulnwrench ignores explain --format trivy --rules .trivyignore --report trivy.json --report-unfiltered --as-of 2026-11-12 --rule-key line:2
+  ! .trivyignore line:3  CVE-2099-2006  expires in 18 days; then unhides pkg:pypi/acme-zip@3.3.3 (EPSS 0.71)
+     vulnwrench ignores explain --format trivy --rules .trivyignore --report trivy.json --report-unfiltered --as-of 2026-11-12 --rule-key line:3
+  ! .trivyignore line:4  CVE-2099-0777  matches nothing in these reports
+     vulnwrench ignores cleanup-plan --format trivy --rules .trivyignore --report trivy.json --report-unfiltered --as-of 2026-11-12 --output-format markdown
+  4 of 4 exceptions name no owner: `vulnwrench triage` keeps owner, reason and expiry in one decision file.
+
+New but below the exploit threshold (3)  not gated
+  · pkg:npm/acme-auth@2.2.0  CVE-2099-2007  HIGH  EPSS 0.09  fix 2.2.1
+  · pkg:pypi/acme-csv@2.0.1  CVE-2099-2003  MEDIUM  EPSS 0.03  fix 2.0.2
+  · pkg:npm/acme-log@7.1.0  CVE-2099-2004  LOW  EPSS 0.01  fix 7.1.1
+
+2 baseline finding(s) are no longer reported. Not reported is not fixed: confirm upgrades with `vulnwrench delta compare` and both SBOMs.
+
+37 raw findings from 3 scanners -> 2 need action.
+--fail-on exploitable: FAIL (exit 1, 2 findings)

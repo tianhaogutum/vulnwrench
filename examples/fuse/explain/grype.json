@@ -1,0 +1,33 @@
+{
+  "matches": [
+    {
+      "artifact": {
+        "name": "demo",
+        "version": "1.0",
+        "type": "npm",
+        "purl": "pkg:npm/demo@1.0#apps/api",
+        "locations": [
+          {
+            "accessPath": "apps/api/node_modules/demo",
+            "realPath": "/workspace/apps/api/node_modules/demo"
+          }
+        ]
+      },
+      "vulnerability": {
+        "id": "GHSA-explain-1",
+        "severity": "Critical",
+        "fix": {
+          "versions": [
+            "1.2"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-EXPLAIN-1"
+        }
+      ]
+    }
+  ]
+}

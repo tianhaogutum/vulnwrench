@@ -1,0 +1,19 @@
+{
+  "architecture": "amd64",
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    ]
+  },
+  "history": [
+    {
+      "created_by": "LABEL synthetic=true",
+      "empty_layer": true
+    },
+    {
+      "created_by": "ADD synthetic base files /"
+    }
+  ]
+}

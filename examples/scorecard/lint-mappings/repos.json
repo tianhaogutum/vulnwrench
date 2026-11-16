@@ -1,0 +1,6 @@
+{
+  "pkg:npm/demo@1.0": "https://GitHub.com/Example/Demo.git/",
+  "pkg:npm/demo@1.0": "https://github.com/example/other",
+  "pkg:npm/helper@1.0": "github.com/EXAMPLE/DEMO",
+  "pkg:npm/demo@2.0": "https://github.com/example/demo"
+}

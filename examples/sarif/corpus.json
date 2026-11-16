@@ -1,0 +1,100 @@
+[
+  {
+    "file": "semgrep.sarif",
+    "decision": "pass",
+    "actionable": 0,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "rejected.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "under-review.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "unspecified-suppression.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "rule-default.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "default-warning.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "failed-invocation.sarif",
+    "decision": "fail",
+    "actionable": 0,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "error-notification.sarif",
+    "decision": "fail",
+    "actionable": 0,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "clean.sarif",
+    "decision": "pass",
+    "actionable": 0,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "unchanged.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "absent.sarif",
+    "decision": "pass",
+    "actionable": 0,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "multiple-runs.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  },
+  {
+    "file": "unknown-execution.sarif",
+    "decision": "pass",
+    "actionable": 0,
+    "naiveCount": 0,
+    "naiveDecision": "pass"
+  },
+  {
+    "file": "explicit-override.sarif",
+    "decision": "fail",
+    "actionable": 1,
+    "naiveCount": 1,
+    "naiveDecision": "fail"
+  }
+]

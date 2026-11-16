@@ -1,0 +1,23 @@
+{
+  "architecture": "amd64",
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ]
+  },
+  "history": [
+    {
+      "created_by": "ADD synthetic upgraded base files /"
+    },
+    {
+      "created_by": "COPY synthetic shared package into base /"
+    },
+    {
+      "created_by": "COPY synthetic app /app"
+    }
+  ]
+}

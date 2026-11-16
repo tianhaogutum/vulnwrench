@@ -1,0 +1,61 @@
+{
+  "advisory": "CVE-SYNTH-001",
+  "alias": "ALIAS/~",
+  "target": " apps/~web|lock.json ",
+  "cases": [
+    {
+      "name": "trivy",
+      "inputs": [
+        "explain/target-trivy-before.json",
+        "explain/target-trivy-after.json",
+        "explain/target-before-bom.json",
+        "explain/target-after-bom.json",
+        "explain/target-trivy-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "grype",
+      "inputs": [
+        "explain/target-grype-before.json",
+        "explain/target-grype-after.json",
+        "explain/target-before-bom.json",
+        "explain/target-after-bom.json",
+        "explain/target-grype-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "mixed",
+      "inputs": [
+        "explain/target-trivy-before.json",
+        "explain/target-grype-after.json",
+        "explain/target-before-bom.json",
+        "explain/target-after-bom.json",
+        "explain/target-mixed-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    }
+  ],
+  "contract": {
+    "library": "explain_target",
+    "cli": "explain --target",
+    "metadata": {
+      "normalized_filter": {
+        "target": " apps/~web|lock.json "
+      }
+    },
+    "positive": "Whole normalized entries at exact package.target, original transition indexes 1 and 2, separate paths, alias equivalence, ordered reasons/prerequisites/resolving sources; full batch equality; no unknown explanation selection or scope inference.",
+    "defaultParity": "Omitted/None selector preserves every previous JSON/Markdown byte including native scalar/ALL/ANY.",
+    "negative": "Reject non-string/empty/whitespace/control target; missing advisory; no exact normalized match; unknown-only advisory; all native selector combinations; validate malformed unselected/opposite-side inputs; CLI exit 2 no stdout safe diagnostics and unchanged output."
+  }
+}

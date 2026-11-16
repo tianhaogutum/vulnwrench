@@ -1,0 +1,159 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "acme-shop",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2099-1001",
+          "PkgName": "acme-http",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-http@2.1.0"
+          },
+          "InstalledVersion": "2.1.0",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "2.1.4"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-1002",
+          "PkgName": "acme-yaml",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-yaml@1.4.2"
+          },
+          "InstalledVersion": "1.4.2",
+          "Severity": "MEDIUM",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "1.4.5"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-1003",
+          "PkgName": "acme-jwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-jwt@3.0.0"
+          },
+          "InstalledVersion": "3.0.0",
+          "Severity": "CRITICAL",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "3.0.2"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-1005",
+          "PkgName": "acme-tar",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-tar@1.0.3"
+          },
+          "InstalledVersion": "1.0.3",
+          "Severity": "LOW",
+          "Title": "Synthetic advisory for a fictional package"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2001",
+          "PkgName": "acme-router",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-router@4.2.0"
+          },
+          "InstalledVersion": "4.2.0",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "4.2.3"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2002",
+          "PkgName": "acme-session",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-session@1.8.0"
+          },
+          "InstalledVersion": "1.8.0",
+          "Severity": "CRITICAL",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "1.8.4"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2004",
+          "PkgName": "acme-log",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-log@7.1.0"
+          },
+          "InstalledVersion": "7.1.0",
+          "Severity": "LOW",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "7.1.1"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2007",
+          "PkgName": "acme-auth",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-auth@2.2.0"
+          },
+          "InstalledVersion": "2.2.0",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "2.2.1"
+        }
+      ]
+    },
+    {
+      "Target": "requirements.txt",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2099-1004",
+          "PkgName": "acme-xml",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/acme-xml@0.9.1"
+          },
+          "InstalledVersion": "0.9.1",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "0.9.4"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2003",
+          "PkgName": "acme-csv",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/acme-csv@2.0.1"
+          },
+          "InstalledVersion": "2.0.1",
+          "Severity": "MEDIUM",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "2.0.2"
+        },
+        {
+          "VulnerabilityID": "CVE-2099-2006",
+          "PkgName": "acme-zip",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/acme-zip@3.3.3"
+          },
+          "InstalledVersion": "3.3.3",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "3.4.0"
+        }
+      ]
+    },
+    {
+      "Target": "packages/admin/package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2099-2001",
+          "PkgName": "acme-router",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/acme-router@4.2.0"
+          },
+          "InstalledVersion": "4.2.0",
+          "Severity": "HIGH",
+          "Title": "Synthetic advisory for a fictional package",
+          "FixedVersion": "4.2.3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "vulnwrench ci",
+          "version": "0.1.0",
+          "informationUri": "https://github.com/tianhaogutum/vulnwrench",
+          "rules": [
+            {
+              "id": "CVE-2099-2001",
+              "shortDescription": {
+                "text": "CVE-2099-2001"
+              }
+            },
+            {
+              "id": "CVE-2099-2002",
+              "shortDescription": {
+                "text": "CVE-2099-2002"
+              }
+            },
+            {
+              "id": "CVE-2099-2003",
+              "shortDescription": {
+                "text": "CVE-2099-2003"
+              }
+            },
+            {
+              "id": "CVE-2099-2004",
+              "shortDescription": {
+                "text": "CVE-2099-2004"
+              }
+            },
+            {
+              "id": "CVE-2099-2007",
+              "shortDescription": {
+                "text": "CVE-2099-2007"
+              }
+            },
+            {
+              "id": "GHSA-w2bb-c4hq-2005",
+              "shortDescription": {
+                "text": "GHSA-w2bb-c4hq-2005"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2099-2001",
+          "level": "error",
+          "message": {
+            "text": "pkg:npm/acme-router@4.2.0: CVE-2099-2001 (HIGH; in KEV; fix 4.2.3; seen by grype, osv, trivy)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:npm/acme-router@4.2.0|CVE-2099-2001"
+          },
+          "properties": {
+            "outcome": "action",
+            "ids": [
+              "CVE-2099-2001",
+              "GHSA-w2bb-c4hq-2001"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2099-2002",
+          "level": "error",
+          "message": {
+            "text": "pkg:npm/acme-session@1.8.0: CVE-2099-2002 (CRITICAL; EPSS 0.62; fix 1.8.4, 1.9.0 (scanners disagree); seen by grype, osv, trivy)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:npm/acme-session@1.8.0|CVE-2099-2002"
+          },
+          "properties": {
+            "outcome": "action",
+            "ids": [
+              "CVE-2099-2002",
+              "GHSA-w2bb-c4hq-2002"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "GHSA-w2bb-c4hq-2005",
+          "level": "warning",
+          "message": {
+            "text": "pkg:npm/acme-color@0.3.0: GHSA-w2bb-c4hq-2005 (MEDIUM; no CVE ID; fix 0.3.1; seen by grype, osv)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:npm/acme-color@0.3.0|GHSA-w2bb-c4hq-2005"
+          },
+          "properties": {
+            "outcome": "unknown",
+            "ids": [
+              "GHSA-w2bb-c4hq-2005"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2099-2007",
+          "level": "note",
+          "message": {
+            "text": "pkg:npm/acme-auth@2.2.0: CVE-2099-2007 (HIGH; EPSS 0.09; fix 2.2.1; seen by grype, osv, trivy)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:npm/acme-auth@2.2.0|CVE-2099-2007"
+          },
+          "properties": {
+            "outcome": "low",
+            "ids": [
+              "CVE-2099-2007",
+              "GHSA-w2bb-c4hq-2007"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2099-2003",
+          "level": "note",
+          "message": {
+            "text": "pkg:pypi/acme-csv@2.0.1: CVE-2099-2003 (MEDIUM; EPSS 0.03; fix 2.0.2; seen by grype, osv, trivy)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:pypi/acme-csv@2.0.1|CVE-2099-2003"
+          },
+          "properties": {
+            "outcome": "low",
+            "ids": [
+              "CVE-2099-2003",
+              "GHSA-w2bb-c4hq-2003",
+              "PYSEC-2099-23"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "requirements.txt"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2099-2004",
+          "level": "note",
+          "message": {
+            "text": "pkg:npm/acme-log@7.1.0: CVE-2099-2004 (LOW; EPSS 0.01; fix 7.1.1; seen by grype, trivy)"
+          },
+          "partialFingerprints": {
+            "vulnwrench/package-advisory": "pkg:npm/acme-log@7.1.0|CVE-2099-2004"
+          },
+          "properties": {
+            "outcome": "low",
+            "ids": [
+              "CVE-2099-2004",
+              "GHSA-w2bb-c4hq-2004"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+[
+  {
+    "name": "unknown-only-empty-before",
+    "inputs": [
+      "explain/unknown-before.json",
+      "explain/unknown-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [],
+      "before_findings": 0,
+      "after_findings": 1,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/0",
+          "reason_codes": [
+            "ambiguous_package_location"
+          ],
+          "reason_sources": {
+            "ambiguous_package_location": [
+              "/after_report/matches/0",
+              "/after_report/matches/0/artifact/locations"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "mixed-known-unknown-selected",
+    "inputs": [
+      "grype/before.json",
+      "explain/mixed-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [
+        "version_changed_still_affected"
+      ],
+      "before_findings": 1,
+      "after_findings": 2,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/1",
+          "reason_codes": [
+            "scope_binding_missing"
+          ],
+          "reason_sources": {
+            "scope_binding_missing": [
+              "/after_report/matches/1",
+              "/after_report/matches/1/artifact/id",
+              "/metadata/after/grype/bindings"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-location-and-binding-mismatch",
+    "inputs": [
+      "grype/before.json",
+      "explain/location-mismatch-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [
+        "no_longer_reported"
+      ],
+      "before_findings": 1,
+      "after_findings": 1,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/0",
+          "reason_codes": [
+            "unsupported_package_location",
+            "scope_binding_location_mismatch"
+          ],
+          "reason_sources": {
+            "unsupported_package_location": [
+              "/after_report/matches/0",
+              "/after_report/matches/0/artifact/locations/0"
+            ],
+            "scope_binding_location_mismatch": [
+              "/after_report/matches/0",
+              "/after_report/matches/0/artifact/id",
+              "/after_report/matches/0/artifact/locations/0",
+              "/metadata/after/grype/bindings/0/location"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-identity-absent-purl",
+    "inputs": [
+      "explain/unknown-before.json",
+      "explain/identity-absent-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [],
+      "before_findings": 0,
+      "after_findings": 1,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/0",
+          "reason_codes": [
+            "package_identity_unsupported"
+          ],
+          "reason_sources": {
+            "package_identity_unsupported": [
+              "/after_report/matches/0",
+              "/after_report/matches/0/artifact"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "mixed-identity-types-disagreement-duplicates",
+    "inputs": [
+      "grype/before.json",
+      "explain/identity-mixed-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "explain/identity-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [
+        "version_changed_still_affected"
+      ],
+      "before_findings": 1,
+      "after_findings": 4,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/1",
+          "reason_codes": [
+            "unsupported_package_type",
+            "package_identity_unsupported"
+          ],
+          "reason_sources": {
+            "unsupported_package_type": [
+              "/after_report/matches/1",
+              "/after_report/matches/1/artifact/type"
+            ],
+            "package_identity_unsupported": [
+              "/after_report/matches/1",
+              "/after_report/matches/1/artifact/purl"
+            ]
+          }
+        },
+        {
+          "side": "after",
+          "unknown_index": 1,
+          "source": "/after_report/matches/2",
+          "reason_codes": [
+            "package_identity_disagrees"
+          ],
+          "reason_sources": {
+            "package_identity_disagrees": [
+              "/after_report/matches/2",
+              "/after_report/matches/2/artifact/type",
+              "/after_report/matches/2/artifact/name",
+              "/after_report/matches/2/artifact/version",
+              "/after_report/matches/2/artifact/purl"
+            ]
+          }
+        },
+        {
+          "side": "after",
+          "unknown_index": 2,
+          "source": "/after_report/matches/3",
+          "reason_codes": [
+            "package_identity_disagrees"
+          ],
+          "reason_sources": {
+            "package_identity_disagrees": [
+              "/after_report/matches/3",
+              "/after_report/matches/3/artifact/type",
+              "/after_report/matches/3/artifact/name",
+              "/after_report/matches/3/artifact/version",
+              "/after_report/matches/3/artifact/purl"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-binding-type",
+    "inputs": [
+      "explain/unknown-before.json",
+      "explain/binding-type-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "explain/binding-type-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [],
+      "before_findings": 0,
+      "after_findings": 1,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 0,
+          "source": "/after_report/matches/0",
+          "reason_codes": [
+            "scope_binding_type_mismatch"
+          ],
+          "reason_sources": {
+            "scope_binding_type_mismatch": [
+              "/after_report/matches/0",
+              "/after_report/matches/0/artifact/id",
+              "/after_report/matches/0/artifact/purl",
+              "/metadata/after/grype/bindings/2/target",
+              "/metadata/after/grype/targets"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "mixed-binding-type-duplicates",
+    "inputs": [
+      "grype/before.json",
+      "explain/binding-type-mixed-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "explain/binding-type-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [
+        "version_changed_still_affected"
+      ],
+      "before_findings": 1,
+      "after_findings": 4,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 1,
+          "source": "/after_report/matches/2",
+          "reason_codes": [
+            "scope_binding_type_mismatch"
+          ],
+          "reason_sources": {
+            "scope_binding_type_mismatch": [
+              "/after_report/matches/2",
+              "/after_report/matches/2/artifact/id",
+              "/after_report/matches/2/artifact/purl",
+              "/metadata/after/grype/bindings/2/target",
+              "/metadata/after/grype/targets"
+            ]
+          }
+        },
+        {
+          "side": "after",
+          "unknown_index": 2,
+          "source": "/after_report/matches/3",
+          "reason_codes": [
+            "scope_binding_type_mismatch"
+          ],
+          "reason_sources": {
+            "scope_binding_type_mismatch": [
+              "/after_report/matches/3",
+              "/after_report/matches/3/artifact/id",
+              "/after_report/matches/3/artifact/purl",
+              "/metadata/after/grype/bindings/2/target",
+              "/metadata/after/grype/targets"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-artifact-conflict-identity",
+    "inputs": [
+      "explain/conflict-before.json",
+      "explain/unknown-before.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [],
+      "before_findings": 3,
+      "after_findings": 0,
+      "unknown": [
+        {
+          "side": "before",
+          "unknown_index": 1,
+          "source": "/before_report/matches/1",
+          "reason_codes": [
+            "artifact_id_conflict"
+          ],
+          "reason_sources": {
+            "artifact_id_conflict": [
+              "/before_report/matches/1",
+              "/before_report/matches/1/artifact/id",
+              "/before_report/matches/0/artifact",
+              "/before_report/matches/1/artifact",
+              "/before_report/matches/2/artifact"
+            ]
+          }
+        },
+        {
+          "side": "before",
+          "unknown_index": 2,
+          "source": "/before_report/matches/2",
+          "reason_codes": [
+            "artifact_id_conflict"
+          ],
+          "reason_sources": {
+            "artifact_id_conflict": [
+              "/before_report/matches/2",
+              "/before_report/matches/2/artifact/id",
+              "/before_report/matches/0/artifact",
+              "/before_report/matches/1/artifact",
+              "/before_report/matches/2/artifact"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "mixed-artifact-conflict-extension",
+    "inputs": [
+      "grype/before.json",
+      "explain/conflict-mixed-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "explain/conflict-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classifications": [
+        "version_changed_still_affected"
+      ],
+      "before_findings": 1,
+      "after_findings": 5,
+      "unknown": [
+        {
+          "side": "after",
+          "unknown_index": 2,
+          "source": "/after_report/matches/3",
+          "reason_codes": [
+            "artifact_id_conflict"
+          ],
+          "reason_sources": {
+            "artifact_id_conflict": [
+              "/after_report/matches/3",
+              "/after_report/matches/3/artifact/id",
+              "/after_report/matches/1/artifact",
+              "/after_report/matches/3/artifact",
+              "/after_report/matches/4/artifact"
+            ]
+          }
+        },
+        {
+          "side": "after",
+          "unknown_index": 3,
+          "source": "/after_report/matches/4",
+          "reason_codes": [
+            "artifact_id_conflict"
+          ],
+          "reason_sources": {
+            "artifact_id_conflict": [
+              "/after_report/matches/4",
+              "/after_report/matches/4/artifact/id",
+              "/after_report/matches/1/artifact",
+              "/after_report/matches/3/artifact",
+              "/after_report/matches/4/artifact"
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

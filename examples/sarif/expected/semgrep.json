@@ -1,0 +1,124 @@
+{
+  "acceptedSuppressions": 1,
+  "actionable": 0,
+  "decision": "pass",
+  "evidence": {
+    "digestKind": "input_bytes",
+    "document": {
+      "runs": [
+        {
+          "invocations": [
+            {
+              "executionSuccessful": true
+            }
+          ],
+          "results": [
+            {
+              "level": "warning",
+              "message": {
+                "text": "Synthetic finding; no real code scanned."
+              },
+              "ruleId": "demo",
+              "suppressions": [
+                {
+                  "kind": "inSource",
+                  "status": "accepted"
+                }
+              ]
+            }
+          ],
+          "tool": {
+            "driver": {
+              "name": "Semgrep",
+              "rules": []
+            }
+          }
+        }
+      ],
+      "version": "2.1.0"
+    },
+    "notice": "Uninterpreted fields are retained, not used in gate policy; no completeness claim.",
+    "sha256": "d7b91ecd86a4a879c55b1192813e033431c8c6788ea5fd5ff1f24f8f8a5fc3da",
+    "uninterpretedFields": []
+  },
+  "generator": {
+    "name": "sarif-gate",
+    "version": "0.1.0"
+  },
+  "naive": {
+    "decision": "fail",
+    "explicitWarningErrorCount": 1
+  },
+  "policy": {
+    "ignoreUnchanged": false,
+    "level": "warning",
+    "requireExecutionSuccess": false
+  },
+  "results": [
+    {
+      "baselineState": "unspecified",
+      "blocking": false,
+      "eligible": false,
+      "hasLocation": false,
+      "level": "warning",
+      "levelSource": "result.level",
+      "levelSourcePointer": "/runs/0/results/0/level",
+      "message": "Synthetic finding; no real code scanned.",
+      "reasons": [
+        "accepted_suppression"
+      ],
+      "resultIndex": 0,
+      "ruleComponent": {
+        "index": null,
+        "kind": "driver",
+        "name": "Semgrep",
+        "sourcePointer": "/runs/0/tool/driver"
+      },
+      "ruleId": "demo",
+      "ruleIndex": null,
+      "ruleResolution": "unlisted",
+      "ruleSourcePointer": null,
+      "runIndex": 0,
+      "sourcePointer": "/runs/0/results/0",
+      "suppressions": [
+        {
+          "kind": "inSource",
+          "sourcePointer": "/runs/0/results/0/suppressions/0",
+          "status": "accepted"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "executionStatus": "successful",
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "failed": false,
+          "notifications": [],
+          "sourcePointer": "/runs/0/invocations/0"
+        }
+      ],
+      "resultsPresent": true,
+      "sourcePointer": "/runs/0",
+      "tool": "Semgrep"
+    }
+  ],
+  "scanFailures": [],
+  "schemaVersion": "sarif-gate/1",
+  "totals": {
+    "acceptedSuppressions": 1,
+    "actionable": 0,
+    "baselineExcluded": 0,
+    "belowThreshold": 0,
+    "eligible": 0,
+    "errorNotifications": 0,
+    "failedInvocations": 0,
+    "results": 1,
+    "scanFailures": 0,
+    "unknownExecutionInvocations": 0,
+    "unknownExecutionRuns": 0,
+    "unlocated": 1
+  }
+}

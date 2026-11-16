@@ -1,0 +1,10 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactType": "container_image",
+  "Results": [
+    {"Target": "synthetic-upgrade", "Class": "os-pkgs", "Type": "debian", "Vulnerabilities": []},
+    {"Target": "stable/packages~1", "Class": "lang-pkgs", "Type": "python"},
+    {"Target": "old-only", "Vulnerabilities": null},
+    {"Target": "synthetic-upgrade", "Class": "lang-pkgs", "Type": "python"}
+  ]
+}

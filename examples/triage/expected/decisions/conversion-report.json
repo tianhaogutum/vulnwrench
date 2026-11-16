@@ -1,0 +1,137 @@
+{
+  "artifacts": {
+    ".trivyignore.yaml": {
+      "bytes": 194,
+      "sha256": "19108f7c9ff6caca9fd9f7f298d69cc0becb75ea38859cb5ba14a33201b95c88"
+    },
+    "openvex.json": {
+      "bytes": 790,
+      "sha256": "81b75332b32ea29d6b19db7d00c2ad3358da959f0aa8fba17a3f0b15f8525f5c"
+    },
+    "osv-scanner.toml": {
+      "bytes": 249,
+      "sha256": "264313dbfbeedc102e95fd1730df36e6b625ec7580bddd13801b77e3dd17fd2b"
+    }
+  },
+  "counts": {
+    "decisions": 1,
+    "osvEntries": 1,
+    "trivyEntries": 1,
+    "vexStatements": 1
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "record": {
+        "aliases": {},
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2025-0001"
+        ],
+        "owner": "app-team",
+        "package": "pkg:npm/demo@1.0",
+        "reason": "Investigation",
+        "status": "under_investigation"
+      }
+    }
+  ],
+  "losses": [
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": ".trivyignore.yaml"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "expiry_not_enforced",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "OpenVEX v0.2 has no native expiry; notes are informational. Regenerate and withdraw stale documents externally.",
+      "fields": [
+        "expiresOn"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "owner_not_structured",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Decision owner is preserved in status_notes, not a native structured field; author is the supplied document author.",
+      "fields": [
+        "owner"
+      ],
+      "target": "openvex.json"
+    }
+  ],
+  "mappings": [
+    {
+      "decisionIndex": 0,
+      "package": "pkg:npm/demo@1.0",
+      "scannerIds": [
+        "CVE-2025-0001"
+      ],
+      "vexPrimaryIds": [
+        "CVE-2025-0001"
+      ]
+    }
+  ],
+  "omittedArtifacts": [],
+  "openvexId": "urn:sha256:fdb5fb8fe54490a3b4d664b07dcb531846e2c552f79be4e9a71b4aa039e0075f",
+  "parameters": {
+    "allowScopeLoss": true,
+    "asOf": "2026-11-11",
+    "author": "Synthetic Example Team",
+    "productId": "urn:example:demo-product:1.0",
+    "timestamp": "2026-11-11T12:00:00Z"
+  },
+  "schemaVersion": 1,
+  "source": {
+    "canonicalJsonSha256": "6d0e71e9e7758e75f12dee941f60bac67cf40aa3401df469c2f07262da23a569",
+    "schemaVersion": 1
+  },
+  "tool": "triage-bridge",
+  "toolVersion": "0.1.0",
+  "warnings": [
+    "Every decision is compiled as a scanner ignore, including affected and under_investigation; this does not assert non-exploitability.",
+    "Only supplied aliases are expanded here. OSV-Scanner may additionally suppress aliases using its own database.",
+    "Expiry is date-only. The bridge rejects expiresOn <= asOf in UTC; native consumers control their runtime expiry behavior.",
+    "No scanner, package, exploitability, alias truth, product membership, or author identity has been verified."
+  ]
+}

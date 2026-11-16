@@ -1,0 +1,8 @@
+vulnerabilities:
+  - id: CVE-2099-0062
+    purls:
+      - "pkg:npm/triage-demo@1.0"
+    paths:
+      - "app/package-lock.json"
+    statement: Path-constrained synthetic exception
+    expired_at: 2026-12-01

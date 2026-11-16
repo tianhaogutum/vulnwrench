@@ -1,0 +1,31 @@
+{
+  "architecture": "amd64",
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ]
+  },
+  "history": [
+    {
+      "created_by": "LABEL synthetic=true",
+      "empty_layer": true
+    },
+    {
+      "created_by": "ADD synthetic base files /"
+    },
+    {
+      "created_by": "ENV MODE=example",
+      "empty_layer": true
+    },
+    {
+      "created_by": "COPY synthetic app upgrade /app"
+    },
+    {
+      "created_by": "COPY synthetic app extras /app"
+    }
+  ]
+}

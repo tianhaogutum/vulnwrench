@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "vulnfuse-coverage-1",
+  "inputs": [
+    {
+      "scanner": "trivy",
+      "input": "trivy.json",
+      "sha256": "15b98d3ade943a1b89e6aa63a7d40256d0e8405829fdd53e73ae50b646063b0b",
+      "targetIdentity": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:common"
+    },
+    {
+      "scanner": "grype",
+      "input": "grype-empty.json",
+      "sha256": "629bb8c22ea1d2f27365e0c41c7d57d630a2327e2a0ac278bf539fbae3a08cad",
+      "targetIdentity": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:common"
+    },
+    {
+      "scanner": "osv",
+      "input": "osv-empty.json",
+      "sha256": "250a97e605ccc127d0b54b8d69907118ccd5d0a3352b27819891e2dc8c5b4046",
+      "targetIdentity": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "scanComplete": false,
+      "databaseTimestamp": null,
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:common"
+    }
+  ]
+}

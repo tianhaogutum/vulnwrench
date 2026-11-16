@@ -1,0 +1,77 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "alpha.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "OTHER",
+          "PkgName": "aaa",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/aaa@1.0"
+          },
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "one"
+        }
+      ]
+    },
+    {
+      "Target": " apps/~web|lock.json ",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "one"
+        },
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "two"
+        }
+      ]
+    },
+    {
+      "Target": "zeta.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "one"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Synthetic KEV catalog for examples/ci; not CISA data",
+  "catalogVersion": "2026.11.10",
+  "dateReleased": "2026-11-10T00:00:00.000Z",
+  "count": 1,
+  "vulnerabilities": [
+    {
+      "cveID": "CVE-2099-2001",
+      "vendorProject": "Synthetic",
+      "product": "acme-router",
+      "vulnerabilityName": "Synthetic entry",
+      "dateAdded": "2026-11-09",
+      "shortDescription": "Fictional entry for a fictional package",
+      "requiredAction": "Test only",
+      "dueDate": "2026-11-30",
+      "knownRansomwareCampaignUse": "Unknown",
+      "notes": "Synthetic fixture"
+    }
+  ]
+}

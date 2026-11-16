@@ -1,0 +1,13 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": []
+    }
+  ]
+}

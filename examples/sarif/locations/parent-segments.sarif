@@ -1,0 +1,118 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic"
+        }
+      },
+      "originalUriBaseIds": {
+        "ROOT": {
+          "uri": "file:///workspace/"
+        },
+        "SRC": {
+          "uri": "src/",
+          "uriBaseId": "ROOT"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "level": "warning",
+          "message": {
+            "text": "Synthetic parent paths; no source files read."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///workspace/link/../a.py"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "link/../a.py"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../lib/a%20b.py",
+                  "uriBaseId": "SRC"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/link/../a.py",
+                  "uriBaseId": "SRC"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "file://localhost/workspace/src/./link/../a%20b.py"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "link/%2e%2e/../a%2fb%2520.py"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "link/../a%20b.py",
+            "uriBaseId": "SRC"
+          }
+        }
+      ]
+    }
+  ]
+}

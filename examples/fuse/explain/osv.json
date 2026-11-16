@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "apps/worker/package-lock.json"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "demo",
+            "version": "1.0",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/demo@1.0#apps/worker"
+          },
+          "vulnerabilities": [
+            {
+              "id": "OSV-EXPLAIN-1",
+              "aliases": [
+                "GHSA-explain-1"
+              ],
+              "database_specific": {
+                "severity": "LOW"
+              },
+              "affected": [
+                {
+                  "package": {
+                    "purl": "pkg:npm/demo@1.0#apps/worker"
+                  },
+                  "ranges": [
+                    {
+                      "type": "SEMVER",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "9.9"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

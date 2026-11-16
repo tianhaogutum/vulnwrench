@@ -1,0 +1,243 @@
+{
+  "evidence": {
+    "bom": {
+      "SPDXID": "SPDXRef-DOCUMENT",
+      "creationInfo": {
+        "created": "2026-11-11T00:00:00Z",
+        "creators": [
+          "Tool: synthetic-fixture"
+        ]
+      },
+      "dataLicense": "CC0-1.0",
+      "documentDescribes": [
+        "SPDXRef-app"
+      ],
+      "documentNamespace": "https://example.invalid/spdx/synthetic-app-064",
+      "name": "synthetic-app",
+      "packages": [
+        {
+          "SPDXID": "SPDXRef-app",
+          "downloadLocation": "NOASSERTION",
+          "filesAnalyzed": false,
+          "name": "synthetic-app",
+          "versionInfo": "1.0"
+        },
+        {
+          "SPDXID": "SPDXRef-a",
+          "downloadLocation": "NOASSERTION",
+          "externalRefs": [
+            {
+              "referenceCategory": "PACKAGE-MANAGER",
+              "referenceLocator": "pkg:npm/a@1.0",
+              "referenceType": "purl"
+            }
+          ],
+          "filesAnalyzed": false,
+          "name": "a",
+          "versionInfo": "1.0"
+        },
+        {
+          "SPDXID": "SPDXRef-b",
+          "downloadLocation": "NOASSERTION",
+          "externalRefs": [
+            {
+              "referenceCategory": "PACKAGE-MANAGER",
+              "referenceLocator": "pkg:npm/b@2.0",
+              "referenceType": "purl"
+            }
+          ],
+          "filesAnalyzed": false,
+          "name": "b",
+          "versionInfo": "2.0"
+        }
+      ],
+      "relationships": [
+        {
+          "relatedSpdxElement": "SPDXRef-a",
+          "relationshipType": "DEPENDS_ON",
+          "spdxElementId": "SPDXRef-app"
+        },
+        {
+          "relatedSpdxElement": "SPDXRef-b",
+          "relationshipType": "DEPENDS_ON",
+          "spdxElementId": "SPDXRef-a"
+        },
+        {
+          "comment": "Containment must not shorten the dependency witness.",
+          "relatedSpdxElement": "SPDXRef-b",
+          "relationshipType": "CONTAINS",
+          "spdxElementId": "SPDXRef-app"
+        }
+      ],
+      "spdxVersion": "SPDX-2.3"
+    },
+    "grype": {
+      "descriptor": {
+        "configuration": {},
+        "name": "grype",
+        "version": "synthetic-fixture"
+      },
+      "distro": {
+        "idLike": [],
+        "name": "",
+        "version": ""
+      },
+      "ignoredMatches": [],
+      "matches": [
+        {
+          "artifact": {
+            "id": "grype-b",
+            "licenses": [
+              "MIT"
+            ],
+            "locations": [
+              {
+                "path": "/synthetic/package-lock.json"
+              }
+            ],
+            "name": "b",
+            "purl": "pkg:npm/b@2.0",
+            "type": "npm",
+            "version": "2.0"
+          },
+          "matchDetails": [
+            {
+              "found": {
+                "versionConstraint": "< 2.1 (unknown)"
+              },
+              "matcher": "javascript-matcher",
+              "searchedBy": {
+                "package": {
+                  "name": "b",
+                  "version": "2.0"
+                }
+              },
+              "type": "exact-direct-match"
+            }
+          ],
+          "relatedVulnerabilities": [],
+          "vulnerability": {
+            "dataSource": "https://example.invalid/advisories/CVE-2099-0001",
+            "fix": {
+              "state": "fixed",
+              "versions": [
+                "2.1"
+              ]
+            },
+            "id": "CVE-2099-0001",
+            "namespace": "synthetic:npm",
+            "severity": "High"
+          }
+        }
+      ],
+      "source": {
+        "target": "/synthetic",
+        "type": "directory"
+      }
+    },
+    "mapping": null
+  },
+  "graph": {
+    "cycles": {
+      "backEdges": [],
+      "detected": false
+    },
+    "danglingDependencies": [],
+    "edgeCount": 2,
+    "missingDependencyDeclarations": [
+      "SPDXRef-b"
+    ],
+    "nodeCount": 3
+  },
+  "limits": {
+    "maxPathsTotal": 1000,
+    "maxRootsPerResult": 100
+  },
+  "provenance": {
+    "bomFormat": "SPDX",
+    "digestAlgorithm": "sha256-canonical-json",
+    "identityPolicy": "explicit mapping overrides exact PURL; no name/version guessing",
+    "inferredEdges": 0,
+    "inputDigests": {
+      "bom": "440a7149930550fa3a11d46d0e563a3f811b161d2b4f2673c2c701ebd87a1660",
+      "grype": "d398251fdd1c9b12de05931e9dbc99db6036a6aee8c8c9aee298877628e905a9",
+      "mapping": null
+    },
+    "rootSelection": "spdx-declarations",
+    "specVersion": "SPDX-2.3"
+  },
+  "results": [
+    {
+      "affectedRootCount": 1,
+      "affectedRoots": [
+        {
+          "path": [
+            "SPDXRef-app",
+            "SPDXRef-a",
+            "SPDXRef-b"
+          ],
+          "root": "SPDXRef-app"
+        }
+      ],
+      "artifactId": "grype-b",
+      "findingIndex": 0,
+      "join": {
+        "candidateCount": 1,
+        "method": "exact-purl"
+      },
+      "purl": "pkg:npm/b@2.0",
+      "status": "reachable",
+      "truncation": {
+        "pathsOmitted": 0,
+        "rootsOmitted": 0
+      },
+      "vulnerabilityId": "CVE-2099-0001",
+      "vulnerableRef": "SPDXRef-b"
+    }
+  ],
+  "roots": [
+    "SPDXRef-app"
+  ],
+  "schemaVersion": "1.0",
+  "summary": {
+    "activeFindings": 1,
+    "ignoredFindings": 0,
+    "pathsOmitted": 0,
+    "results": 1,
+    "rootsOmitted": 0,
+    "unmappedFindings": 0,
+    "witnessPaths": 1
+  },
+  "tool": {
+    "name": "sbom-pathfinder",
+    "version": "0.1.0"
+  },
+  "warnings": [
+    {
+      "code": "explicit_edges_only",
+      "message": "Only package-to-package DEPENDS_ON is traversed; no runtime exploitability or complete dependency coverage is implied. Other fields remain in evidence."
+    },
+    {
+      "code": "spdx_relationship_not_projected",
+      "from": "SPDXRef-app",
+      "message": "Relationship retained in evidence but not used as a dependency edge or root declaration.",
+      "relationshipIndex": 2,
+      "relationshipType": "CONTAINS",
+      "to": "SPDXRef-b"
+    },
+    {
+      "code": "dependency_declarations_missing",
+      "message": "These nodes have no dependency declaration; absence is not proof of no dependencies.",
+      "refs": [
+        "SPDXRef-b"
+      ]
+    },
+    {
+      "code": "component_purls_missing",
+      "message": "Components without PURLs require explicit artifact-id mapping to join.",
+      "refs": [
+        "SPDXRef-app"
+      ]
+    }
+  ]
+}

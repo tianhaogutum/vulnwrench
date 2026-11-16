@@ -1,0 +1,57 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic",
+          "version": "1.0.0"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic finding A"
+          },
+          "level": "warning",
+          "fingerprints": {
+            "primary/v1": "A"
+          },
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "status": "accepted",
+              "justification": "Synthetic approval"
+            }
+          ]
+        },
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic finding B"
+          },
+          "level": "warning",
+          "fingerprints": {
+            "primary/v1": "B"
+          }
+        },
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic finding D"
+          },
+          "level": "note",
+          "fingerprints": {
+            "primary/v1": "D"
+          }
+        }
+      ]
+    }
+  ]
+}

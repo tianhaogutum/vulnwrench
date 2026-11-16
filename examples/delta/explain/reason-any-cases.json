@@ -1,0 +1,568 @@
+{
+  "inputs": [
+    "explain/reason-before.json",
+    "explain/reason-after.json",
+    "grype/before-bom.json",
+    "grype/after-bom.json",
+    "grype/scans.json"
+  ],
+  "advisory": "GHSA-SYNTH-001",
+  "default": {
+    "normalized": 1,
+    "selected_unknown": 14,
+    "before_findings": 9,
+    "after_findings": 9
+  },
+  "selector": {
+    "cli": "repeat --reason-code-any CODE",
+    "library": "explain_reason_codes_any=[CODE, ...]",
+    "requires": [
+      "advisory",
+      "side",
+      "artifact_id"
+    ],
+    "semantics": "ANY exact supported emitted adapter code membership on each whole entry. At least one requested code must occur. Supported codes absent from this selection are permitted alongside a matching code; unsupported codes always fail. Optional original native match_index intersects. No aliases, scope inference or unknown-array index interpretation.",
+    "collection": "Nonempty list or tuple of nonempty valid strings only; None omits. Duplicate codes collapse in first-requested order without mutating input. Singleton collections supported.",
+    "scalarInteraction": "Mutually exclusive with scalar and ALL selectors, even equal or empty collections; InputError / exit 2."
+  },
+  "output": "unknown_filter.reason_codes_any is the first-occurrence unique ordered array. No new fields when omitted. Markdown caption: Unknown reason filter (ANY): CODE, CODE. findings=[]; original whole entries with every ordered reason/context/index/duplicate; unchanged full batch/native evidence/accounting and blockers.",
+  "positive": [
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        8
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_location_mismatch",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        7
+      ],
+      "native_indexes": [
+        8
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location"
+      ],
+      "unknown_indexes": [
+        2,
+        3
+      ],
+      "native_indexes": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        3
+      ],
+      "native_indexes": [
+        4
+      ],
+      "match_index": 4
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        7
+      ],
+      "native_indexes": [
+        8
+      ],
+      "match_index": 8
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "artifact_id_conflict",
+        "scope_binding_type_mismatch"
+      ],
+      "unknown_indexes": [
+        5
+      ],
+      "native_indexes": [
+        6
+      ],
+      "match_index": 6
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        8
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ],
+      "unknown_indexes": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "native_indexes": [
+        3,
+        4,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_location_mismatch",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        7
+      ],
+      "native_indexes": [
+        8
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location"
+      ],
+      "unknown_indexes": [
+        2,
+        3
+      ],
+      "native_indexes": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        3
+      ],
+      "native_indexes": [
+        4
+      ],
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ],
+      "unknown_indexes": [
+        7
+      ],
+      "native_indexes": [
+        8
+      ],
+      "match_index": 8
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "artifact_id_conflict",
+        "scope_binding_type_mismatch"
+      ],
+      "unknown_indexes": [
+        5
+      ],
+      "native_indexes": [
+        6
+      ],
+      "match_index": 6
+    }
+  ],
+  "negative": [
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        ""
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        " "
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "SYNTHETIC_SECRET_CODE"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "ambiguous"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "package_identity_disagrees",
+        "scope_binding_type_mismatch"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "report_identity_unknown"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "AMBIGUOUS_PACKAGE_LOCATION"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        " ambiguous_package_location"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_location_mismatch",
+        "package_identity_unsupported"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_code": "scope_binding_missing",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_code": "",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": null,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": null,
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": null,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "AFTER",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "CVE-SYNTH-001",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "SYNTHETIC_SECRET_RELATED",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "SYNTHETIC_SECRET_EXTENSION",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "other-artifact",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "only-before",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "pkg:npm/demo@1.1",
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "synthetic-demo-1.1",
+      "match_index": 0,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 2,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "unsupported_package_type"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 9,
+      "reason_codes_any": [
+        "ambiguous_package_location",
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing"
+      ],
+      "reason_codes_all": [
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing"
+      ],
+      "reason_codes_all": []
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing"
+      ],
+      "reason_code": "scope_binding_missing",
+      "reason_codes_all": [
+        "scope_binding_missing"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "SYNTHETIC_SECRET_CODE"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing",
+        "bad\u0001CODE"
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "reason_codes_any": [
+        "scope_binding_missing"
+      ],
+      "advisory": "UNSELECTED-CONFLICT",
+      "match_index": 4
+    }
+  ],
+  "failures": "Malformed/empty/unsupported/no-match collections and missing/mismatched exact selectors fail with InputError / exit 2; no stdout, safe diagnostics, unchanged existing output. Fully validate unselected and opposite-side evidence."
+}

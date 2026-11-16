@@ -1,0 +1,161 @@
+{
+  "inputs": [
+    "explain/filter-before.json",
+    "explain/filter-after.json",
+    "grype/before-bom.json",
+    "grype/after-bom.json",
+    "grype/scans.json"
+  ],
+  "advisory": "GHSA-SYNTH-001",
+  "normalizedPolicy": "With a filter, findings is empty even when normalized rows match; require at least one exact unknown match.",
+  "default": {
+    "normalized": 1,
+    "selected_unknown": 8,
+    "before_findings": 6,
+    "after_findings": 6
+  },
+  "positive": [
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "unknown_indexes": [
+        2,
+        3
+      ],
+      "native_indexes": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "other-artifact",
+      "unknown_indexes": [
+        1
+      ],
+      "native_indexes": [
+        2
+      ]
+    },
+    {
+      "side": "before",
+      "artifact_id": "only-before",
+      "unknown_indexes": [
+        4
+      ],
+      "native_indexes": [
+        5
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "unknown_indexes": [
+        2,
+        3
+      ],
+      "native_indexes": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "other-artifact",
+      "unknown_indexes": [
+        1
+      ],
+      "native_indexes": [
+        2
+      ]
+    },
+    {
+      "side": "after",
+      "artifact_id": "only-after",
+      "unknown_indexes": [
+        4
+      ],
+      "native_indexes": [
+        5
+      ]
+    }
+  ],
+  "negative": [
+    {
+      "side": null,
+      "artifact_id": "native/~shared ID"
+    },
+    {
+      "side": "after",
+      "artifact_id": null
+    },
+    {
+      "side": "",
+      "artifact_id": "native/~shared ID"
+    },
+    {
+      "side": " ",
+      "artifact_id": "native/~shared ID"
+    },
+    {
+      "side": "AFTER",
+      "artifact_id": "native/~shared ID"
+    },
+    {
+      "side": "SYNTHETIC_SECRET_SIDE",
+      "artifact_id": "native/~shared ID"
+    },
+    {
+      "side": "after",
+      "artifact_id": ""
+    },
+    {
+      "side": "after",
+      "artifact_id": " "
+    },
+    {
+      "side": "after",
+      "artifact_id": "SYNTHETIC_SECRET_ABSENT"
+    },
+    {
+      "side": "after",
+      "artifact_id": "only-before"
+    },
+    {
+      "side": "after",
+      "artifact_id": "synthetic-demo-1.1"
+    },
+    {
+      "side": "after",
+      "artifact_id": "pkg:npm/demo@1.1"
+    },
+    {
+      "side": "after",
+      "artifact_id": "node_modules/demo"
+    },
+    {
+      "side": "after",
+      "artifact_id": " native/~shared ID"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID "
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "CVE-SYNTH-001"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "SYNTHETIC_SECRET_RELATED"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "advisory": "SYNTHETIC_SECRET_EXTENSION"
+    }
+  ],
+  "failures": "InputError / CLI exit 2; value-free diagnostics, no stdout, unchanged existing output, no temporary output files. All reports are validated before selection, including unselected conflicts. Selected non-Grype sides unsupported."
+}

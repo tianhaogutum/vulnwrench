@@ -1,0 +1,6 @@
+{
+  "pkg:npm/demo@1.0": "https://github.com/example/demo",
+  "pkg:npm/demo-helper@2.0": "https://GitHub.com/Example/Demo.git/",
+  "pkg:pypi/legacy@1.0": "https://github.com/example/legacy",
+  "pkg:npm/unchecked@1.0": "https://github.com/example/unchecked"
+}

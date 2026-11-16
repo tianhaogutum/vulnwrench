@@ -1,0 +1,52 @@
+{
+  "vulnerabilities": [
+    {
+      "expired_at": "2026-12-01",
+      "id": "CVE-2025-0001",
+      "purls": [
+        "pkg:npm/demo@1.0"
+      ],
+      "statement": "Synthetic investigation, not proof of safety"
+    },
+    {
+      "expired_at": "2026-12-02",
+      "id": "CVE-2025-0002",
+      "purls": [
+        "pkg:pypi/example-lib@2.0"
+      ],
+      "statement": "Synthetic time-limited risk acceptance"
+    },
+    {
+      "expired_at": "2026-12-03",
+      "id": "CVE-2025-0003",
+      "purls": [
+        "pkg:maven/example/demo@3.0"
+      ],
+      "statement": "Synthetic build excludes the vulnerable code"
+    },
+    {
+      "expired_at": "2026-12-04",
+      "id": "CVE-2025-0004",
+      "purls": [
+        "pkg:golang/example.org/demo@4.0"
+      ],
+      "statement": "Synthetic maintenance exception; the product remains affected"
+    },
+    {
+      "expired_at": "2026-12-05",
+      "id": "CVE-2025-0005",
+      "purls": [
+        "pkg:deb/debian/demo@5.0?arch=amd64"
+      ],
+      "statement": "Synthetic fixed build awaiting scanner database refresh"
+    },
+    {
+      "expired_at": "2026-12-01",
+      "id": "GHSA-demo-0001-0001",
+      "purls": [
+        "pkg:npm/demo@1.0"
+      ],
+      "statement": "Synthetic investigation, not proof of safety"
+    }
+  ]
+}

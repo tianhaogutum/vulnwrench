@@ -1,0 +1,26 @@
+{
+  "baseline": [
+    {
+      "runIndex": 0,
+      "pairId": "api"
+    },
+    {
+      "runIndex": 1,
+      "pairId": "web"
+    }
+  ],
+  "current": [
+    {
+      "runIndex": 1,
+      "pairId": "api"
+    },
+    {
+      "runIndex": 0,
+      "pairId": "web"
+    }
+  ],
+  "inputSha256": {
+    "baseline": "952f23f6dd4fa0287c98cefdbb6bc7dea1c03908b30ff04f48486a3cb41f2b81",
+    "current": "054685b02c7f793d228cd62e12da201db55b00241f1a564458abb8c86be43e58"
+  }
+}

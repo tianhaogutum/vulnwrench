@@ -1,0 +1,362 @@
+{
+  "automaticActions": [],
+  "counts": {
+    "decisions": 6,
+    "reviewRequired": 5
+  },
+  "decisions": [
+    {
+      "actions": [
+        "review_expired_exception"
+      ],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-expired",
+          "expiresOn": "2026-11-11",
+          "ids": [
+            "SYNTHETIC-EXPIRED"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-expired@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:expired"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 0,
+          "pointer": "/decisions/0"
+        }
+      },
+      "currentExpiryStatus": "expired",
+      "decisionId": "exception-expired",
+      "expiryStatus": "expired",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-expired",
+          "expiresOn": "2026-11-11",
+          "ids": [
+            "SYNTHETIC-EXPIRED"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-expired@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:expired"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 0,
+          "pointer": "/decisions/0"
+        }
+      },
+      "reviewRequired": true,
+      "statuses": [
+        "expired"
+      ]
+    },
+    {
+      "actions": [
+        "review_expiring_exception"
+      ],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-soon",
+          "expiresOn": "2026-11-18",
+          "ids": [
+            "SYNTHETIC-SOON"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-soon@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:soon"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 1,
+          "pointer": "/decisions/1"
+        }
+      },
+      "currentExpiryStatus": "expiring_soon",
+      "decisionId": "exception-soon",
+      "expiryStatus": "expiring_soon",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-soon",
+          "expiresOn": "2026-11-18",
+          "ids": [
+            "SYNTHETIC-SOON"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-soon@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:soon"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 1,
+          "pointer": "/decisions/1"
+        }
+      },
+      "reviewRequired": true,
+      "statuses": [
+        "expiring_soon"
+      ]
+    },
+    {
+      "actions": [
+        "confirm_owner_handoff"
+      ],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-owner",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-OWNER"
+          ],
+          "owner": "new-example-team",
+          "package": "pkg:npm/demo-owner@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:owner"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 2,
+          "pointer": "/decisions/2"
+        }
+      },
+      "currentExpiryStatus": "active",
+      "decisionId": "exception-owner",
+      "expiryStatus": "active",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-owner",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-OWNER"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-owner@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:owner"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 2,
+          "pointer": "/decisions/2"
+        }
+      },
+      "reviewRequired": true,
+      "statuses": [
+        "owner_changed"
+      ]
+    },
+    {
+      "actions": [
+        "assign_owner_for_review"
+      ],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-missing",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-MISSING"
+          ],
+          "package": "pkg:npm/demo-missing@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:missing"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 3,
+          "pointer": "/decisions/3"
+        }
+      },
+      "currentExpiryStatus": "active",
+      "decisionId": "exception-missing",
+      "expiryStatus": "active",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-missing",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-MISSING"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-missing@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:missing"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 3,
+          "pointer": "/decisions/3"
+        }
+      },
+      "reviewRequired": true,
+      "statuses": [
+        "owner_missing"
+      ]
+    },
+    {
+      "actions": [
+        "reassess_changed_scope"
+      ],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-scope",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-SCOPE"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-scope@2.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:scope"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 4,
+          "pointer": "/decisions/4"
+        }
+      },
+      "currentExpiryStatus": "active",
+      "decisionId": "exception-scope",
+      "expiryStatus": "active",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-scope",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-SCOPE"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-scope@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:scope"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 4,
+          "pointer": "/decisions/4"
+        }
+      },
+      "reviewRequired": true,
+      "statuses": [
+        "scope_changed"
+      ]
+    },
+    {
+      "actions": [],
+      "current": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-unchanged",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-UNCHANGED"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-unchanged@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:unchanged"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+          "decisionIndex": 5,
+          "pointer": "/decisions/5"
+        }
+      },
+      "currentExpiryStatus": "active",
+      "decisionId": "exception-unchanged",
+      "expiryStatus": "active",
+      "prior": {
+        "record": {
+          "aliases": {},
+          "decisionId": "exception-unchanged",
+          "expiresOn": "2026-12-31",
+          "ids": [
+            "SYNTHETIC-UNCHANGED"
+          ],
+          "owner": "example-team",
+          "package": "pkg:npm/demo-unchanged@1.0",
+          "reason": "Synthetic review fixture; no real security claim",
+          "sourceRefs": [
+            "urn:example:review:unchanged"
+          ],
+          "status": "accepted_risk"
+        },
+        "source": {
+          "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+          "decisionIndex": 5,
+          "pointer": "/decisions/5"
+        }
+      },
+      "reviewRequired": false,
+      "statuses": [
+        "unchanged"
+      ]
+    }
+  ],
+  "mode": "review_only",
+  "parameters": {
+    "asOf": "2026-11-11",
+    "currentSupplied": true,
+    "expiringWithinDays": 7,
+    "priorAsOf": "2026-11-01"
+  },
+  "schemaVersion": 1,
+  "sources": {
+    "currentCanonicalJsonSha256": "420423d2dfced86a5977bb8d39e72a009c85e397fbea6f51a2f9000041352c88",
+    "priorCanonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12"
+  },
+  "tool": "triage-bridge",
+  "toolVersion": "0.1.0",
+  "warnings": [
+    "Review plan only: no exception was renewed, approved, suppressed or compiled; no OpenVEX assertion was issued.",
+    "Expiry uses the first invalid UTC day. A candidate extension does not clear the prior expiry finding.",
+    "Decision IDs and source references are supplied by the caller; content digests are not authenticated provenance.",
+    "Existing scanner and OpenVEX artifacts are not withdrawn or modified by this preview."
+  ]
+}

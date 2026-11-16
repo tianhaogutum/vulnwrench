@@ -1,0 +1,120 @@
+{
+  "baselineCorrect": 8,
+  "cases": 14,
+  "experiment": "synthetic decision correctness; not a speed benchmark",
+  "gateCorrect": 14,
+  "rows": [
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "pass",
+      "fixture": "semgrep.sarif",
+      "gateActionable": 0,
+      "gateDecision": "pass"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "rejected.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "under-review.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "unspecified-suppression.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "fail",
+      "fixture": "rule-default.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "fail",
+      "fixture": "default-warning.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "fail",
+      "fixture": "failed-invocation.sarif",
+      "gateActionable": 0,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "fail",
+      "fixture": "error-notification.sarif",
+      "gateActionable": 0,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "pass",
+      "fixture": "clean.sarif",
+      "gateActionable": 0,
+      "gateDecision": "pass"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "unchanged.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "pass",
+      "fixture": "absent.sarif",
+      "gateActionable": 0,
+      "gateDecision": "pass"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "multiple-runs.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    },
+    {
+      "baselineCount": 0,
+      "baselineDecision": "pass",
+      "expected": "pass",
+      "fixture": "unknown-execution.sarif",
+      "gateActionable": 0,
+      "gateDecision": "pass"
+    },
+    {
+      "baselineCount": 1,
+      "baselineDecision": "fail",
+      "expected": "fail",
+      "fixture": "explicit-override.sarif",
+      "gateActionable": 1,
+      "gateDecision": "fail"
+    }
+  ]
+}

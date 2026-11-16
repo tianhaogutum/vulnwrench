@@ -1,0 +1,12 @@
+{
+  "vulnerabilities": [
+    {
+      "expired_at": "2026-12-01",
+      "id": "CVE-2025-0001",
+      "purls": [
+        "pkg:npm/demo@1.0"
+      ],
+      "statement": "Investigation"
+    }
+  ]
+}

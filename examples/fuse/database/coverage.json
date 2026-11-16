@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "vulnfuse-coverage-1",
+  "inputs": [
+    {
+      "scanner": "trivy",
+      "input": "found.json",
+      "sha256": "1e91ac0563e08f0d4d6d1925fa415ede560fb8ffd5680c6eb42e7a8166bf4f5f",
+      "targetIdentity": "synthetic:target",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:A"
+    },
+    {
+      "scanner": "trivy",
+      "input": "absent.json",
+      "sha256": "feec24cf96efedc05ff221fcdefdf3e9f36f8bb507442b2c57742c82e3438906",
+      "targetIdentity": "synthetic:target",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:B"
+    }
+  ]
+}

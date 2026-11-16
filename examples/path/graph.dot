@@ -1,0 +1,10 @@
+digraph sbom_witnesses {
+  graph [active_findings="6", edges_omitted="0", edges_total="3", finding_selection="explicit", inferred_edges="0", input_cycles_detected="true", label="Declared dependency witnesses\nBlue boxes: roots; red fill: affected nodes; bold edges: witnesses.\nOne shortest path per root and result; alternate paths not enumerated.\nUnreachable does not mean safe; missing declarations may hide dependencies.\nTruncated: false; nodes omitted: 0; edges omitted: 0; report roots omitted: 0; report paths omitted: 0.\nRoots selected explicitly: app, worker.\nFindings selected explicitly (zero-based): 0. Total active input findings: 6; selected results: 1.\nFinding 0 CVE-2099-0001 / lib-v1: reachable; affected roots: 2", labelloc="t", max_edges="400", max_nodes="200", nodes_omitted="0", nodes_total="4", rankdir="LR", report_paths_omitted="0", report_roots_omitted="0", results_json="[{\"affectedRootCount\":2,\"findingIndex\":0,\"status\":\"reachable\",\"truncation\":{\"pathsOmitted\":0,\"rootsOmitted\":0},\"vulnerabilityId\":\"CVE-2099-0001\",\"vulnerableRef\":\"lib-v1\"}]", root_selection="explicit", selected_finding_indexes_json="[0]", selected_findings="[0]", selected_results="1", selected_roots_json="[\"app\",\"worker\"]", truncated="false", witness_scope="One shortest path per root and result; alternate paths not enumerated."];
+  n0 [color="blue", fillcolor="white", is_affected="false", is_root="true", label="app", sbom_ref="app", shape="box", style="filled"];
+  n1 [color="black", fillcolor="white", is_affected="false", is_root="false", label="left", sbom_ref="left", shape="ellipse", style="filled"];
+  n2 [color="black", fillcolor="mistyrose", is_affected="true", is_root="false", label="lib-v1\nCVE-2099-0001", sbom_ref="lib-v1", shape="ellipse", style="filled"];
+  n3 [color="blue", fillcolor="white", is_affected="false", is_root="true", label="worker", sbom_ref="worker", shape="box", style="filled"];
+  n0 -> n1 [color="firebrick", style="bold", witness="true"];
+  n1 -> n2 [color="firebrick", style="bold", witness="true"];
+  n3 -> n2 [color="firebrick", style="bold", witness="true"];
+}

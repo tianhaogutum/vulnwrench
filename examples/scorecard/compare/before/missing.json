@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-01",
+  "repo": {
+    "name": "github.com/example/missing",
+    "commit": "3333333333333333333333333333333333333333"
+  },
+  "scorecard": {
+    "version": "v5.0.0",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "score": 8.4,
+  "checks": [
+    {
+      "name": "Code-Review",
+      "score": 1,
+      "reason": "Synthetic: baseline"
+    }
+  ]
+}

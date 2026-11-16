@@ -1,0 +1,44 @@
+{
+  "approvedDecisionIndices": [
+    0,
+    1,
+    2
+  ],
+  "decisionDocument": {
+    "decisions": [
+      {
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2099-0062"
+        ],
+        "owner": "Synthetic Review Team",
+        "package": "pkg:npm/triage-demo@1.0",
+        "reason": "Investigation: synthetic fixture",
+        "status": "accepted_risk"
+      },
+      {
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2099-0062"
+        ],
+        "owner": "Synthetic Review Team",
+        "package": "pkg:npm/triage-demo@2.0",
+        "reason": "Investigation: synthetic fixture",
+        "status": "accepted_risk"
+      },
+      {
+        "expiresOn": "2026-12-15",
+        "ids": [
+          "GHSA-demo-0062-0001"
+        ],
+        "owner": "Synthetic Review Team",
+        "package": "pkg:pypi/triage-demo@3.0",
+        "reason": "Reviewer's synthetic reason",
+        "status": "accepted_risk"
+      }
+    ],
+    "schemaVersion": 1
+  },
+  "schemaVersion": 1,
+  "unsupportedDispositions": []
+}

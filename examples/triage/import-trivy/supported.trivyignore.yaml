@@ -1,0 +1,12 @@
+# Synthetic exact-scope entries for import/compile equivalence verification.
+vulnerabilities:
+  - id: CVE-2099-0062
+    purls:
+      - "pkg:npm/triage-demo@1.0"
+      - "pkg:npm/triage-demo@2.0"
+    statement: "Investigation: synthetic fixture"
+    expired_at: 2026-12-01
+  - id: GHSA-demo-0062-0001
+    purls: ["pkg:pypi/triage-demo@3.0"]
+    statement: 'Reviewer''s synthetic reason'
+    expired_at: "2026-12-15"

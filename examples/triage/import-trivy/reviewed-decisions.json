@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "ids": ["CVE-2099-0062"],
+      "package": "pkg:npm/triage-demo@1.0",
+      "owner": "Synthetic Review Team",
+      "reason": "Investigation: synthetic fixture",
+      "expiresOn": "2026-12-01",
+      "status": "accepted_risk"
+    },
+    {
+      "ids": ["CVE-2099-0062"],
+      "package": "pkg:npm/triage-demo@2.0",
+      "owner": "Synthetic Review Team",
+      "reason": "Investigation: synthetic fixture",
+      "expiresOn": "2026-12-01",
+      "status": "accepted_risk"
+    },
+    {
+      "ids": ["GHSA-demo-0062-0001"],
+      "package": "pkg:pypi/triage-demo@3.0",
+      "owner": "Synthetic Review Team",
+      "reason": "Reviewer's synthetic reason",
+      "expiresOn": "2026-12-15",
+      "status": "accepted_risk"
+    }
+  ]
+}

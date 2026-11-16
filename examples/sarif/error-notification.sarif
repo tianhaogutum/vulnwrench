@@ -1,0 +1,27 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticTool",
+          "rules": []
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": [
+            {
+              "level": "error",
+              "message": {
+                "text": "Synthetic execution failure"
+              }
+            }
+          ]
+        }
+      ],
+      "results": []
+    }
+  ]
+}

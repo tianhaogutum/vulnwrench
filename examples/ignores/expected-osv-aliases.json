@@ -1,0 +1,134 @@
+{
+  "asOf": "2026-11-11",
+  "coverage": "asserted_unfiltered",
+  "expiryConvention": "date-inclusive; expired when expiry < asOf (UTC calendar dates)",
+  "matcher": {
+    "name": "indexed",
+    "operations": 7
+  },
+  "notes": [
+    "Coverage is a caller assertion, not independently verifiable; candidates are limited to this report.",
+    "Matching uses exact advisory IDs unless an explicit local alias map is supplied; unmatched aliases are not proof of unused suppressions."
+  ],
+  "provenance": {
+    "aliasMapSha256": "4c468d124e9843b192d1544c1ab89d52c2face8fbfcf73ad298dcb0e7c7118d2",
+    "aliases": "explicit_local_groups",
+    "format": "osv",
+    "reportSha256": "81064f88fd8bb675e2277818a6aa13cafc1ba7b95f61f273de8a49b53a042a84",
+    "ruleScope": "global",
+    "rulesSha256": "9ba2aa6e504746186cb36b8329712eb257403869380585f8dc9c2df7aff06c4e"
+  },
+  "reportUnfilteredAcknowledged": true,
+  "rules": [
+    {
+      "daysUntilExpiry": -1,
+      "duplicateOf": [
+        "IgnoredVulns:2"
+      ],
+      "expires": "2026-11-10",
+      "hasOwner": false,
+      "hasReason": true,
+      "key": "IgnoredVulns:0",
+      "matchCount": 2,
+      "matchedFindings": [
+        "results[0].packages[0].vulnerabilities[0]",
+        "results[0].packages[1].vulnerabilities[0]"
+      ],
+      "matchedPackages": [
+        {
+          "ecosystem": "npm",
+          "name": "demo-a"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "demo-b"
+        }
+      ],
+      "rule": "CVE-2025-0001",
+      "selectors": {},
+      "status": [
+        "duplicate",
+        "expired",
+        "missing_owner",
+        "overly_broad"
+      ],
+      "unknownMatchCount": 0
+    },
+    {
+      "daysUntilExpiry": 20,
+      "duplicateOf": [],
+      "expires": "2026-12-01",
+      "hasOwner": false,
+      "hasReason": false,
+      "key": "IgnoredVulns:1",
+      "matchCount": 0,
+      "matchedFindings": [],
+      "matchedPackages": [],
+      "rule": "CVE-2025-9999",
+      "selectors": {},
+      "status": [
+        "orphan_candidate",
+        "soon_expiring",
+        "missing_reason",
+        "missing_owner"
+      ],
+      "unknownMatchCount": 0
+    },
+    {
+      "daysUntilExpiry": null,
+      "duplicateOf": [
+        "IgnoredVulns:0"
+      ],
+      "expires": null,
+      "hasOwner": false,
+      "hasReason": false,
+      "key": "IgnoredVulns:2",
+      "matchCount": 2,
+      "matchedFindings": [
+        "results[0].packages[0].vulnerabilities[0]",
+        "results[0].packages[1].vulnerabilities[0]"
+      ],
+      "matchedPackages": [
+        {
+          "ecosystem": "npm",
+          "name": "demo-a"
+        },
+        {
+          "ecosystem": "npm",
+          "name": "demo-b"
+        }
+      ],
+      "rule": "GHSA-synthetic-alias",
+      "selectors": {},
+      "status": [
+        "duplicate",
+        "missing_reason",
+        "missing_owner",
+        "overly_broad"
+      ],
+      "unknownMatchCount": 0
+    }
+  ],
+  "schemaVersion": 1,
+  "soonDays": 30,
+  "summary": {
+    "findingCount": 3,
+    "ruleCount": 3,
+    "statusCounts": {
+      "duplicate": 2,
+      "expired": 1,
+      "missing_owner": 3,
+      "missing_reason": 2,
+      "orphan_candidate": 1,
+      "overly_broad": 2,
+      "soon_expiring": 1
+    }
+  },
+  "tool": "ignore-audit",
+  "uninterpretedFields": [
+    "results[].packages[].groups",
+    "results[].packages[].vulnerabilities[].aliases",
+    "results[].packages[].vulnerabilities[].summary",
+    "results[].source.type"
+  ]
+}

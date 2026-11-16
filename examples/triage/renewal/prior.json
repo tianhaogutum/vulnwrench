@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "decisionId": "exception-expired",
+      "ids": [
+        "SYNTHETIC-EXPIRED"
+      ],
+      "package": "pkg:npm/demo-expired@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-11-11",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:expired"
+      ]
+    },
+    {
+      "decisionId": "exception-soon",
+      "ids": [
+        "SYNTHETIC-SOON"
+      ],
+      "package": "pkg:npm/demo-soon@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-11-18",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:soon"
+      ]
+    },
+    {
+      "decisionId": "exception-owner",
+      "ids": [
+        "SYNTHETIC-OWNER"
+      ],
+      "package": "pkg:npm/demo-owner@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-12-31",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:owner"
+      ]
+    },
+    {
+      "decisionId": "exception-missing",
+      "ids": [
+        "SYNTHETIC-MISSING"
+      ],
+      "package": "pkg:npm/demo-missing@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-12-31",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:missing"
+      ]
+    },
+    {
+      "decisionId": "exception-scope",
+      "ids": [
+        "SYNTHETIC-SCOPE"
+      ],
+      "package": "pkg:npm/demo-scope@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-12-31",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:scope"
+      ]
+    },
+    {
+      "decisionId": "exception-unchanged",
+      "ids": [
+        "SYNTHETIC-UNCHANGED"
+      ],
+      "package": "pkg:npm/demo-unchanged@1.0",
+      "owner": "example-team",
+      "reason": "Synthetic review fixture; no real security claim",
+      "expiresOn": "2026-12-31",
+      "status": "accepted_risk",
+      "sourceRefs": [
+        "urn:example:review:unchanged"
+      ]
+    }
+  ]
+}

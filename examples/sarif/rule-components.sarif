@@ -1,0 +1,68 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic",
+          "rules": [
+            {
+              "id": "shared",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        },
+        "extensions": [
+          {
+            "name": "Pack",
+            "version": "1",
+            "rules": [
+              {
+                "id": "shared",
+                "defaultConfiguration": {
+                  "level": "note"
+                }
+              },
+              {
+                "id": "other"
+              }
+            ]
+          }
+        ]
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "rule": {
+            "index": 0,
+            "toolComponent": {
+              "index": 0
+            }
+          },
+          "message": {
+            "text": "Extension default"
+          }
+        },
+        {
+          "ruleIndex": 0,
+          "rule": {
+            "index": 0,
+            "toolComponent": {
+              "index": 0
+            }
+          },
+          "level": "error",
+          "message": {
+            "text": "Explicit error"
+          }
+        }
+      ]
+    }
+  ]
+}

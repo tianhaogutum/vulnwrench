@@ -1,0 +1,88 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "0",
+      "name": "aaa",
+      "version": "1.0",
+      "purl": "pkg:npm/aaa@1.0",
+      "properties": [
+        {
+          "name": "scan-delta:target",
+          "value": "alpha.lock"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "1",
+      "name": "demo",
+      "version": "1.0",
+      "purl": "pkg:npm/demo@1.0",
+      "properties": [
+        {
+          "name": "scan-delta:target",
+          "value": "alpha.lock"
+        },
+        {
+          "name": "scan-delta:package-path",
+          "value": "one"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "2",
+      "name": "demo",
+      "version": "1.0",
+      "purl": "pkg:npm/demo@1.0",
+      "properties": [
+        {
+          "name": "scan-delta:target",
+          "value": " apps/~web|lock.json "
+        },
+        {
+          "name": "scan-delta:package-path",
+          "value": "one"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "3",
+      "name": "demo",
+      "version": "1.0",
+      "purl": "pkg:npm/demo@1.0",
+      "properties": [
+        {
+          "name": "scan-delta:target",
+          "value": " apps/~web|lock.json "
+        },
+        {
+          "name": "scan-delta:package-path",
+          "value": "two"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "4",
+      "name": "demo",
+      "version": "1.0",
+      "purl": "pkg:npm/demo@1.0",
+      "properties": [
+        {
+          "name": "scan-delta:target",
+          "value": "zeta.lock"
+        },
+        {
+          "name": "scan-delta:package-path",
+          "value": "one"
+        }
+      ]
+    }
+  ]
+}

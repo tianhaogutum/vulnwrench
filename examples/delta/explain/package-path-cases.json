@@ -1,0 +1,99 @@
+{
+  "advisory": "CVE-SYNTH-001",
+  "alias": "ALIAS/~",
+  "target": " apps/~web|lock.json ",
+  "cases": [
+    {
+      "name": "trivy",
+      "inputs": [
+        "explain/package-path-trivy-before.json",
+        "explain/package-path-trivy-after.json",
+        "explain/package-path-before-bom.json",
+        "explain/package-path-after-bom.json",
+        "explain/package-path-trivy-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "grype",
+      "inputs": [
+        "explain/package-path-grype-before.json",
+        "explain/package-path-grype-after.json",
+        "explain/package-path-before-bom.json",
+        "explain/package-path-after-bom.json",
+        "explain/package-path-grype-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "mixed",
+      "inputs": [
+        "explain/package-path-trivy-before.json",
+        "explain/package-path-grype-after.json",
+        "explain/package-path-before-bom.json",
+        "explain/package-path-after-bom.json",
+        "explain/package-path-mixed-scans.json"
+      ],
+      "expected_indexes": [
+        1,
+        2
+      ]
+    }
+  ],
+  "contract": {
+    "library": "explain_package_path",
+    "cli": "explain --package-path",
+    "metadata": {
+      "normalized_filter": {
+        "target": " apps/~web|lock.json ",
+        "package_path": " node_modules/~demo|copy "
+      }
+    },
+    "positive": "Exact target/path, whole normalized entries, original indexes 1/2 with distinct {} and arch=test qualifiers; separate other-path entry index 3 and empty-path OTHER entry index 0. No trimming, normalization, prefix or native-location/PURL inference. Empty path is valid only for an existing normalized empty path.",
+    "defaultParity": "Omitted/None path preserves all default, exact-target and native scalar/index/ALL/ANY JSON/Markdown bytes.",
+    "negative": "Require advisory and target; reject malformed/control/whitespace-only path, no exact normalized match, wrong target/advisory, unknown-only and every native selector including zero/empty collections. Validate all unselected/opposite-side evidence. InputError / CLI exit 2, safe value-free diagnostics, no stdout and unchanged existing files."
+  },
+  "package_path": " node_modules/~demo|copy ",
+  "positive": [
+    {
+      "target": " apps/~web|lock.json ",
+      "package_path": " node_modules/~demo|copy ",
+      "advisory": "CVE-SYNTH-001",
+      "indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "target": " apps/~web|lock.json ",
+      "package_path": " node_modules/~demo|copy ",
+      "advisory": "ALIAS/~",
+      "indexes": [
+        1,
+        2
+      ]
+    },
+    {
+      "target": " apps/~web|lock.json ",
+      "package_path": "two",
+      "advisory": "CVE-SYNTH-001",
+      "indexes": [
+        3
+      ]
+    },
+    {
+      "target": "alpha.lock",
+      "package_path": "",
+      "advisory": "OTHER",
+      "indexes": [
+        0
+      ]
+    }
+  ]
+}

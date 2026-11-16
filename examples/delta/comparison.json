@@ -1,0 +1,256 @@
+{
+  "cases": [
+    {
+      "actual": [
+        "persistent"
+      ],
+      "baseline": [
+        "persistent"
+      ],
+      "baseline_correct": true,
+      "baseline_false_fixed": 0,
+      "case": "unchanged",
+      "expected": [
+        "persistent"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "persistent"
+      ],
+      "baseline": [
+        "fixed_within_snapshot",
+        "introduced"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "alias-only",
+      "expected": [
+        "persistent"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "version_changed_still_affected"
+      ],
+      "baseline": [
+        "fixed_within_snapshot",
+        "introduced"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "alias-and-upgrade",
+      "expected": [
+        "version_changed_still_affected"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "version_changed_still_affected"
+      ],
+      "baseline": [
+        "fixed_within_snapshot",
+        "introduced"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "upgrade-still-affected",
+      "expected": [
+        "version_changed_still_affected"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "package_removed"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "package-removal",
+      "expected": [
+        "package_removed"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "fixed_within_snapshot"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": true,
+      "baseline_false_fixed": 0,
+      "case": "same-snapshot-fix",
+      "expected": [
+        "fixed_within_snapshot"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "changed-database",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "missing-database",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "missing-inventory-record",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "incomplete-inventory",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "missing-target-coverage",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "no_longer_reported"
+      ],
+      "baseline": [
+        "fixed_within_snapshot"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 1,
+      "case": "changed-profile",
+      "expected": [
+        "no_longer_reported"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "introduced"
+      ],
+      "baseline": [
+        "introduced"
+      ],
+      "baseline_correct": true,
+      "baseline_false_fixed": 0,
+      "case": "newly-observed",
+      "expected": [
+        "introduced"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    },
+    {
+      "actual": [
+        "fixed_within_snapshot",
+        "persistent"
+      ],
+      "baseline": [
+        "persistent"
+      ],
+      "baseline_correct": false,
+      "baseline_false_fixed": 0,
+      "case": "separate-package-copies",
+      "expected": [
+        "fixed_within_snapshot",
+        "persistent"
+      ],
+      "delta_correct": true,
+      "delta_false_fixed": 0
+    }
+  ],
+  "corpus": "14 synthetic scenarios v1; exact expected classification-set accuracy per scenario",
+  "platform": "Linux x86_64",
+  "python": "3.14.4",
+  "summary": {
+    "baseline_correct": 3,
+    "baseline_false_fixed": 10,
+    "cases": 14,
+    "delta_correct": 14,
+    "delta_false_fixed": 0
+  },
+  "timing_notice": "Different work: vulnwrench delta also validates inventory and retains provenance. No speedup claim.",
+  "timings": {
+    "raw_tuple_baseline": {
+      "corpus_runs_per_sample": 200,
+      "median_ms_per_14_case_corpus": 0.007426,
+      "samples": 7
+    },
+    "vulnwrench_delta": {
+      "corpus_runs_per_sample": 200,
+      "median_ms_per_14_case_corpus": 1.151417,
+      "samples": 7
+    }
+  }
+}

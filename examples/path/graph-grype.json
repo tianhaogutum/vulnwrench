@@ -1,0 +1,80 @@
+{
+  "matches": [
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0001",
+        "severity": "High"
+      },
+      "artifact": {
+        "id": "v1",
+        "name": "lib",
+        "version": "1.0",
+        "purl": "pkg:npm/lib@1.0"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0001",
+        "severity": "High"
+      },
+      "artifact": {
+        "id": "v2",
+        "name": "lib",
+        "version": "2.0",
+        "purl": "pkg:npm/lib@2.0"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0002",
+        "severity": "Low"
+      },
+      "artifact": {
+        "id": "orphan-id",
+        "purl": "pkg:npm/orphan@1.0"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0003"
+      },
+      "artifact": {
+        "id": "absent",
+        "purl": "pkg:npm/not-in-bom@1.0"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0004"
+      },
+      "artifact": {
+        "id": "local-artifact",
+        "name": "local-only"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0005"
+      },
+      "artifact": {
+        "id": "unknown-artifact",
+        "name": "unresolved"
+      }
+    }
+  ],
+  "ignoredMatches": [],
+  "source": {
+    "type": "directory",
+    "target": "/synthetic"
+  },
+  "distro": {
+    "name": "",
+    "version": "",
+    "idLike": []
+  },
+  "descriptor": {
+    "name": "grype",
+    "version": "synthetic-fixture",
+    "configuration": {}
+  }
+}

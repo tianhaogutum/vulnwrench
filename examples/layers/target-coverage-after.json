@@ -1,0 +1,9 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactType": "container_image",
+  "Results": [
+    {"Target": "new-only", "Vulnerabilities": []},
+    {"Target": "stable/packages~1", "Class": "lang-pkgs", "Type": "python", "Vulnerabilities": []},
+    {"Target": "synthetic-upgrade:v2", "Class": "os-pkgs", "Type": "debian", "Vulnerabilities": null}
+  ]
+}

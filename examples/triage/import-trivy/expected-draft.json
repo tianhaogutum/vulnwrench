@@ -1,0 +1,102 @@
+{
+  "automaticActions": [],
+  "counts": {
+    "draftDecisions": 3,
+    "nativeEntries": 2,
+    "unsupported": 0
+  },
+  "decisionDocument": {
+    "decisions": [
+      {
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2099-0062"
+        ],
+        "owner": null,
+        "package": "pkg:npm/triage-demo@1.0",
+        "reason": "Investigation: synthetic fixture",
+        "status": null
+      },
+      {
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2099-0062"
+        ],
+        "owner": null,
+        "package": "pkg:npm/triage-demo@2.0",
+        "reason": "Investigation: synthetic fixture",
+        "status": null
+      },
+      {
+        "expiresOn": null,
+        "ids": [
+          "GHSA-demo-0062-0001"
+        ],
+        "owner": null,
+        "package": null,
+        "reason": "Needs a package scope and expiry review",
+        "status": null
+      }
+    ],
+    "schemaVersion": 1
+  },
+  "kind": "trivy_import_draft",
+  "mode": "review_only",
+  "reviews": [
+    {
+      "decisionIndex": 0,
+      "nativeScope": "exact_purls",
+      "requiredFields": [
+        "owner",
+        "status"
+      ],
+      "reviewFields": [
+        "package"
+      ],
+      "reviewRequired": true,
+      "sourcePointer": "/vulnerabilities/0"
+    },
+    {
+      "decisionIndex": 1,
+      "nativeScope": "exact_purls",
+      "requiredFields": [
+        "owner",
+        "status"
+      ],
+      "reviewFields": [
+        "package"
+      ],
+      "reviewRequired": true,
+      "sourcePointer": "/vulnerabilities/0"
+    },
+    {
+      "decisionIndex": 2,
+      "nativeScope": "all_packages",
+      "requiredFields": [
+        "package",
+        "owner",
+        "expiresOn",
+        "status"
+      ],
+      "reviewFields": [
+        "package"
+      ],
+      "reviewRequired": true,
+      "sourcePointer": "/vulnerabilities/1"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "format": "trivy-ignore-yaml",
+    "rawSha256": "1fcfa657be2cd478c9d2f06cfca8451b5606f5b769a39323bbd3aeaca51f0f63"
+  },
+  "unsupported": [],
+  "warnings": [
+    "Drafts only: assign every required field and review package scope before extracting decisionDocument for compilation.",
+    "Native ignores provide no owner or VEX status/evidence. No accepted_risk or not_affected status was inferred.",
+    "All-package native scope cannot be compiled directly: selecting an exact versioned PURL narrows that scope and requires human review.",
+    "IDs, reasons and expiry dates are copied without alias inference or date extension; compile rechecks evidence, overlap and expiry.",
+    "Unsupported entries produce no drafts. A partial import is not a replacement for the original ignore file.",
+    "Source digest is reproducible content identification, not authenticated provenance. No scanner was executed."
+  ]
+}

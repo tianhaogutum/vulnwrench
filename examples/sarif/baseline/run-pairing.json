@@ -1,0 +1,22 @@
+{
+  "baseline": [
+    {
+      "runIndex": 0,
+      "pairId": "api"
+    },
+    {
+      "runIndex": 1,
+      "pairId": "web"
+    }
+  ],
+  "current": [
+    {
+      "runIndex": 1,
+      "pairId": "api"
+    },
+    {
+      "runIndex": 0,
+      "pairId": "web"
+    }
+  ]
+}

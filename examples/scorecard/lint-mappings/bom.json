@@ -1,0 +1,12 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "components": [
+    {"type": "library", "name": "demo", "purl": "pkg:npm/demo@1.0"},
+    {"type": "library", "name": "helper", "purl": "pkg:npm/helper@1.0"},
+    {"type": "library", "name": "demo", "purl": "pkg:npm/demo@3.0",
+     "externalReferences": [{"type": "vcs", "url": "https://github.com/example/demo"}]},
+    {"type": "file", "name": "local-file"}
+  ]
+}

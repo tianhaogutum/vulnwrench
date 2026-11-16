@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "before": {
+    "scanner": {
+      "name": "trivy",
+      "version": "0.58.0"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true
+  },
+  "after": {
+    "scanner": {
+      "name": "trivy",
+      "version": "0.58.0"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true
+  },
+  "aliases": {
+    "ALIAS/~": [
+      "GHSA-SYNTH-001"
+    ],
+    "GHSA-SYNTH-001": [
+      "CVE-SYNTH-001"
+    ]
+  }
+}

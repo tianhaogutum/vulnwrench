@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "app/lock"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "demo"
+          },
+          "groups": [
+            {
+              "ids": [
+                "CVE-1"
+              ],
+              "aliases": [
+                "GHSA-local"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "source": {"path": "app/package-lock.json", "type": "lockfile"},
+      "packages": [
+        {
+          "package": {"name": "demo-a", "version": "1.0.0", "ecosystem": "npm"},
+          "vulnerabilities": [
+            {"id": "CVE-2025-0001", "aliases": ["GHSA-synthetic-alias"], "summary": "Synthetic record"},
+            {"id": "CVE-2025-0002"}
+          ],
+          "groups": [{"ids": ["CVE-2025-0001"], "aliases": ["GHSA-synthetic-alias"]}]
+        },
+        {
+          "package": {"name": "demo-b", "version": "2.0.0", "ecosystem": "npm"},
+          "vulnerabilities": [{"id": "CVE-2025-0001"}]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "schema": "vulnwrench.ci/v1",
+  "vulnwrench_version": "0.1.0",
+  "asOf": "2026-11-12",
+  "inputs": {
+    "reports": [
+      {
+        "scanner": "trivy",
+        "input": "trivy.json",
+        "sha256": "e2fc41df323ccaf1dc503e2c840c7dd80a92a2d7d91dde8532a578b9f3c9f0df"
+      },
+      {
+        "scanner": "grype",
+        "input": "grype.json",
+        "sha256": "0d319addef6ba1de4eb15d9ab0c1d0530c57e806b13f1fde27d33caeb8910bbf"
+      },
+      {
+        "scanner": "osv",
+        "input": "osv.json",
+        "sha256": "94101e73f17dc71cda13a927e467d731644a03e8ec5294b9d0bc9a18cb1bdf30"
+      }
+    ],
+    "baseline": "baseline.json",
+    "ignores": [
+      ".trivyignore",
+      "osv-scanner.toml"
+    ],
+    "epss": "epss.csv",
+    "kev": "kev.json",
+    "policy": null,
+    "aliases": null,
+    "reportsUnfiltered": true
+  },
+  "funnel": {
+    "rawFindings": 37,
+    "scanners": [
+      "grype",
+      "osv",
+      "trivy"
+    ],
+    "reports": 3,
+    "fused": 14,
+    "new": 8,
+    "unsuppressed": 6,
+    "needAction": 2,
+    "unknown": 1,
+    "low": 3,
+    "suppressed": 2,
+    "baselineKnown": 6,
+    "baselineGone": 2
+  },
+  "findings": [
+    {
+      "findingId": "f0008",
+      "package": "pkg:npm/acme-router@4.2.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2001",
+      "ids": [
+        "CVE-2099-2001",
+        "GHSA-w2bb-c4hq-2001"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 4,
+      "paths": [
+        "package-lock.json",
+        "packages/admin/package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "4.2.3"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "block",
+        "reasons": [
+          "epss_threshold",
+          "kev_match"
+        ],
+        "matchedCves": [
+          "CVE-2099-2001"
+        ],
+        "epss": 0.12,
+        "kev": true
+      },
+      "outcome": "action",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2001",
+        "--package",
+        "pkg:npm/acme-router@4.2.0"
+      ]
+    },
+    {
+      "findingId": "f0009",
+      "package": "pkg:npm/acme-session@1.8.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2002",
+      "ids": [
+        "CVE-2099-2002",
+        "GHSA-w2bb-c4hq-2002"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "CRITICAL",
+      "severityValues": [
+        "CRITICAL"
+      ],
+      "fixVersions": [
+        "1.8.4",
+        "1.9.0"
+      ],
+      "fixConflict": true,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "block",
+        "reasons": [
+          "epss_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2002"
+        ],
+        "epss": 0.62,
+        "kev": false
+      },
+      "outcome": "action",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2002",
+        "--package",
+        "pkg:npm/acme-session@1.8.0"
+      ]
+    },
+    {
+      "findingId": "f0002",
+      "package": "pkg:npm/acme-color@0.3.0",
+      "packageKnown": true,
+      "advisory": "GHSA-w2bb-c4hq-2005",
+      "ids": [
+        "GHSA-w2bb-c4hq-2005"
+      ],
+      "scanners": [
+        "grype",
+        "osv"
+      ],
+      "observations": 2,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [
+        "0.3.1"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "unknown",
+        "reasons": [
+          "no_cve_mapping"
+        ],
+        "matchedCves": [],
+        "epss": null,
+        "kev": false
+      },
+      "outcome": "unknown",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "GHSA-w2bb-c4hq-2005",
+        "--package",
+        "pkg:npm/acme-color@0.3.0"
+      ]
+    },
+    {
+      "findingId": "f0001",
+      "package": "pkg:npm/acme-auth@2.2.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2007",
+      "ids": [
+        "CVE-2099-2007",
+        "GHSA-w2bb-c4hq-2007"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "2.2.1"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2007"
+        ],
+        "epss": 0.09,
+        "kev": false
+      },
+      "outcome": "low",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2007",
+        "--package",
+        "pkg:npm/acme-auth@2.2.0"
+      ]
+    },
+    {
+      "findingId": "f0012",
+      "package": "pkg:pypi/acme-csv@2.0.1",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2003",
+      "ids": [
+        "CVE-2099-2003",
+        "GHSA-w2bb-c4hq-2003",
+        "PYSEC-2099-23"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "requirements.txt",
+        "/requirements.txt"
+      ],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [
+        "2.0.2"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2003"
+        ],
+        "epss": 0.03,
+        "kev": false
+      },
+      "outcome": "low",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2003",
+        "--package",
+        "pkg:pypi/acme-csv@2.0.1"
+      ]
+    },
+    {
+      "findingId": "f0005",
+      "package": "pkg:npm/acme-log@7.1.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2004",
+      "ids": [
+        "CVE-2099-2004",
+        "GHSA-w2bb-c4hq-2004"
+      ],
+      "scanners": [
+        "grype",
+        "trivy"
+      ],
+      "observations": 2,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "LOW",
+      "severityValues": [
+        "LOW"
+      ],
+      "fixVersions": [
+        "7.1.1"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2004"
+        ],
+        "epss": 0.01,
+        "kev": false
+      },
+      "outcome": "low",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2004",
+        "--package",
+        "pkg:npm/acme-log@7.1.0"
+      ]
+    },
+    {
+      "findingId": "f0016",
+      "package": "pkg:pypi/acme-zip@3.3.3",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2006",
+      "ids": [
+        "CVE-2099-2006",
+        "GHSA-w2bb-c4hq-2006",
+        "PYSEC-2099-26"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "requirements.txt",
+        "/requirements.txt"
+      ],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "3.4.0"
+      ],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [
+        ".trivyignore:line:3"
+      ],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "block",
+        "reasons": [
+          "epss_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2006"
+        ],
+        "epss": 0.71,
+        "kev": false
+      },
+      "outcome": "suppressed",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2006",
+        "--package",
+        "pkg:pypi/acme-zip@3.3.3"
+      ]
+    },
+    {
+      "findingId": "f0013",
+      "package": "pkg:pypi/acme-dns@1.1.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-2008",
+      "ids": [
+        "CVE-2099-2008",
+        "GHSA-w2bb-c4hq-2008",
+        "PYSEC-2099-28"
+      ],
+      "scanners": [
+        "grype",
+        "osv"
+      ],
+      "observations": 2,
+      "paths": [
+        "requirements.txt",
+        "/requirements.txt"
+      ],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [],
+      "fixConflict": false,
+      "baseline": "new",
+      "suppressedBy": [
+        "osv-scanner.toml:IgnoredVulns:0"
+      ],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-2008"
+        ],
+        "epss": 0.02,
+        "kev": false
+      },
+      "outcome": "suppressed",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-2008",
+        "--package",
+        "pkg:pypi/acme-dns@1.1.0"
+      ]
+    },
+    {
+      "findingId": "f0011",
+      "package": "pkg:npm/acme-yaml@1.4.2",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1002",
+      "ids": [
+        "CVE-2099-1002",
+        "GHSA-w1aa-c4hq-0002"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [
+        "1.4.5"
+      ],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "block",
+        "reasons": [
+          "epss_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1002"
+        ],
+        "epss": 0.31,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1002",
+        "--package",
+        "pkg:npm/acme-yaml@1.4.2"
+      ]
+    },
+    {
+      "findingId": "f0015",
+      "package": "pkg:pypi/acme-xml@0.9.1",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1004",
+      "ids": [
+        "CVE-2099-1004",
+        "GHSA-w1aa-c4hq-0004",
+        "PYSEC-2099-4"
+      ],
+      "scanners": [
+        "osv",
+        "trivy"
+      ],
+      "observations": 2,
+      "paths": [
+        "requirements.txt"
+      ],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "0.9.4"
+      ],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [
+        ".trivyignore:line:2"
+      ],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1004"
+        ],
+        "epss": 0.05,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1004",
+        "--package",
+        "pkg:pypi/acme-xml@0.9.1"
+      ]
+    },
+    {
+      "findingId": "f0003",
+      "package": "pkg:npm/acme-http@2.1.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1001",
+      "ids": [
+        "CVE-2099-1001",
+        "GHSA-w1aa-c4hq-0001"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "2.1.4"
+      ],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1001"
+        ],
+        "epss": 0.04,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1001",
+        "--package",
+        "pkg:npm/acme-http@2.1.0"
+      ]
+    },
+    {
+      "findingId": "f0004",
+      "package": "pkg:npm/acme-jwt@3.0.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1003",
+      "ids": [
+        "CVE-2099-1003",
+        "GHSA-w1aa-c4hq-0003"
+      ],
+      "scanners": [
+        "grype",
+        "trivy"
+      ],
+      "observations": 2,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "CRITICAL",
+      "severityValues": [
+        "CRITICAL"
+      ],
+      "fixVersions": [
+        "3.0.2"
+      ],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1003"
+        ],
+        "epss": 0.02,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1003",
+        "--package",
+        "pkg:npm/acme-jwt@3.0.0"
+      ]
+    },
+    {
+      "findingId": "f0014",
+      "package": "pkg:pypi/acme-img@5.2.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1006",
+      "ids": [
+        "CVE-2099-1006",
+        "GHSA-w1aa-c4hq-0006",
+        "PYSEC-2099-6"
+      ],
+      "scanners": [
+        "grype",
+        "osv"
+      ],
+      "observations": 2,
+      "paths": [
+        "requirements.txt",
+        "/requirements.txt"
+      ],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [
+        "5.3.0"
+      ],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1006"
+        ],
+        "epss": 0.02,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1006",
+        "--package",
+        "pkg:pypi/acme-img@5.2.0"
+      ]
+    },
+    {
+      "findingId": "f0010",
+      "package": "pkg:npm/acme-tar@1.0.3",
+      "packageKnown": true,
+      "advisory": "CVE-2099-1005",
+      "ids": [
+        "CVE-2099-1005",
+        "GHSA-w1aa-c4hq-0005"
+      ],
+      "scanners": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "observations": 3,
+      "paths": [
+        "package-lock.json",
+        "/package-lock.json"
+      ],
+      "severity": "LOW",
+      "severityValues": [
+        "LOW"
+      ],
+      "fixVersions": [],
+      "fixConflict": false,
+      "baseline": "known",
+      "suppressedBy": [],
+      "expiredExceptions": [],
+      "exploit": {
+        "decision": "pass",
+        "reasons": [
+          "epss_below_threshold",
+          "kev_not_listed"
+        ],
+        "matchedCves": [
+          "CVE-2099-1005"
+        ],
+        "epss": 0.01,
+        "kev": false
+      },
+      "outcome": "baseline",
+      "command": [
+        "vulnwrench",
+        "fuse",
+        "explain",
+        "--trivy",
+        "trivy.json",
+        "--grype",
+        "grype.json",
+        "--osv",
+        "osv.json",
+        "--advisory",
+        "CVE-2099-1005",
+        "--package",
+        "pkg:npm/acme-tar@1.0.3"
+      ]
+    }
+  ],
+  "baselineGone": [
+    {
+      "findingId": "f0006",
+      "package": "pkg:npm/acme-old@1.0.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-0901",
+      "ids": [
+        "CVE-2099-0901",
+        "GHSA-w0zz-c4hq-0901"
+      ],
+      "scanners": [],
+      "observations": 0,
+      "paths": [],
+      "severity": "HIGH",
+      "severityValues": [
+        "HIGH"
+      ],
+      "fixVersions": [
+        "1.0.1"
+      ],
+      "fixConflict": false,
+      "baseline": "known"
+    },
+    {
+      "findingId": "f0007",
+      "package": "pkg:npm/acme-qs@6.0.0",
+      "packageKnown": true,
+      "advisory": "CVE-2099-0902",
+      "ids": [
+        "CVE-2099-0902",
+        "GHSA-w0zz-c4hq-0902"
+      ],
+      "scanners": [],
+      "observations": 0,
+      "paths": [],
+      "severity": "MEDIUM",
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "fixVersions": [
+        "6.0.1"
+      ],
+      "fixConflict": false,
+      "baseline": "known"
+    }
+  ],
+  "staleExceptions": [
+    {
+      "file": ".trivyignore",
+      "format": "trivy",
+      "key": "line:2",
+      "rule": "CVE-2099-1004",
+      "expires": "2026-10-31",
+      "daysUntilExpiry": -12,
+      "status": [
+        "expired"
+      ],
+      "matches": [
+        "f0015"
+      ],
+      "command": [
+        "vulnwrench",
+        "ignores",
+        "explain",
+        "--format",
+        "trivy",
+        "--rules",
+        ".trivyignore",
+        "--report",
+        "trivy.json",
+        "--report-unfiltered",
+        "--as-of",
+        "2026-11-12",
+        "--rule-key",
+        "line:2"
+      ]
+    },
+    {
+      "file": ".trivyignore",
+      "format": "trivy",
+      "key": "line:3",
+      "rule": "CVE-2099-2006",
+      "expires": "2026-11-30",
+      "daysUntilExpiry": 18,
+      "status": [
+        "soon_expiring"
+      ],
+      "matches": [
+        "f0016"
+      ],
+      "command": [
+        "vulnwrench",
+        "ignores",
+        "explain",
+        "--format",
+        "trivy",
+        "--rules",
+        ".trivyignore",
+        "--report",
+        "trivy.json",
+        "--report-unfiltered",
+        "--as-of",
+        "2026-11-12",
+        "--rule-key",
+        "line:3"
+      ]
+    },
+    {
+      "file": ".trivyignore",
+      "format": "trivy",
+      "key": "line:4",
+      "rule": "CVE-2099-0777",
+      "expires": null,
+      "daysUntilExpiry": null,
+      "status": [
+        "orphan_candidate"
+      ],
+      "matches": [],
+      "command": [
+        "vulnwrench",
+        "ignores",
+        "cleanup-plan",
+        "--format",
+        "trivy",
+        "--rules",
+        ".trivyignore",
+        "--report",
+        "trivy.json",
+        "--report-unfiltered",
+        "--as-of",
+        "2026-11-12",
+        "--output-format",
+        "markdown"
+      ]
+    }
+  ],
+  "exceptionHygiene": {
+    "rules": 4,
+    "missingReason": 3,
+    "missingOwner": 4,
+    "unverifiedOrphans": 0
+  },
+  "noticeNotFixed": "Not observed is not proof of safety. Aliases are input assertions, not independently verified. Fixed versions are reported evidence, not remediation advice.",
+  "exploit": {
+    "policy": {
+      "epssThreshold": 0.1,
+      "blockKev": true,
+      "maxAgeDays": 7,
+      "missing": "unknown",
+      "unknownIsFailure": true
+    },
+    "snapshots": {
+      "epss": {
+        "sha256": "14a96e3697460efe11255659f741ad9f38d37ca6cfa5b2047efae6881621651f",
+        "date": "2026-11-11",
+        "publishedAt": "2026-11-11T00:00:00+0000",
+        "ageDays": 1,
+        "status": "fresh",
+        "records": 15,
+        "metadata": {
+          "comments": [
+            "model_version:synthetic,score_date:2026-11-11T00:00:00+0000",
+            " Synthetic fixture for examples/ci: fictional CVE IDs, not FIRST EPSS data."
+          ],
+          "columns": [
+            "cve",
+            "epss",
+            "percentile"
+          ]
+        }
+      },
+      "kev": {
+        "sha256": "bc13d873b86bdf4fdfbb13f08b600a9b79b24cc73490f3bbc54a5e699545aaa4",
+        "date": "2026-11-10",
+        "publishedAt": "2026-11-10T00:00:00.000Z",
+        "ageDays": 2,
+        "status": "fresh",
+        "records": 1,
+        "metadata": {
+          "title": "Synthetic KEV catalog for examples/ci; not CISA data",
+          "catalogVersion": "2026.11.10",
+          "dateReleased": "2026-11-10T00:00:00.000Z",
+          "count": 1
+        }
+      }
+    }
+  },
+  "gate": {
+    "failOn": "exploitable",
+    "failing": 2,
+    "staleSnapshots": [],
+    "status": "failed",
+    "exitCode": 1
+  }
+}

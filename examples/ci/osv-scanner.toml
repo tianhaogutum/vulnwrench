@@ -1,0 +1,5 @@
+# Synthetic exceptions for the vulnwrench ci example (fictional IDs).
+[[IgnoredVulns]]
+id = "PYSEC-2099-28"
+effectiveUntil = 2027-03-31
+reason = "acme-dns is only used by the offline test harness"

@@ -1,0 +1,36 @@
+{
+  "indexed": {
+    "medianSeconds": 0.024478475999785587,
+    "operations": 15000,
+    "seconds": [
+      0.025386627999978373,
+      0.024478475999785587,
+      0.0240196790000482
+    ]
+  },
+  "machine": {
+    "machine": "x86_64",
+    "python": "3.14.4",
+    "system": "Linux"
+  },
+  "matchSetEqual": true,
+  "matchedPairs": 3664,
+  "operationDefinition": "reference: each rule/finding check; indexed: each posting insertion + candidate check (not all CPU operations)",
+  "reference": {
+    "medianSeconds": 1.0411768409994693,
+    "operations": 10000000,
+    "seconds": [
+      1.0179988049985695,
+      1.0458283170009963,
+      1.0411768409994693
+    ]
+  },
+  "schemaVersion": 1,
+  "timingIncludes": "validation, full matching, index construction and result lists; excludes fixture generation and imports",
+  "workload": {
+    "description": "synthetic selective exact IDs; one third of rules also select package",
+    "findings": 10000,
+    "repeat": 3,
+    "rules": 1000
+  }
+}

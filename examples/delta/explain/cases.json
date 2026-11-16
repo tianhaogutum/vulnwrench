@@ -1,0 +1,152 @@
+[
+  {
+    "name": "version-upgrade",
+    "inputs": [
+      "grype/trivy-before.json",
+      "grype/trivy-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/trivy-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "version_changed_still_affected",
+      "reason_codes": [
+        "version_sets_changed",
+        "explicit_alias_equivalence"
+      ],
+      "failed_prerequisites": [
+        "after_finding_absent"
+      ],
+      "source_references": [
+        "/before_report/Results/0/Vulnerabilities/0",
+        "/after_report/Results/0/Vulnerabilities/0"
+      ]
+    }
+  },
+  {
+    "name": "alias-change",
+    "inputs": [
+      "grype/trivy-before.json",
+      "explain/alias-after.json",
+      "grype/before-bom.json",
+      "grype/before-bom.json",
+      "grype/trivy-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "persistent",
+      "reason_codes": [
+        "version_sets_unchanged",
+        "explicit_alias_equivalence"
+      ],
+      "failed_prerequisites": [
+        "after_finding_absent"
+      ],
+      "source_references": [
+        "/metadata/aliases/GHSA-SYNTH-001"
+      ]
+    }
+  },
+  {
+    "name": "missing-inventory",
+    "inputs": [
+      "grype/trivy-before.json",
+      "explain/absent-after.json",
+      "explain/empty-bom.json",
+      "grype/after-bom.json",
+      "grype/trivy-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "no_longer_reported",
+      "reason_codes": [
+        "finding_absent_after",
+        "finding_missing_from_inventory",
+        "report_inventory_conflict"
+      ],
+      "failed_prerequisites": [
+        "findings_in_inventory",
+        "scope_inventory_consistent"
+      ],
+      "source_references": [
+        "/before_bom/components",
+        "/before_report/Results/0/Vulnerabilities/0"
+      ]
+    }
+  },
+  {
+    "name": "database-change",
+    "inputs": [
+      "grype/trivy-before.json",
+      "explain/absent-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "explain/changed-db.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "no_longer_reported",
+      "reason_codes": [
+        "finding_absent_after",
+        "database_identity_changed"
+      ],
+      "failed_prerequisites": [
+        "database_identity_unchanged"
+      ],
+      "source_references": [
+        "/metadata/before/database",
+        "/metadata/after/database"
+      ]
+    }
+  },
+  {
+    "name": "snapshot-fix",
+    "inputs": [
+      "grype/trivy-before.json",
+      "explain/absent-after.json",
+      "grype/before-bom.json",
+      "grype/after-bom.json",
+      "grype/trivy-scans.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "fixed_within_snapshot",
+      "reason_codes": [
+        "finding_absent_after"
+      ],
+      "failed_prerequisites": [],
+      "source_references": [
+        "/after_bom/components/0",
+        "/after_report/Results",
+        "/metadata/after/report_complete"
+      ]
+    }
+  },
+  {
+    "name": "package-removal",
+    "inputs": [
+      "grype/trivy-before.json",
+      "explain/absent-after.json",
+      "grype/before-bom.json",
+      "explain/empty-bom.json",
+      "explain/changed-db.json"
+    ],
+    "advisory": "GHSA-SYNTH-001",
+    "expected": {
+      "classification": "package_removed",
+      "reason_codes": [
+        "finding_absent_after",
+        "database_identity_changed"
+      ],
+      "failed_prerequisites": [
+        "database_identity_unchanged",
+        "after_scope_present"
+      ],
+      "source_references": [
+        "/after_bom/components",
+        "/metadata/after/inventory_complete"
+      ]
+    }
+  }
+]

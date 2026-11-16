@@ -1,0 +1,33 @@
+{
+  "descriptor": {"name": "grype", "version": "synthetic", "configuration": {}},
+  "source": {"type": "directory", "target": "/synthetic/app"},
+  "matches": [
+    {
+      "vulnerability": {
+        "id": "GHSA-demo-0001",
+        "severity": "Critical",
+        "namespace": "github:language:javascript",
+        "dataSource": "https://example.invalid/synthetic",
+        "fix": {"versions": ["1.2"], "state": "fixed"}
+      },
+      "relatedVulnerabilities": [{"id": "CVE-2025-0001", "namespace": "nvd:cpe", "severity": "High"}],
+      "matchDetails": [{"type": "exact-direct-match", "matcher": "synthetic"}],
+      "artifact": {
+        "id": "synthetic-artifact",
+        "name": "demo",
+        "version": "1.0",
+        "type": "npm",
+        "purl": "pkg:npm/demo@1.0",
+        "locations": [{"path": "/app/node_modules/demo/package.json", "layerID": "synthetic-layer"}]
+      }
+    },
+    {
+      "vulnerability": {"id": "CVE-2025-0001", "severity": "Low", "fix": {"versions": [], "state": "not-fixed"}},
+      "relatedVulnerabilities": [],
+      "artifact": {
+        "name": "demo", "version": "1.0", "type": "python",
+        "purl": "pkg:pypi/demo@1.0", "locations": [{"accessPath": "/app/requirements.txt"}]
+      }
+    }
+  ]
+}

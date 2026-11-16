@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-11",
+  "repo": {
+    "name": "github.com/example/demo",
+    "commit": "2222222222222222222222222222222222222222"
+  },
+  "scorecard": {
+    "version": "v5.0.0",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "score": 8.4,
+  "checks": [
+    {
+      "name": "Code-Review",
+      "score": 8,
+      "reason": "Synthetic: more reviews"
+    },
+    {
+      "name": "License",
+      "score": 5,
+      "reason": "Synthetic: new explanation"
+    },
+    {
+      "name": "Maintained",
+      "score": 10,
+      "reason": "Synthetic: active"
+    },
+    {
+      "name": "Future-Check",
+      "score": 10,
+      "reason": "Synthetic: new check"
+    }
+  ]
+}

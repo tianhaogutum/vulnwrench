@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-02",
+  "repo": {
+    "name": "github.com/example/stale",
+    "commit": "4444444444444444444444444444444444444444"
+  },
+  "scorecard": {
+    "version": "v5.0.0",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "score": 8.4,
+  "checks": [
+    {
+      "name": "Code-Review",
+      "score": 10,
+      "reason": "Synthetic: high but stale"
+    }
+  ]
+}

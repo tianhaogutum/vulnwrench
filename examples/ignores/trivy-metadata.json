@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "rulesSha256": "9538b4eaafa1b6928f3d679bcff4469d701c142fdbe6327bade271f74306b89d",
+  "rules": {
+    "line:2": {
+      "owner": "synthetic-team",
+      "reason": "Synthetic migration exception"
+    },
+    "line:3": {
+      "owner": "synthetic-team",
+      "reason": "Synthetic migration exception"
+    }
+  }
+}

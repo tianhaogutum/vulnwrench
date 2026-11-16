@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "source": {"path": "app/package-lock.json", "type": "lockfile"},
+      "packages": [{
+        "package": {"name": "demo-a", "version": "1.0.0", "ecosystem": "npm"},
+        "vulnerabilities": [{"id": "CVE-2025-0001", "aliases": ["GHSA-synthetic-alias"]}]
+      }]
+    },
+    {
+      "source": {"path": "app/sub/package-lock.json", "type": "lockfile"},
+      "packages": [{
+        "package": {"name": "demo-b", "version": "2.0.0", "ecosystem": "npm"},
+        "vulnerabilities": [{"id": "CVE-2025-0001"}]
+      }]
+    },
+    {
+      "source": {"path": "other/package-lock.json", "type": "lockfile"},
+      "packages": [{
+        "package": {"name": "demo-c", "version": "1.0.0", "ecosystem": "npm"},
+        "vulnerabilities": [{"id": "CVE-2025-0002"}]
+      }]
+    },
+    {
+      "source": {"type": "lockfile"},
+      "packages": [{
+        "package": {"name": "demo-d", "version": "1.0.0", "ecosystem": "npm"},
+        "vulnerabilities": [{"id": "CVE-2025-0001"}]
+      }]
+    }
+  ]
+}

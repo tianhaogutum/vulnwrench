@@ -1,0 +1,17 @@
+{
+  "SchemaVersion": 2,
+  "Results": [
+    {
+      "Target": "synthetic-lock.json",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SNAPSHOT-1",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "alpha.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "OTHER",
+          "PkgName": "aaa",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/aaa@1.0"
+          },
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "GHSA-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    },
+    {
+      "Target": " apps/~web|lock.json ",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "GHSA-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "2.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@2.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        },
+        {
+          "VulnerabilityID": "GHSA-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "2.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@2.0?arch=test"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    },
+    {
+      "Target": "zeta.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "GHSA-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    }
+  ]
+}

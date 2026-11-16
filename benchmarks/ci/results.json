@@ -1,0 +1,38 @@
+{
+  "claim": "37 raw findings from 3 scanners -> 2 that need action",
+  "synthetic": true,
+  "inputs": "examples/ci: fictional acme-* packages and fictional advisory IDs; not real vulnerability data",
+  "command": "cd examples/ci && vulnwrench ci --trivy trivy.json --grype grype.json --osv osv.json --baseline baseline.json --ignores .trivyignore --ignores osv-scanner.toml --epss epss.csv --kev kev.json --as-of 2026-11-12 --reports-unfiltered",
+  "exitCode": 1,
+  "funnel": {
+    "rawFindings": 37,
+    "scanners": [
+      "grype",
+      "osv",
+      "trivy"
+    ],
+    "reports": 3,
+    "fused": 14,
+    "new": 8,
+    "unsuppressed": 6,
+    "needAction": 2,
+    "unknown": 1,
+    "low": 3,
+    "suppressed": 2,
+    "baselineKnown": 6,
+    "baselineGone": 2
+  },
+  "removedByStage": {
+    "fuse (duplicates across and within scanners)": 23,
+    "baseline (already on the base branch)": 6,
+    "exceptions (unexpired .trivyignore / osv-scanner.toml rules)": 2,
+    "exploit (not in KEV, EPSS below 0.1)": 3,
+    "exploit (no exploit data, listed for review)": 1
+  },
+  "recordedOutputs": [
+    "benchmarks/ci/report.txt",
+    "benchmarks/ci/report.json",
+    "benchmarks/ci/report.sarif"
+  ],
+  "reproduce": "python3 scripts/ci/verify_examples.py"
+}

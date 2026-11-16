@@ -1,0 +1,42 @@
+{
+  "Results": [
+    {
+      "Target": "apps/api/package-lock.json",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-EXPLAIN-1",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0#apps/api"
+          },
+          "Severity": "HIGH",
+          "FixedVersion": "1.1",
+          "PkgPath": "apps/api/node_modules/demo"
+        },
+        {
+          "VulnerabilityID": "CVE-EXPLAIN-1",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0#apps/worker"
+          },
+          "Severity": "LOW",
+          "FixedVersion": "9.9",
+          "PkgPath": "apps/worker/node_modules/demo"
+        },
+        {
+          "VulnerabilityID": "UNLINKED-EXPLAIN-1",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0#apps/api"
+          },
+          "Severity": "MEDIUM",
+          "FixedVersion": "8.8"
+        }
+      ]
+    }
+  ]
+}

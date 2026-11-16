@@ -1,0 +1,5 @@
+# Synthetic advisory IDs, not assertions about real vulnerabilities.
+CVE-2025-0001 exp:2026-11-10
+CVE-2025-0001 exp:2026-11-11
+CVE-2025-9999
+GHSA-synthetic-alias

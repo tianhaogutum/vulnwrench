@@ -1,0 +1,184 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticColumnUnits"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "artifacts": [
+        {
+          "location": {
+            "uri": "./link/../a%3Cb%3E%7C.py"
+          }
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Synthetic explicit units"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 3,
+                  "endColumn": 5
+                }
+              },
+              "message": {
+                "text": "<b>literal</b>|[unit]\nnext"
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 11,
+                  "endLine": 13,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "markdown": "**literal related**"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticColumnUnits"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "columnKind": "unicodeCodePoints",
+      "results": [
+        {
+          "message": {
+            "text": "Related only"
+          },
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 3,
+                  "endColumn": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticColumnUnits"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Unit omitted"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "endColumn": 5
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticColumnUnits"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "columnKind": {
+        "unconsumed": "raw"
+      },
+      "results": [
+        {
+          "message": {
+            "text": "Unconsumed unit"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startColumn": false
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 2
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

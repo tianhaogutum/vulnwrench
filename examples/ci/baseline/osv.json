@@ -1,0 +1,259 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "package-lock.json",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "acme-http",
+            "version": "2.1.0",
+            "ecosystem": "npm"
+          },
+          "vulnerabilities": [
+            {
+              "id": "GHSA-w1aa-c4hq-0001",
+              "aliases": [
+                "CVE-2099-1001"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "acme-http"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "2.1.4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "HIGH"
+              }
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "acme-yaml",
+            "version": "1.4.2",
+            "ecosystem": "npm"
+          },
+          "vulnerabilities": [
+            {
+              "id": "GHSA-w1aa-c4hq-0002",
+              "aliases": [
+                "CVE-2099-1002"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "acme-yaml"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.4.5"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "MEDIUM"
+              }
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "acme-tar",
+            "version": "1.0.3",
+            "ecosystem": "npm"
+          },
+          "vulnerabilities": [
+            {
+              "id": "GHSA-w1aa-c4hq-0005",
+              "aliases": [
+                "CVE-2099-1005"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "acme-tar"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "LOW"
+              }
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "acme-old",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+          },
+          "vulnerabilities": [
+            {
+              "id": "GHSA-w0zz-c4hq-0901",
+              "aliases": [
+                "CVE-2099-0901"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "acme-old"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.0.1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "HIGH"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "requirements.txt",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "acme-xml",
+            "version": "0.9.1",
+            "ecosystem": "PyPI"
+          },
+          "vulnerabilities": [
+            {
+              "id": "PYSEC-2099-4",
+              "aliases": [
+                "CVE-2099-1004",
+                "GHSA-w1aa-c4hq-0004"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "PyPI",
+                    "name": "acme-xml"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.9.4"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "HIGH"
+              }
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "acme-img",
+            "version": "5.2.0",
+            "ecosystem": "PyPI"
+          },
+          "vulnerabilities": [
+            {
+              "id": "PYSEC-2099-6",
+              "aliases": [
+                "CVE-2099-1006",
+                "GHSA-w1aa-c4hq-0006"
+              ],
+              "summary": "Synthetic advisory for a fictional package",
+              "affected": [
+                {
+                  "package": {
+                    "ecosystem": "PyPI",
+                    "name": "acme-img"
+                  },
+                  "ranges": [
+                    {
+                      "type": "ECOSYSTEM",
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "5.3.0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "severity": "MEDIUM"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

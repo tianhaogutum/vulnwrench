@@ -1,0 +1,308 @@
+{
+  "artifacts": {
+    ".trivyignore.yaml": {
+      "bytes": 1279,
+      "sha256": "e63cdb4b403252dc35e6385e55be720741379e7e25e0be1508f6593bdc6eee30"
+    },
+    "openvex.json": {
+      "bytes": 2765,
+      "sha256": "098d2d05fc0bef6b534d8f411277bb105f3e68472c185a2e5c4dff83edfc889f"
+    },
+    "osv-scanner.toml": {
+      "bytes": 923,
+      "sha256": "f2e4cf0af8ee8629087429e598b35565c7b3821acb5dd9640e846eee896b1532"
+    }
+  },
+  "counts": {
+    "decisions": 5,
+    "osvEntries": 6,
+    "trivyEntries": 6,
+    "vexStatements": 4
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "record": {
+        "aliases": {
+          "CVE-2025-0001": [
+            "GHSA-demo-0001-0001"
+          ]
+        },
+        "expiresOn": "2026-12-01",
+        "ids": [
+          "CVE-2025-0001"
+        ],
+        "owner": "app-team",
+        "package": "pkg:npm/demo@1.0",
+        "reason": "Synthetic investigation, not proof of safety",
+        "status": "under_investigation"
+      }
+    },
+    {
+      "index": 1,
+      "record": {
+        "aliases": {},
+        "expiresOn": "2026-12-02",
+        "ids": [
+          "CVE-2025-0002"
+        ],
+        "owner": "risk-team",
+        "package": "pkg:pypi/example-lib@2.0",
+        "reason": "Synthetic time-limited risk acceptance",
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 2,
+      "record": {
+        "aliases": {},
+        "expiresOn": "2026-12-03",
+        "ids": [
+          "CVE-2025-0003"
+        ],
+        "impact_statement": "Only the synthetic safe module is included in this demo product.",
+        "justification": "vulnerable_code_not_present",
+        "owner": "build-team",
+        "package": "pkg:maven/example/demo@3.0",
+        "reason": "Synthetic build excludes the vulnerable code",
+        "status": "not_affected"
+      }
+    },
+    {
+      "index": 3,
+      "record": {
+        "action_statement": "Upgrade the synthetic dependency before exception expiry.",
+        "aliases": {},
+        "expiresOn": "2026-12-04",
+        "ids": [
+          "CVE-2025-0004"
+        ],
+        "owner": "service-team",
+        "package": "pkg:golang/example.org/demo@4.0",
+        "reason": "Synthetic maintenance exception; the product remains affected",
+        "status": "affected"
+      }
+    },
+    {
+      "index": 4,
+      "record": {
+        "aliases": {},
+        "expiresOn": "2026-12-05",
+        "ids": [
+          "CVE-2025-0005"
+        ],
+        "owner": "release-team",
+        "package": "pkg:deb/debian/demo@5.0?arch=amd64",
+        "reason": "Synthetic fixed build awaiting scanner database refresh",
+        "status": "fixed"
+      }
+    }
+  ],
+  "losses": [
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        1
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        1
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        2
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        3
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        4
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": ".trivyignore.yaml"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "expiry_not_enforced",
+      "decisionIndices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "detail": "OpenVEX v0.2 has no native expiry; notes are informational. Regenerate and withdraw stale documents externally.",
+      "fields": [
+        "expiresOn"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "owner_not_structured",
+      "decisionIndices": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "detail": "Decision owner is preserved in status_notes, not a native structured field; author is the supplied document author.",
+      "fields": [
+        "owner"
+      ],
+      "target": "openvex.json"
+    }
+  ],
+  "mappings": [
+    {
+      "decisionIndex": 0,
+      "package": "pkg:npm/demo@1.0",
+      "scannerIds": [
+        "CVE-2025-0001",
+        "GHSA-demo-0001-0001"
+      ],
+      "vexPrimaryIds": [
+        "CVE-2025-0001"
+      ]
+    },
+    {
+      "decisionIndex": 1,
+      "package": "pkg:pypi/example-lib@2.0",
+      "scannerIds": [
+        "CVE-2025-0002"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 2,
+      "package": "pkg:maven/example/demo@3.0",
+      "scannerIds": [
+        "CVE-2025-0003"
+      ],
+      "vexPrimaryIds": [
+        "CVE-2025-0003"
+      ]
+    },
+    {
+      "decisionIndex": 3,
+      "package": "pkg:golang/example.org/demo@4.0",
+      "scannerIds": [
+        "CVE-2025-0004"
+      ],
+      "vexPrimaryIds": [
+        "CVE-2025-0004"
+      ]
+    },
+    {
+      "decisionIndex": 4,
+      "package": "pkg:deb/debian/demo@5.0?arch=amd64",
+      "scannerIds": [
+        "CVE-2025-0005"
+      ],
+      "vexPrimaryIds": [
+        "CVE-2025-0005"
+      ]
+    }
+  ],
+  "omittedArtifacts": [],
+  "openvexId": "urn:sha256:a23755f332b32f3dacfc034e169bde65bebd7cbfc5a80a73fdf6a9489ce5c25c",
+  "parameters": {
+    "allowScopeLoss": true,
+    "asOf": "2026-11-11",
+    "author": "Synthetic Example Team",
+    "productId": "urn:example:demo-product:1.0",
+    "timestamp": "2026-11-11T12:00:00Z"
+  },
+  "schemaVersion": 1,
+  "source": {
+    "canonicalJsonSha256": "b96be77b849313f12d9de4623dfd67bfbffceaf81e6cfc51d9e3dfde47437909",
+    "schemaVersion": 1
+  },
+  "tool": "triage-bridge",
+  "toolVersion": "0.1.0",
+  "warnings": [
+    "Every decision is compiled as a scanner ignore, including affected and under_investigation; this does not assert non-exploitability.",
+    "Only supplied aliases are expanded here. OSV-Scanner may additionally suppress aliases using its own database.",
+    "Expiry is date-only. The bridge rejects expiresOn <= asOf in UTC; native consumers control their runtime expiry behavior.",
+    "No scanner, package, exploitability, alias truth, product membership, or author identity has been verified."
+  ]
+}

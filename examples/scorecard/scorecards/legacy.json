@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-01",
+  "repo": {"name": "https://github.com/example/legacy", "commit": "2222222222222222222222222222222222222222"},
+  "scorecard": {"version": "v5.0.0", "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "score": 9.1,
+  "checks": [
+    {"name": "Code-Review", "score": 10, "reason": "Synthetic review"},
+    {"name": "Security-Policy", "score": 10, "reason": "Synthetic policy"}
+  ]
+}

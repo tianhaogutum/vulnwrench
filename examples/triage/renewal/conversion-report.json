@@ -1,0 +1,413 @@
+{
+  "artifacts": {
+    ".trivyignore.yaml": {
+      "bytes": 1286,
+      "sha256": "e4b8e8684c7ae537a9b1a4cd2675e3f8d9ed6840c1de49c03207efb956b41839"
+    },
+    "osv-scanner.toml": {
+      "bytes": 938,
+      "sha256": "46c42828fc069b1ee22e491853970e5965819c14d0dfea006bbac106269c8107"
+    }
+  },
+  "counts": {
+    "decisions": 6,
+    "osvEntries": 6,
+    "trivyEntries": 6,
+    "vexStatements": 0
+  },
+  "decisions": [
+    {
+      "index": 0,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-expired",
+        "expiresOn": "2026-11-11",
+        "ids": [
+          "SYNTHETIC-EXPIRED"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-expired@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:expired"
+        ],
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 1,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-soon",
+        "expiresOn": "2026-11-18",
+        "ids": [
+          "SYNTHETIC-SOON"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-soon@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:soon"
+        ],
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 2,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-owner",
+        "expiresOn": "2026-12-31",
+        "ids": [
+          "SYNTHETIC-OWNER"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-owner@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:owner"
+        ],
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 3,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-missing",
+        "expiresOn": "2026-12-31",
+        "ids": [
+          "SYNTHETIC-MISSING"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-missing@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:missing"
+        ],
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 4,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-scope",
+        "expiresOn": "2026-12-31",
+        "ids": [
+          "SYNTHETIC-SCOPE"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-scope@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:scope"
+        ],
+        "status": "accepted_risk"
+      }
+    },
+    {
+      "index": 5,
+      "record": {
+        "aliases": {},
+        "decisionId": "exception-unchanged",
+        "expiresOn": "2026-12-31",
+        "ids": [
+          "SYNTHETIC-UNCHANGED"
+        ],
+        "owner": "example-team",
+        "package": "pkg:npm/demo-unchanged@1.0",
+        "reason": "Synthetic review fixture; no real security claim",
+        "sourceRefs": [
+          "urn:example:review:unchanged"
+        ],
+        "status": "accepted_risk"
+      }
+    }
+  ],
+  "losses": [
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        0
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        1
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        1
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        2
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        2
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        3
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        3
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        4
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        4
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "package_scope_widened",
+      "decisionIndices": [
+        5
+      ],
+      "detail": "Authorized by --allow-scope-loss: IDs apply to every matching package in the OSV config scope.",
+      "fields": [
+        "package"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "no_vex_assertion",
+      "decisionIndices": [
+        5
+      ],
+      "detail": "accepted_risk is an exception policy, not a VEX status; no statement emitted.",
+      "fields": [
+        "status"
+      ],
+      "target": "openvex.json"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": ".trivyignore.yaml"
+    },
+    {
+      "code": "decision_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "detail": "Scanner ignore formats cannot represent this decision metadata; retained in this report.",
+      "fields": [
+        "owner",
+        "status",
+        "justification",
+        "impact_statement",
+        "action_statement"
+      ],
+      "target": "osv-scanner.toml"
+    },
+    {
+      "code": "review_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "detail": "Stable decision IDs and source references are retained in the conversion report, not projected into this target.",
+      "fields": [
+        "decisionId",
+        "sourceRefs"
+      ],
+      "target": ".trivyignore.yaml"
+    },
+    {
+      "code": "review_metadata_not_native",
+      "decisionIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "detail": "Stable decision IDs and source references are retained in the conversion report, not projected into this target.",
+      "fields": [
+        "decisionId",
+        "sourceRefs"
+      ],
+      "target": "osv-scanner.toml"
+    }
+  ],
+  "mappings": [
+    {
+      "decisionIndex": 0,
+      "package": "pkg:npm/demo-expired@1.0",
+      "scannerIds": [
+        "SYNTHETIC-EXPIRED"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 1,
+      "package": "pkg:npm/demo-soon@1.0",
+      "scannerIds": [
+        "SYNTHETIC-SOON"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 2,
+      "package": "pkg:npm/demo-owner@1.0",
+      "scannerIds": [
+        "SYNTHETIC-OWNER"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 3,
+      "package": "pkg:npm/demo-missing@1.0",
+      "scannerIds": [
+        "SYNTHETIC-MISSING"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 4,
+      "package": "pkg:npm/demo-scope@1.0",
+      "scannerIds": [
+        "SYNTHETIC-SCOPE"
+      ],
+      "vexPrimaryIds": []
+    },
+    {
+      "decisionIndex": 5,
+      "package": "pkg:npm/demo-unchanged@1.0",
+      "scannerIds": [
+        "SYNTHETIC-UNCHANGED"
+      ],
+      "vexPrimaryIds": []
+    }
+  ],
+  "omittedArtifacts": [
+    {
+      "file": "openvex.json",
+      "reason": "No explicit VEX statuses; empty OpenVEX documents are invalid."
+    }
+  ],
+  "openvexId": null,
+  "parameters": {
+    "allowScopeLoss": true,
+    "asOf": "2026-11-01",
+    "author": "Synthetic Example Team",
+    "productId": "urn:example:demo-product:1.0",
+    "timestamp": "2026-11-01T12:00:00Z"
+  },
+  "schemaVersion": 1,
+  "source": {
+    "canonicalJsonSha256": "fb0323358baeb9ebe0a69a49d6490717ba202bf1c27c909887199ec4d9b1bc12",
+    "schemaVersion": 1
+  },
+  "tool": "triage-bridge",
+  "toolVersion": "0.1.0",
+  "warnings": [
+    "Every decision is compiled as a scanner ignore, including affected and under_investigation; this does not assert non-exploitability.",
+    "Only supplied aliases are expanded here. OSV-Scanner may additionally suppress aliases using its own database.",
+    "Expiry is date-only. The bridge rejects expiresOn <= asOf in UTC; native consumers control their runtime expiry behavior.",
+    "No scanner, package, exploitability, alias truth, product membership, or author identity has been verified."
+  ]
+}

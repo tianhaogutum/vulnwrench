@@ -1,0 +1,87 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "alpha.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "OTHER",
+          "PkgName": "aaa",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/aaa@1.0"
+          },
+          "Severity": "HIGH"
+        },
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    },
+    {
+      "Target": " apps/~web|lock.json ",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        },
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "two"
+        },
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0?arch=test"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    },
+    {
+      "Target": "zeta.lock",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": " node_modules/~demo|copy "
+        }
+      ]
+    }
+  ]
+}

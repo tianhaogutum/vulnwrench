@@ -1,0 +1,38 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticColumnUnits"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "columnKind": "SYNTHETIC_SECRET<script>|",
+      "results": [
+        {
+          "message": {
+            "text": "Unsupported consumed unit"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cb%3E%7C.py"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

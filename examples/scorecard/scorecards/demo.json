@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-10T12:00:00Z",
+  "repo": {"name": "github.com/example/demo", "commit": "1111111111111111111111111111111111111111"},
+  "scorecard": {"version": "v5.0.0", "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "score": 8.4,
+  "checks": [
+    {"name": "Code-Review", "score": 8, "reason": "Synthetic reviews", "details": ["Info: synthetic fixture"], "documentation": {"url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review", "short": "Review changes"}},
+    {"name": "Security-Policy", "score": 10, "reason": "Synthetic policy"},
+    {"name": "Future-Check", "score": 6, "reason": "Preserved, not selected by policy", "extension": {"synthetic": true}}
+  ],
+  "metadata": ["fixture=synthetic"]
+}

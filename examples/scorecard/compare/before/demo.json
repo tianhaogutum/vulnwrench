@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-01",
+  "repo": {
+    "name": "github.com/example/demo",
+    "commit": "1111111111111111111111111111111111111111"
+  },
+  "scorecard": {
+    "version": "v5.0.0",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "score": 8.4,
+  "checks": [
+    {
+      "name": "Code-Review",
+      "score": 3,
+      "reason": "Synthetic: few reviews"
+    },
+    {
+      "name": "License",
+      "score": 5,
+      "reason": "Synthetic: old explanation"
+    },
+    {
+      "name": "Maintained",
+      "score": -1,
+      "reason": "Synthetic: unavailable"
+    },
+    {
+      "name": "Security-Policy",
+      "score": 10,
+      "reason": "Synthetic: policy exists"
+    }
+  ]
+}

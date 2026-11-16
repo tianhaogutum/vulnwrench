@@ -1,0 +1,34 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticTool",
+          "rules": [
+            {
+              "id": "default-error",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Synthetic finding; no real code scanned."
+          },
+          "ruleId": "default-error",
+          "ruleIndex": 0
+        }
+      ]
+    }
+  ]
+}

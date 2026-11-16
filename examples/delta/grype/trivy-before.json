@@ -1,0 +1,24 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-SYNTH-001",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {
+            "PURL": "pkg:npm/demo@1.0"
+          },
+          "Severity": "HIGH",
+          "PkgPath": "node_modules/demo"
+        }
+      ]
+    }
+  ]
+}

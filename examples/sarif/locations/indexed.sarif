@@ -1,0 +1,65 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic"
+        }
+      },
+      "originalUriBaseIds": {
+        "ROOT": {
+          "uri": "file:///workspace/"
+        },
+        "SRC": {
+          "uri": "lib/",
+          "uriBaseId": "ROOT"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "level": "warning",
+          "message": {
+            "text": "Synthetic location; no source files read."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "file://localhost/workspace/lib/./a%20b.py"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "a%20b.py",
+            "uriBaseId": "SRC",
+            "index": 0
+          },
+          "sourceLanguage": "python"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "urn:sha256:a23755f332b32f3dacfc034e169bde65bebd7cbfc5a80a73fdf6a9489ce5c25c",
+  "author": "Synthetic Example Team",
+  "statements": [
+    {
+      "action_statement": "Upgrade the synthetic dependency before exception expiry.",
+      "products": [
+        {
+          "@id": "urn:example:demo-product:1.0",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/example.org/demo@4.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected",
+      "status_notes": "Reason: Synthetic maintenance exception; the product remains affected\nDecision owner: service-team\nException expiresOn (first invalid UTC day): 2026-12-04; OpenVEX consumers do not enforce this expiry.",
+      "vulnerability": {
+        "name": "CVE-2025-0004"
+      }
+    },
+    {
+      "impact_statement": "Only the synthetic safe module is included in this demo product.",
+      "justification": "vulnerable_code_not_present",
+      "products": [
+        {
+          "@id": "urn:example:demo-product:1.0",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/example/demo@3.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "Reason: Synthetic build excludes the vulnerable code\nDecision owner: build-team\nException expiresOn (first invalid UTC day): 2026-12-03; OpenVEX consumers do not enforce this expiry.",
+      "vulnerability": {
+        "name": "CVE-2025-0003"
+      }
+    },
+    {
+      "products": [
+        {
+          "@id": "urn:example:demo-product:1.0",
+          "subcomponents": [
+            {
+              "@id": "pkg:deb/debian/demo@5.0?arch=amd64"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "Reason: Synthetic fixed build awaiting scanner database refresh\nDecision owner: release-team\nException expiresOn (first invalid UTC day): 2026-12-05; OpenVEX consumers do not enforce this expiry.",
+      "vulnerability": {
+        "name": "CVE-2025-0005"
+      }
+    },
+    {
+      "products": [
+        {
+          "@id": "urn:example:demo-product:1.0",
+          "subcomponents": [
+            {
+              "@id": "pkg:npm/demo@1.0"
+            }
+          ]
+        }
+      ],
+      "status": "under_investigation",
+      "status_notes": "Reason: Synthetic investigation, not proof of safety\nDecision owner: app-team\nException expiresOn (first invalid UTC day): 2026-12-01; OpenVEX consumers do not enforce this expiry.",
+      "vulnerability": {
+        "aliases": [
+          "GHSA-demo-0001-0001"
+        ],
+        "name": "CVE-2025-0001"
+      }
+    }
+  ],
+  "timestamp": "2026-11-11T12:00:00Z",
+  "tooling": "triage-bridge/0.1.0",
+  "version": 1
+}

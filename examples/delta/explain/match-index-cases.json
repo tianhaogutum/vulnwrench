@@ -1,0 +1,314 @@
+{
+  "inputs": [
+    "explain/reason-before.json",
+    "explain/reason-after.json",
+    "grype/before-bom.json",
+    "grype/after-bom.json",
+    "grype/scans.json"
+  ],
+  "advisory": "GHSA-SYNTH-001",
+  "default": {
+    "normalized": 1,
+    "selected_unknown": 14,
+    "before_findings": 9,
+    "after_findings": 9
+  },
+  "selector": {
+    "cli": "--match-index INDEX",
+    "library": "explain_match_index=INDEX",
+    "requires": [
+      "advisory",
+      "side",
+      "artifact_id"
+    ],
+    "index": "Zero-based original native matches-array index in the explicitly selected report. Never unknown-array position or cross-report identity. Library accepts int >= 0, rejects bool/float/string; CLI accepts ASCII decimal digits only, no sign/whitespace/decimal/exponent. None omits selector.",
+    "reasonInteraction": "Conjunctive with optional exact reason_code; a mismatch fails, never falls back to another entry."
+  },
+  "output": "unknown_filter adds integer match_index only when supplied; findings=[]; exactly one original unknown explanation entry, retaining source, original unknown_index, all ordered reasons and context. No added scope or decision; full batch/evidence/accounting/blockers unchanged. Markdown caption: Native match index: INDEX.",
+  "positive": [
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 3,
+      "unknown_index": 2
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "unknown_index": 3
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 6,
+      "unknown_index": 5
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "unknown_index": 6
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 8,
+      "unknown_index": 7
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "unknown_index": 3,
+      "reason_code": "ambiguous_package_location"
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "unknown_index": 6,
+      "reason_code": "scope_binding_missing"
+    },
+    {
+      "side": "before",
+      "artifact_id": "native/~shared ID",
+      "match_index": 8,
+      "unknown_index": 7,
+      "reason_code": "unsupported_package_type"
+    },
+    {
+      "side": "before",
+      "artifact_id": "other-artifact",
+      "match_index": 2,
+      "unknown_index": 1
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 3,
+      "unknown_index": 2
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "unknown_index": 3
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 6,
+      "unknown_index": 5
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "unknown_index": 6
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 8,
+      "unknown_index": 7
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "unknown_index": 3,
+      "reason_code": "ambiguous_package_location"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "unknown_index": 6,
+      "reason_code": "scope_binding_missing"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 8,
+      "unknown_index": 7,
+      "reason_code": "unsupported_package_type"
+    },
+    {
+      "side": "after",
+      "artifact_id": "other-artifact",
+      "match_index": 2,
+      "unknown_index": 1
+    }
+  ],
+  "negative": [
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": ""
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": " "
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "SYNTHETIC_SECRET_INDEX"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "3.0"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "3e0"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "+3"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": " 3"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "3 "
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "0x3"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "\u0663"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "-1"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "9"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "9999999999999999999999999999999999999999999999999999999999"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 0
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 1
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 2
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 5
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "advisory": null
+    },
+    {
+      "side": null,
+      "artifact_id": "native/~shared ID",
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": null,
+      "match_index": 4
+    },
+    {
+      "side": "AFTER",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "advisory": "CVE-SYNTH-001"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "advisory": "SYNTHETIC_SECRET_RELATED"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "advisory": "SYNTHETIC_SECRET_EXTENSION"
+    },
+    {
+      "side": "after",
+      "artifact_id": "other-artifact",
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": "only-before",
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": "pkg:npm/demo@1.1",
+      "match_index": 4
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "reason_code": "unsupported_package_type"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 4,
+      "reason_code": "ambiguous"
+    },
+    {
+      "side": "after",
+      "artifact_id": "synthetic-demo-1.1",
+      "match_index": 0
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": 7,
+      "reason_code": "ambiguous_package_location"
+    },
+    {
+      "side": "after",
+      "artifact_id": "native/~shared ID",
+      "match_index": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+    }
+  ],
+  "failures": "InputError / CLI exit 2, no stdout, no input values in diagnostics, unchanged existing output and no temporary output. Full validation of unselected/opposite-side evidence remains required. Reject normalized-only, wrong-advisory/artifact, out-of-range and reason mismatch; never use unknown-array positions."
+}

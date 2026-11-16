@@ -1,0 +1,62 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic",
+          "version": "1.0.0"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic"
+          },
+          "fingerprints": {
+            "primary/v1": "A"
+          }
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic",
+          "version": "1.0.0"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic"
+          },
+          "fingerprints": {
+            "primary/v1": "C"
+          }
+        },
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic"
+          },
+          "fingerprints": {
+            "primary/v1": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

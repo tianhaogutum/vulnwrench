@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "ids": ["CVE-2025-0001"],
+      "aliases": {"CVE-2025-0001": ["GHSA-demo-0001-0001"]},
+      "package": "pkg:npm/demo@1.0",
+      "owner": "app-team",
+      "reason": "Synthetic investigation, not proof of safety",
+      "expiresOn": "2026-12-01",
+      "status": "under_investigation"
+    },
+    {
+      "ids": ["CVE-2025-0002"],
+      "package": "pkg:pypi/example-lib@2.0",
+      "owner": "risk-team",
+      "reason": "Synthetic time-limited risk acceptance",
+      "expiresOn": "2026-12-02",
+      "status": "accepted_risk"
+    },
+    {
+      "ids": ["CVE-2025-0003"],
+      "package": "pkg:maven/example/demo@3.0",
+      "owner": "build-team",
+      "reason": "Synthetic build excludes the vulnerable code",
+      "expiresOn": "2026-12-03",
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Only the synthetic safe module is included in this demo product."
+    },
+    {
+      "ids": ["CVE-2025-0004"],
+      "package": "pkg:golang/example.org/demo@4.0",
+      "owner": "service-team",
+      "reason": "Synthetic maintenance exception; the product remains affected",
+      "expiresOn": "2026-12-04",
+      "status": "affected",
+      "action_statement": "Upgrade the synthetic dependency before exception expiry."
+    },
+    {
+      "ids": ["CVE-2025-0005"],
+      "package": "pkg:deb/debian/demo@5.0?arch=amd64",
+      "owner": "release-team",
+      "reason": "Synthetic fixed build awaiting scanner database refresh",
+      "expiresOn": "2026-12-05",
+      "status": "fixed"
+    }
+  ]
+}

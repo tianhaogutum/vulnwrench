@@ -1,0 +1,263 @@
+{
+  "descriptor": {
+    "name": "grype",
+    "version": "synthetic",
+    "configuration": {}
+  },
+  "source": {
+    "type": "directory",
+    "target": "/src/acme-shop"
+  },
+  "matches": [
+    {
+      "vulnerability": {
+        "id": "GHSA-w1aa-c4hq-0001",
+        "severity": "High",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [
+            "2.1.4"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-1001",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-http",
+        "version": "2.1.0",
+        "type": "npm",
+        "purl": "pkg:npm/acme-http@2.1.0",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w1aa-c4hq-0002",
+        "severity": "Medium",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [
+            "1.4.5"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-1002",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-yaml",
+        "version": "1.4.2",
+        "type": "npm",
+        "purl": "pkg:npm/acme-yaml@1.4.2",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w1aa-c4hq-0003",
+        "severity": "Critical",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [
+            "3.0.2"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-1003",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-jwt",
+        "version": "3.0.0",
+        "type": "npm",
+        "purl": "pkg:npm/acme-jwt@3.0.0",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w1aa-c4hq-0005",
+        "severity": "Low",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [],
+          "state": "not-fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-1005",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-tar",
+        "version": "1.0.3",
+        "type": "npm",
+        "purl": "pkg:npm/acme-tar@1.0.3",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w1aa-c4hq-0006",
+        "severity": "Medium",
+        "namespace": "github:language:python",
+        "fix": {
+          "versions": [
+            "5.3.0"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-1006",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-img",
+        "version": "5.2.0",
+        "type": "python",
+        "purl": "pkg:pypi/acme-img@5.2.0",
+        "locations": [
+          {
+            "path": "/requirements.txt"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w0zz-c4hq-0901",
+        "severity": "High",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [
+            "1.0.1"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-0901",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-old",
+        "version": "1.0.0",
+        "type": "npm",
+        "purl": "pkg:npm/acme-old@1.0.0",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-w0zz-c4hq-0902",
+        "severity": "Medium",
+        "namespace": "github:language:javascript",
+        "fix": {
+          "versions": [
+            "6.0.1"
+          ],
+          "state": "fixed"
+        }
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "CVE-2099-0902",
+          "namespace": "nvd:cpe"
+        }
+      ],
+      "matchDetails": [
+        {
+          "type": "exact-direct-match",
+          "matcher": "synthetic"
+        }
+      ],
+      "artifact": {
+        "name": "acme-qs",
+        "version": "6.0.0",
+        "type": "npm",
+        "purl": "pkg:npm/acme-qs@6.0.0",
+        "locations": [
+          {
+            "path": "/package-lock.json"
+          }
+        ]
+      }
+    }
+  ]
+}

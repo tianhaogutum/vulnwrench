@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic:local",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "DiffIDs": [
+      "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ],
+    "OS": {
+      "Family": "alpine",
+      "Name": "synthetic"
+    }
+  },
+  "Results": [
+    {
+      "Target": "synthetic image (synthetic OS)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "DEMO-BASE",
+          "PkgName": "openssl",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "DiffID": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-APP-UPGRADE",
+          "PkgName": "openssl",
+          "InstalledVersion": "2.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-APP-ONLY",
+          "PkgName": "myapp",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "DiffID": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-MISSING-BASE-NAME",
+          "PkgName": "openssl",
+          "InstalledVersion": "3.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-MISSING-NEW-NAME",
+          "PkgName": "plugin",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {}
+        },
+        {
+          "VulnerabilityID": "DEMO-DIGEST-IS-NOT-DIFFID",
+          "PkgName": "openssl",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "Digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-UNMATCHED",
+          "PkgName": "system-lib",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "DiffID": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-MAPPED-DIGEST",
+          "PkgName": "openssl",
+          "InstalledVersion": "2.1",
+          "Severity": "HIGH",
+          "Status": "affected",
+          "DataSource": {
+            "ID": "synthetic"
+          },
+          "Layer": {
+            "Digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        }
+      ]
+    }
+  ],
+  "SyntheticExtension": {
+    "preserve": true
+  }
+}

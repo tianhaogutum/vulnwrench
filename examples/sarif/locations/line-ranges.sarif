@@ -1,0 +1,121 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic"
+        }
+      },
+      "originalUriBaseIds": {
+        "ROOT": {
+          "uri": "file:///workspace/"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+            "uriBaseId": "ROOT"
+          }
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic source line evidence"
+          },
+          "fingerprints": {
+            "primary/v1": "A"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+                  "uriBaseId": "ROOT"
+                },
+                "region": {
+                  "startLine": 7,
+                  "endLine": 9,
+                  "snippet": {
+                    "text": "DO_NOT_RENDER"
+                  }
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+                  "uriBaseId": "ROOT"
+                },
+                "region": {
+                  "startLine": 11,
+                  "endLine": 11
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "plain.py"
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "columns.py"
+                },
+                "region": {
+                  "startColumn": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Related-only source line evidence"
+          },
+          "fingerprints": {
+            "primary/v1": "B"
+          },
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

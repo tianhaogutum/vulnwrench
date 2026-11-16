@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "before": {
+    "scanner": {
+      "name": "grype",
+      "version": "0.86.1"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-grype-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true,
+    "grype": {
+      "adapter_version": 1,
+      "targets": [
+        {
+          "target": "alpha.lock",
+          "type": "node-pkg"
+        },
+        {
+          "target": " apps/~web|lock.json ",
+          "type": "node-pkg"
+        },
+        {
+          "target": "zeta.lock",
+          "type": "node-pkg"
+        }
+      ],
+      "bindings": [
+        {
+          "artifact_id": "native-0",
+          "target": "alpha.lock",
+          "package_path": "",
+          "location": {
+            "path": "/workspace/0/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-1",
+          "target": "alpha.lock",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/1/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-2",
+          "target": " apps/~web|lock.json ",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/2/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-3",
+          "target": " apps/~web|lock.json ",
+          "package_path": "two",
+          "location": {
+            "path": "/workspace/3/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-4",
+          "target": "zeta.lock",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/4/package.json"
+          }
+        }
+      ]
+    }
+  },
+  "after": {
+    "scanner": {
+      "name": "grype",
+      "version": "0.86.1"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-grype-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true,
+    "grype": {
+      "adapter_version": 1,
+      "targets": [
+        {
+          "target": "alpha.lock",
+          "type": "node-pkg"
+        },
+        {
+          "target": " apps/~web|lock.json ",
+          "type": "node-pkg"
+        },
+        {
+          "target": "zeta.lock",
+          "type": "node-pkg"
+        }
+      ],
+      "bindings": [
+        {
+          "artifact_id": "native-0",
+          "target": "alpha.lock",
+          "package_path": "",
+          "location": {
+            "path": "/workspace/0/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-1",
+          "target": "alpha.lock",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/1/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-2",
+          "target": " apps/~web|lock.json ",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/2/package.json"
+          }
+        },
+        {
+          "artifact_id": "native-4",
+          "target": "zeta.lock",
+          "package_path": "one",
+          "location": {
+            "path": "/workspace/4/package.json"
+          }
+        }
+      ]
+    }
+  },
+  "aliases": {
+    "ALIAS/~": [
+      "GHSA-SYNTH-001"
+    ],
+    "GHSA-SYNTH-001": [
+      "CVE-SYNTH-001"
+    ]
+  }
+}

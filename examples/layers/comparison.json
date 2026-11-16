@@ -1,0 +1,17 @@
+{
+  "basePackageNames": [
+    "openssl",
+    "system-lib"
+  ],
+  "expected": {
+    "DEMO-BASE": "base",
+    "DEMO-APP-UPGRADE": "app",
+    "DEMO-APP-ONLY": "app",
+    "DEMO-MISSING-BASE-NAME": "unknown",
+    "DEMO-MISSING-NEW-NAME": "unknown",
+    "DEMO-DIGEST-IS-NOT-DIFFID": "unknown",
+    "DEMO-UNMATCHED": "unknown",
+    "DEMO-MAPPED-DIGEST": "unknown"
+  },
+  "description": "Expected safe attribution with no compressed digest mapping; names are not layer proof."
+}

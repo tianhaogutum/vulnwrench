@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "vulnfuse-coverage-1",
+  "inputs": [
+    {
+      "scanner": "trivy",
+      "input": "found.json",
+      "sha256": "d711efff55973f53356c95707a707a484c0fbd3c1ca527e32ad7ae55770a05d2",
+      "targetIdentity": "synthetic:demo-build-1",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:none",
+      "databaseIdentity": "synthetic:snapshot:common"
+    },
+    {
+      "scanner": "trivy",
+      "input": "suppressed.json",
+      "sha256": "c9983cd1cdbcd42a20f35891fc1db4749ef73fba3c507d73c0f55f18cf30c9ce",
+      "targetIdentity": "synthetic:demo-build-1",
+      "scanComplete": true,
+      "databaseTimestamp": "2026-11-10T12:00:00Z",
+      "scanPolicyIdentity": "synthetic:suppress:CVE-POLICY-1",
+      "databaseIdentity": "synthetic:snapshot:common"
+    }
+  ]
+}

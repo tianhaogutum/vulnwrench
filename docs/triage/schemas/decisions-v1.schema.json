@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "triage-bridge decision document v1",
+  "description": "Structural schema. Runtime also enforces aliases, PURL profile, record contradictions, expiry, parameters and target projection collisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decisions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ids",
+          "package",
+          "owner",
+          "reason",
+          "expiresOn",
+          "status"
+        ],
+        "properties": {
+          "decisionId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:+-]{0,255}$",
+            "description": "Optional for compilation; required, unique and stable across renewal preview documents. Independent of vulnerability IDs and package scope."
+          },
+          "sourceRefs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1, "maxLength": 16384},
+            "description": "Opaque reference strings retained verbatim in reports and preview records; never fetched or interpreted. Runtime text validation also applies."
+          },
+          "ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:+-]{0,255}$"
+            }
+          },
+          "aliases": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:+-]{0,255}$"
+            },
+            "additionalProperties": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:+-]{0,255}$"
+              }
+            },
+            "description": "Keys must be primary IDs in this record. Alias assignments must be unambiguous across the document. No alias inference."
+          },
+          "package": {
+            "type": "string",
+            "pattern": "^pkg:[a-z][a-z0-9.+-]*/[^?#]+@[^?#]+(?:\\?[^#]+)?$",
+            "description": "Exact versioned ASCII PURL profile; see README and runtime for segment and qualifier validation. No subpaths or glob patterns."
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16384,
+            "description": "Runtime additionally rejects edge whitespace, controls except LF/TAB, DEL and unpaired surrogates."
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16384,
+            "description": "Runtime additionally rejects edge whitespace, controls except LF/TAB, DEL and unpaired surrogates."
+          },
+          "expiresOn": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+            "description": "First invalid UTC day; must be strictly later than --as-of."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "accepted_risk",
+              "affected",
+              "fixed",
+              "not_affected",
+              "under_investigation"
+            ]
+          },
+          "justification": {
+            "type": "string",
+            "enum": [
+              "component_not_present",
+              "inline_mitigations_already_exist",
+              "vulnerable_code_cannot_be_controlled_by_adversary",
+              "vulnerable_code_not_in_execute_path",
+              "vulnerable_code_not_present"
+            ]
+          },
+          "impact_statement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16384,
+            "description": "Runtime additionally rejects edge whitespace, controls except LF/TAB, DEL and unpaired surrogates."
+          },
+          "action_statement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16384,
+            "description": "Runtime additionally rejects edge whitespace, controls except LF/TAB, DEL and unpaired surrogates."
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "not_affected"
+                }
+              }
+            },
+            "then": {
+              "anyOf": [
+                {
+                  "required": [
+                    "justification"
+                  ]
+                },
+                {
+                  "required": [
+                    "impact_statement"
+                  ]
+                }
+              ]
+            },
+            "else": {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "justification"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "impact_statement"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "affected"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "action_statement"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "action_statement"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

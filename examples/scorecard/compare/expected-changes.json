@@ -1,0 +1,119 @@
+{
+  "demo": {
+    "comparison": "comparable",
+    "commitChange": "changed",
+    "checks": {
+      "Code-Review": [
+        "changed",
+        "increased",
+        true,
+        true
+      ],
+      "Future-Check": [
+        "added",
+        "not_comparable",
+        true,
+        true
+      ],
+      "License": [
+        "changed",
+        "unchanged",
+        false,
+        true
+      ],
+      "Maintained": [
+        "changed",
+        "not_comparable",
+        true,
+        true
+      ],
+      "Security-Policy": [
+        "deleted",
+        "not_comparable",
+        true,
+        true
+      ]
+    },
+    "scannerChange": {
+      "before": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "after": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "versionChange": "unchanged",
+      "commitChange": "unchanged"
+    }
+  },
+  "stale": {
+    "comparison": "stale_after",
+    "commitChange": "changed",
+    "checks": {
+      "Code-Review": [
+        "changed",
+        "not_comparable",
+        true,
+        true
+      ]
+    },
+    "scannerChange": {
+      "before": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "after": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "versionChange": "unchanged",
+      "commitChange": "unchanged"
+    }
+  },
+  "missing": {
+    "comparison": "missing_after",
+    "commitChange": "not_comparable",
+    "checks": {
+      "Code-Review": [
+        "not_comparable",
+        "not_comparable",
+        null,
+        null
+      ]
+    },
+    "scannerChange": {
+      "before": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "after": null,
+      "versionChange": "not_comparable",
+      "commitChange": "not_comparable"
+    }
+  },
+  "scanner": {
+    "comparison": "comparable",
+    "commitChange": "unchanged",
+    "scannerChange": {
+      "before": {
+        "version": "v5.0.0",
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "after": {
+        "version": "v5.1.0",
+        "commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "versionChange": "changed",
+      "commitChange": "changed"
+    },
+    "checks": {
+      "Code-Review": [
+        "changed",
+        "increased",
+        true,
+        true
+      ]
+    }
+  }
+}

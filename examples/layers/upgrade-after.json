@@ -1,0 +1,33 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "DiffIDs": [
+      "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    ]
+  },
+  "Results": [
+    {
+      "Target": "synthetic-upgrade",
+      "Class": "os-pkgs",
+      "Type": "debian",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "DEMO-MOVED",
+          "PkgName": "shared",
+          "InstalledVersion": "1",
+          "Layer": {
+            "DiffID": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        {
+          "VulnerabilityID": "DEMO-LOST-EVIDENCE",
+          "PkgName": "shared",
+          "InstalledVersion": "1"
+        }
+      ]
+    }
+  ]
+}

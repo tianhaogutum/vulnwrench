@@ -1,0 +1,18 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:00000000-0000-4000-8000-000000000065",
+  "version": 1,
+  "metadata": {
+    "component": {"type": "application", "bom-ref": "release", "name": "synthetic-release", "version": "1.0"}
+  },
+  "components": [
+    {"type": "library", "bom-ref": "demo", "name": "demo", "version": "1.0", "purl": "pkg:npm/demo@1.0", "properties": [{"name": "fixture", "value": "synthetic"}]},
+    {"type": "library", "bom-ref": "demo-helper", "name": "demo-helper", "version": "2.0", "purl": "pkg:npm/demo-helper@2.0"},
+    {"type": "library", "bom-ref": "legacy", "name": "legacy", "version": "1.0", "purl": "pkg:pypi/legacy@1.0"},
+    {"type": "library", "bom-ref": "unchecked", "name": "unchecked", "version": "1.0", "purl": "pkg:npm/unchecked@1.0"},
+    {"type": "library", "bom-ref": "unlisted", "name": "unlisted", "purl": "pkg:generic/unlisted@1"},
+    {"type": "file", "bom-ref": "local-file", "name": "local-file"}
+  ],
+  "dependencies": [{"ref": "release", "dependsOn": ["demo", "demo-helper", "legacy", "unchecked", "unlisted", "local-file"]}]
+}

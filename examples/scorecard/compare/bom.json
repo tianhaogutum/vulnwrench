@@ -1,0 +1,41 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "components": [
+    {
+      "type": "library",
+      "name": "demo",
+      "purl": "pkg:npm/demo@1"
+    },
+    {
+      "type": "library",
+      "name": "helper",
+      "purl": "pkg:npm/helper@1"
+    },
+    {
+      "type": "library",
+      "name": "stale",
+      "purl": "pkg:npm/stale@1"
+    },
+    {
+      "type": "library",
+      "name": "missing",
+      "purl": "pkg:npm/missing@1"
+    },
+    {
+      "type": "library",
+      "name": "scanner",
+      "purl": "pkg:npm/scanner@1"
+    },
+    {
+      "type": "library",
+      "name": "unmapped",
+      "purl": "pkg:npm/unmapped@1"
+    },
+    {
+      "type": "file",
+      "name": "local-file"
+    }
+  ]
+}

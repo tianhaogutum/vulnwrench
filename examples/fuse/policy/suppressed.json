@@ -1,0 +1,10 @@
+{
+  "SchemaVersion": 2,
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Type": "node-pkg",
+      "Vulnerabilities": []
+    }
+  ]
+}

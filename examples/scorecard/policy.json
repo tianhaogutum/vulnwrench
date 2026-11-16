@@ -1,0 +1,5 @@
+{
+  "checks": {"Code-Review": 7, "Security-Policy": 5},
+  "maxAgeDays": 30,
+  "missing": "unknown"
+}

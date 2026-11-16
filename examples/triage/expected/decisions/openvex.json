@@ -1,0 +1,27 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "urn:sha256:fdb5fb8fe54490a3b4d664b07dcb531846e2c552f79be4e9a71b4aa039e0075f",
+  "author": "Synthetic Example Team",
+  "statements": [
+    {
+      "products": [
+        {
+          "@id": "urn:example:demo-product:1.0",
+          "subcomponents": [
+            {
+              "@id": "pkg:npm/demo@1.0"
+            }
+          ]
+        }
+      ],
+      "status": "under_investigation",
+      "status_notes": "Reason: Investigation\nDecision owner: app-team\nException expiresOn (first invalid UTC day): 2026-12-01; OpenVEX consumers do not enforce this expiry.",
+      "vulnerability": {
+        "name": "CVE-2025-0001"
+      }
+    }
+  ],
+  "timestamp": "2026-11-11T12:00:00Z",
+  "tooling": "triage-bridge/0.1.0",
+  "version": 1
+}

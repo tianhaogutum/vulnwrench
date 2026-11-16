@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "ids": ["CVE-2025-0001"],
+      "package": "pkg:npm/demo@1.0",
+      "owner": "app-team",
+      "reason": "Investigation",
+      "expiresOn": "2026-12-01",
+      "status": "under_investigation"
+    }
+  ]
+}

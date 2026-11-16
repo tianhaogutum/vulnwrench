@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "before": {
+    "scanner": {
+      "name": "grype",
+      "version": "0.86.1"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-grype-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true,
+    "grype": {
+      "adapter_version": 1,
+      "targets": [
+        {
+          "target": "package-lock.json",
+          "type": "node-pkg"
+        }
+      ],
+      "bindings": [
+        {
+          "artifact_id": "synthetic-demo-1.0",
+          "target": "package-lock.json",
+          "package_path": "node_modules/demo",
+          "location": {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        }
+      ]
+    }
+  },
+  "after": {
+    "scanner": {
+      "name": "grype",
+      "version": "0.86.1"
+    },
+    "database": {
+      "id": "sha256:synthetic-db-A"
+    },
+    "profile": "synthetic-grype-npm-full-unfiltered-v1",
+    "report_complete": true,
+    "inventory_complete": true,
+    "grype": {
+      "adapter_version": 1,
+      "targets": [
+        {
+          "target": "package-lock.json",
+          "type": "node-pkg"
+        }
+      ],
+      "bindings": [
+        {
+          "artifact_id": "synthetic-demo-1.1",
+          "target": "package-lock.json",
+          "package_path": "node_modules/demo",
+          "location": {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        },
+        {
+          "artifact_id": "synthetic-demo-1.0",
+          "target": "package-lock.json",
+          "package_path": "node_modules/demo",
+          "location": {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        },
+        {
+          "artifact_id": "unrelated-artifact",
+          "target": "package-lock.json",
+          "package_path": "node_modules/demo",
+          "location": {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        }
+      ]
+    }
+  },
+  "aliases": {
+    "GHSA-SYNTH-001": [
+      "CVE-SYNTH-001"
+    ]
+  }
+}

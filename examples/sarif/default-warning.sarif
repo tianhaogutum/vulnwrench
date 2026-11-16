@@ -1,0 +1,26 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticTool",
+          "rules": []
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Synthetic finding; no real code scanned."
+          },
+          "ruleId": "unlisted-rule"
+        }
+      ]
+    }
+  ]
+}

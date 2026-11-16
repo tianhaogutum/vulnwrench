@@ -1,0 +1,10 @@
+# Synthetic native Trivy vulnerability ignores; no real security assertions.
+vulnerabilities:
+  - id: CVE-2099-0062
+    purls:
+      - "pkg:npm/triage-demo@1.0"
+      - "pkg:npm/triage-demo@2.0"
+    statement: "Investigation: synthetic fixture"
+    expired_at: 2026-12-01
+  - id: GHSA-demo-0062-0001
+    statement: Needs a package scope and expiry review

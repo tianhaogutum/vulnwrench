@@ -1,0 +1,220 @@
+"""External raw-plan pin for rules/metadata identity, never annotation approval."""
+from copy import deepcopy
+from hashlib import sha256
+import io
+import json
+from pathlib import Path
+import tempfile
+import unittest
+from unittest.mock import patch
+
+import test_verify_cleanup_inputs as support
+from test_verify_cleanup_metadata import plan_for, sidecar
+
+
+class VerifyCleanupMetadataPinTests(unittest.TestCase):
+    run_cli = support.VerifyCleanupInputsTests.run_cli
+    fixture = support.VerifyCleanupInputsTests.fixture
+
+    def metadata_fixture(self, tmp, format='trivy', aliases=True, empty=False):
+        files, data = self.fixture(tmp, format, True, aliases, empty, incomplete=format == 'osv')
+        for key in set(files) - {'plan', 'rules', 'metadata'}:
+            files.pop(key).unlink()
+        return files, data
+
+    def expected(self, files, pin=None):
+        result = {'command': 'verify-cleanup-metadata', 'metadataVerified': True,
+                  'metadataSha256': sha256(files['metadata'].read_bytes()).hexdigest(),
+                  'rulesSha256': sha256(files['rules'].read_bytes()).hexdigest(), 'automaticChangesAllowed': False}
+        if pin is not None: result['planSha256'] = pin
+        return json.dumps(result, indent=2, sort_keys=True) + '\n'
+
+    def verify(self, files, pin=None, output=None):
+        args = [v for k, p in files.items() for v in ('--' + k, p)]
+        if pin is not None: args += ['--expected-plan-sha256', pin]
+        if output is not None: args += ['--output', output]
+        return self.run_cli('verify-cleanup-metadata', *args)
+
+    def failure(self, files, pin, output):
+        before = {p: p.read_bytes() for p in [*files.values(), output] if p.is_file()}
+        proc = self.verify(files, pin, output)
+        self.assertEqual(proc.returncode, 2, proc.stderr)
+        self.assertEqual(proc.stdout, '')
+        self.assertTrue(proc.stderr.startswith('vulnwrench ignores: '), proc.stderr)
+        for secret in ('PRIVATE', str(output.parent), 'Traceback'):
+            self.assertNotIn(secret, proc.stderr)
+        self.assertEqual(before, {p: p.read_bytes() for p in before})
+        self.assertEqual(list(output.parent.glob('.vulnwrench-ignores-*')), [])
+        return proc
+
+    def test_valid_pin_default_empty_and_unavailable_bound_inputs_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            for format in ('trivy', 'osv'):
+                for aliases in (False, True):
+                    for empty in (False, True):
+                        with self.subTest(format=format, aliases=aliases, empty=empty):
+                            files, data = self.metadata_fixture(tmp, format, aliases, empty)
+                            if format == 'osv':
+                                self.assertEqual(data['coverage'], 'unknown')
+                                self.assertEqual(data['groups']['report_local_orphans'], [])
+                            before = {p: p.read_bytes() for p in files.values()}
+                            default = self.verify(files)
+                            self.assertEqual(default.returncode, 0, default.stderr)
+                            self.assertEqual(default.stdout, self.expected(files))
+                            pin = sha256(before[files['plan']]).hexdigest()
+                            proc = self.verify(files, pin)
+                            self.assertEqual(proc.returncode, 0, proc.stderr)
+                            self.assertEqual(proc.stderr, '')
+                            self.assertEqual(proc.stdout, self.expected(files, pin))
+                            self.assertEqual(before, {p: p.read_bytes() for p in before})
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            proc = self.verify(files, pin, output)
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            self.assertEqual(proc.stdout + proc.stderr, '')
+            self.assertEqual(output.read_text(), self.expected(files, pin))
+
+    def test_raw_whitespace_context_and_manual_suggestion_edits_need_new_pin(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            files, base = self.metadata_fixture(tmp)
+            original = files['plan'].read_bytes(); pin = sha256(original).hexdigest()
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            context = deepcopy(base); context.update(asOf='PRIVATE-context', summary={'findingCount': -1}, coverage='PRIVATE-context')
+            suggestion = deepcopy(base); suggestion['groups']['ownerless'][0]['suggestedManualAction'] = 'PRIVATE-suggestion'
+            for raw in (original + b' ', json.dumps(context).encode(), json.dumps(suggestion).encode()):
+                files['plan'].write_bytes(raw)
+                self.assertEqual(self.verify(files).stdout, self.expected(files))
+                self.failure(files, pin, output)
+                new_pin = sha256(raw).hexdigest()
+                proc = self.verify(files, new_pin)
+                self.assertEqual(proc.returncode, 0, proc.stderr)
+                self.assertEqual(proc.stdout, self.expected(files, new_pin))
+
+    def test_invalid_digest_redacted_before_plan_parsing(self):
+        from vulnwrench.ignoreaudit import verification
+        from vulnwrench.ignoreaudit.model import InputError
+        with tempfile.TemporaryDirectory() as tmp:
+            files, _ = self.metadata_fixture(tmp, empty=True)
+            pin = sha256(files['plan'].read_bytes()).hexdigest()
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            values = ('0' * 64, '', pin.upper(), pin[:-1], pin + '0', 'g' * 64,
+                      ' ' + pin, pin + ' ', pin + '\n', '０' * 64, 'PRIVATE-' + 'a' * 56)
+            for value in values:
+                proc = self.failure(files, value, output)
+                if value: self.assertNotIn(value, proc.stderr)
+            with patch.object(verification, '_plan_identity', side_effect=AssertionError('must pin before parsing')):
+                for value in (*values, True, 1, b'a' * 64, [], {}):
+                    with self.assertRaisesRegex(InputError, 'expected plan SHA-256'):
+                        verification.verify_cleanup_metadata(b'PRIVATE-invalid-json', b'', b'', expected_plan_sha256=value)
+
+    def test_correct_pin_cannot_bypass_envelope_or_three_input_digests(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            files, base = self.metadata_fixture(tmp, empty=True)
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            def reject():
+                self.failure(files, sha256(files['plan'].read_bytes()).hexdigest(), output)
+            for key, value in [('schemaVersion', 2), ('schemaVersion', True), ('reviewOnly', False),
+                               ('tool', 'PRIVATE'), ('command', 'audit'), ('automaticChangesAllowed', True),
+                               ('unusedRuleAssertionAllowed', True), ('provenance', {'format': 'grype'})]:
+                data = deepcopy(base); data[key] = value
+                files['plan'].write_text(json.dumps(data)); reject()
+            for key in ('rulesSha256', 'metadataSha256'):
+                for value in (None, '', '0' * 64, True, [], {}):
+                    data = deepcopy(base); data['provenance'][key] = value
+                    files['plan'].write_text(json.dumps(data)); reject()
+                data = deepcopy(base); del data['provenance'][key]
+                files['plan'].write_text(json.dumps(data)); reject()
+            for raw in (b'{"PRIVATE":', b'null', b'\xff', b'{"schemaVersion":1,"schemaVersion":1}'):
+                files['plan'].write_bytes(raw); reject()
+            for key in ('rules', 'metadata'):
+                files, _ = self.metadata_fixture(tmp)
+                files[key].write_bytes(files[key].read_bytes() + b' '); reject()
+
+    def test_correct_pin_requires_complete_native_rules_strict_sidecar_and_reasons(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            files, _ = self.metadata_fixture(tmp, empty=True)
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            def check(format, raw_rules, raw_metadata, valid=False):
+                files['rules'].write_bytes(raw_rules); files['metadata'].write_bytes(raw_metadata)
+                files['plan'].write_text(json.dumps(plan_for(raw_rules, raw_metadata, format)))
+                pin = sha256(files['plan'].read_bytes()).hexdigest()
+                if valid:
+                    proc = self.verify(files, pin)
+                    self.assertEqual(proc.returncode, 0, proc.stderr)
+                    self.assertEqual(proc.stdout, self.expected(files, pin))
+                else: self.failure(files, pin, output)
+            for format, raw in (('trivy', b'PRIVATE invalid rule'), ('trivy', b'\xff'),
+                                ('osv', b'[[PRIVATE'), ('osv', b'PackageOverrides=[]')):
+                check(format, raw, sidecar(raw))
+            for format in ('trivy', 'osv'):
+                for raw in (b'null', b'\xff', b'{"PRIVATE":', b'{"schemaVersion":1,"schemaVersion":1}',
+                            b'{"schemaVersion":NaN}', sidecar(b'changed'),
+                            json.dumps({'schemaVersion': 2, 'rulesSha256': sha256(b'').hexdigest(), 'rules': {}}).encode(),
+                            sidecar(b'', {'line:1': {'owner': 'PRIVATE'}})):
+                    check(format, b'', raw)
+                check(format, b'', sidecar(b''), valid=True)
+            rules = b'[[IgnoredVulns]]\nid="CVE-1"\nreason="PRIVATE-native"\n'
+            for reason in ('PRIVATE-native', 'PRIVATE-conflict'):
+                check('osv', rules, sidecar(rules, {'IgnoredVulns:0': {'reason': reason}}), valid=reason == 'PRIVATE-native')
+            for entry in ({'line:99': {'owner': 'PRIVATE'}}, {'line:1': {'owner': 'PRIVATE\ntext'}},
+                          {'line:1': {'reason': True}}, {'line:1': {'PRIVATE': 'PRIVATE'}}):
+                check('trivy', b'CVE-1\n', sidecar(b'CVE-1\n', entry))
+
+    def test_correct_pin_keeps_destinations_and_missing_inputs_protected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            files, _ = self.metadata_fixture(tmp)
+            pin = sha256(files['plan'].read_bytes()).hexdigest()
+            for path in files.values():
+                for mode in ('direct', 'symlink', 'hardlink'):
+                    dest = path if mode == 'direct' else Path(tmp, 'alias')
+                    if mode == 'symlink': dest.symlink_to(path)
+                    if mode == 'hardlink': dest.hardlink_to(path)
+                    self.failure(files, pin, dest)
+                    if mode != 'direct': dest.unlink()
+            output = Path(tmp, 'verified.json'); output.write_bytes(b'previous output')
+            for key in files:
+                self.failure({**files, key: Path(tmp, 'PRIVATE-missing')}, pin, output)
+            self.failure(files, pin, Path(tmp, 'missing-dir', 'out.json'))
+            self.assertFalse(Path(tmp, 'missing-dir').exists())
+            directory = Path(tmp, 'directory'); directory.mkdir()
+            (directory / 'sentinel').write_bytes(b'keep')
+            self.failure(files, pin, directory)
+            self.assertEqual((directory / 'sentinel').read_bytes(), b'keep')
+
+    def test_single_snapshot_before_parse_only_plan_rules_metadata_reads_no_reaudit(self):
+        from vulnwrench.ignoreaudit import cli, verification
+        with tempfile.TemporaryDirectory() as tmp:
+            files, base = self.metadata_fixture(tmp, 'osv')
+            base['groups'] = 'PRIVATE-unverified'; base['excludedFromOrphanReview'] = None
+            files['plan'].write_text(json.dumps(base))
+            raw = files['plan'].read_bytes(); pin = sha256(raw).hexdigest()
+            original_read, original_digest, original_identity = cli.read_bytes, verification.digest, verification._plan_identity
+            reads, hashed = [], []
+            def read(path):
+                self.assertIn(path, [str(p) for p in files.values()])
+                self.assertNotIn(path, reads); reads.append(path)
+                return raw if path == str(files['plan']) else original_read(path)
+            def digest(value):
+                hashed.append(value); return original_digest(value)
+            def identity(value):
+                self.assertIs(value, raw); self.assertIs(hashed[0], raw)
+                return original_identity(value)
+            args = ['verify-cleanup-metadata', '--expected-plan-sha256', pin,
+                    *[v for k, p in files.items() for v in ('--' + k, str(p))]]
+            with patch.object(cli, 'read_bytes', side_effect=read), \
+                 patch.object(verification, 'digest', side_effect=digest), \
+                 patch.object(verification, '_plan_identity', side_effect=identity), \
+                 patch.object(verification, 'load_rules', wraps=verification.load_rules) as native, \
+                 patch.object(verification, 'apply_metadata', wraps=verification.apply_metadata) as metadata, \
+                 patch.object(verification, 'load_report', side_effect=AssertionError('no report')), \
+                 patch.object(verification, 'load_aliases', side_effect=AssertionError('no map')), \
+                 patch.object(verification, 'verify_cleanup_source', side_effect=AssertionError('no source references')), \
+                 patch.object(cli, 'audit', side_effect=AssertionError('no matching')), \
+                 patch('sys.stdout', new_callable=io.StringIO) as stdout:
+                self.assertEqual(cli.main(args), 0)
+                self.assertEqual(stdout.getvalue(), self.expected(files, pin))
+                self.assertEqual(len(reads), 3)
+                self.assertEqual(native.call_count, 1); self.assertEqual(metadata.call_count, 1)
+
+
+if __name__ == '__main__':
+    unittest.main()

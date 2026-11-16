@@ -1,0 +1,916 @@
+{
+  "aliasEdges": [
+    {
+      "basis": "grype-relatedVulnerabilities",
+      "from": "GHSA-demo-0001",
+      "observationId": "s0001#/matches/0",
+      "to": "CVE-2025-0001"
+    },
+    {
+      "basis": "osv-aliases",
+      "from": "OSV-DEMO-0001",
+      "observationId": "s0002#/results/0/packages/0/vulnerabilities/0",
+      "to": "GHSA-demo-0001"
+    }
+  ],
+  "coverageAssessment": {
+    "reasonCodes": [
+      "manifest-not-supplied"
+    ],
+    "status": "unknown"
+  },
+  "coverageManifest": null,
+  "findingCount": 4,
+  "findings": [
+    {
+      "absenceAssessments": {},
+      "findingId": "f0001",
+      "fixConflict": true,
+      "fixStateConflict": false,
+      "fixStates": [
+        "fixed"
+      ],
+      "fixVersionConflict": true,
+      "fixVersions": [
+        "1.1",
+        "1.2"
+      ],
+      "ids": [
+        "CVE-2025-0001",
+        "GHSA-demo-0001",
+        "OSV-DEMO-0001"
+      ],
+      "inputPresence": {
+        "s0001": "observed",
+        "s0002": "observed",
+        "s0003": "observed"
+      },
+      "observationCount": 3,
+      "observations": [
+        {
+          "fix": {
+            "basis": "grype-vulnerability.fix",
+            "explicitVersionSet": true,
+            "state": "fixed",
+            "versions": [
+              "1.2"
+            ]
+          },
+          "ids": [
+            "CVE-2025-0001",
+            "GHSA-demo-0001"
+          ],
+          "observationId": "s0001#/matches/0",
+          "originalId": "GHSA-demo-0001",
+          "package": {
+            "identity": "pkg:npm/demo@1.0",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": "pkg:npm/demo@1.0",
+            "qualifiers": {},
+            "reason": null,
+            "reportedEcosystem": "npm",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "npm",
+            "version": "1.0"
+          },
+          "paths": [
+            "/app/node_modules/demo/package.json"
+          ],
+          "pointer": "/matches/0",
+          "rawSeverities": [
+            "Critical"
+          ],
+          "scanner": "grype",
+          "severity": "CRITICAL",
+          "severityValues": [
+            "CRITICAL"
+          ],
+          "sourceId": "s0001"
+        },
+        {
+          "fix": {
+            "basis": "osv-matching-affected-fixed-events;no-range-evaluation",
+            "explicitVersionSet": true,
+            "matchedAffectedIndices": [
+              0
+            ],
+            "state": "fixed",
+            "versions": [
+              "1.1"
+            ]
+          },
+          "ids": [
+            "GHSA-demo-0001",
+            "OSV-DEMO-0001"
+          ],
+          "observationId": "s0002#/results/0/packages/0/vulnerabilities/0",
+          "originalId": "OSV-DEMO-0001",
+          "package": {
+            "identity": "pkg:npm/demo@1.0",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": null,
+            "qualifiers": {},
+            "reason": null,
+            "reportedEcosystem": "npm",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "npm",
+            "version": "1.0"
+          },
+          "paths": [
+            "app/package-lock.json"
+          ],
+          "pointer": "/results/0/packages/0/vulnerabilities/0",
+          "rawSeverities": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "database_specific": "HIGH"
+            }
+          ],
+          "scanner": "osv",
+          "severity": "HIGH",
+          "severityValues": [
+            "HIGH"
+          ],
+          "sourceId": "s0002"
+        },
+        {
+          "fix": {
+            "basis": "trivy-FixedVersion",
+            "explicitVersionSet": true,
+            "state": "fixed",
+            "versions": [
+              "1.1"
+            ]
+          },
+          "ids": [
+            "CVE-2025-0001"
+          ],
+          "observationId": "s0003#/Results/0/Vulnerabilities/0",
+          "originalId": "CVE-2025-0001",
+          "package": {
+            "identity": "pkg:npm/demo@1.0",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": "pkg:npm/demo@1.0",
+            "qualifiers": {},
+            "reason": null,
+            "reportedEcosystem": "node-pkg",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "npm",
+            "version": "1.0"
+          },
+          "paths": [
+            "app/package-lock.json",
+            "node_modules/demo/package.json"
+          ],
+          "pointer": "/Results/0/Vulnerabilities/0",
+          "rawSeverities": [
+            "HIGH"
+          ],
+          "scanner": "trivy",
+          "severity": "HIGH",
+          "severityValues": [
+            "HIGH"
+          ],
+          "sourceId": "s0003"
+        }
+      ],
+      "observedBy": [
+        "grype",
+        "osv",
+        "trivy"
+      ],
+      "package": {
+        "identity": "pkg:npm/demo@1.0",
+        "known": true,
+        "name": "demo",
+        "namespace": "",
+        "purl": "pkg:npm/demo@1.0",
+        "qualifiers": {},
+        "reason": null,
+        "reportedEcosystem": "npm",
+        "reportedName": "demo",
+        "subpath": "",
+        "type": "npm",
+        "version": "1.0"
+      },
+      "paths": [
+        "/app/node_modules/demo/package.json",
+        "app/package-lock.json",
+        "node_modules/demo/package.json"
+      ],
+      "scannerPresence": {
+        "grype": "observed",
+        "osv": "observed",
+        "trivy": "observed"
+      },
+      "severityAssessment": "conflict",
+      "severityConflict": true,
+      "severityValues": [
+        "CRITICAL",
+        "HIGH"
+      ],
+      "unknownSeverityObservationCount": 0
+    },
+    {
+      "absenceAssessments": {
+        "s0001": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0002",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        },
+        "s0003": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0002",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        }
+      },
+      "findingId": "f0002",
+      "fixConflict": false,
+      "fixStateConflict": false,
+      "fixStates": [],
+      "fixVersionConflict": false,
+      "fixVersions": [],
+      "ids": [
+        "CVE-2025-0001",
+        "GHSA-demo-0001",
+        "OSV-DEMO-0001"
+      ],
+      "inputPresence": {
+        "s0001": "not_observed",
+        "s0002": "observed",
+        "s0003": "not_observed"
+      },
+      "observationCount": 1,
+      "observations": [
+        {
+          "fix": {
+            "basis": "osv-matching-affected-fixed-events;no-range-evaluation",
+            "explicitVersionSet": false,
+            "matchedAffectedIndices": [],
+            "state": "unknown",
+            "versions": []
+          },
+          "ids": [
+            "CVE-2025-0001"
+          ],
+          "observationId": "s0002#/results/0/packages/1/vulnerabilities/0",
+          "originalId": "CVE-2025-0001",
+          "package": {
+            "identity": "pkg:npm/demo@1.0?arch=arm64",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": "pkg:npm/demo@1.0?arch=arm64",
+            "qualifiers": {
+              "arch": "arm64"
+            },
+            "reason": null,
+            "reportedEcosystem": "npm",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "npm",
+            "version": "1.0"
+          },
+          "paths": [
+            "app/package-lock.json"
+          ],
+          "pointer": "/results/0/packages/1/vulnerabilities/0",
+          "rawSeverities": [
+            {
+              "database_specific": "MODERATE"
+            }
+          ],
+          "scanner": "osv",
+          "severity": "MEDIUM",
+          "severityValues": [
+            "MEDIUM"
+          ],
+          "sourceId": "s0002"
+        }
+      ],
+      "observedBy": [
+        "osv"
+      ],
+      "package": {
+        "identity": "pkg:npm/demo@1.0?arch=arm64",
+        "known": true,
+        "name": "demo",
+        "namespace": "",
+        "purl": "pkg:npm/demo@1.0?arch=arm64",
+        "qualifiers": {
+          "arch": "arm64"
+        },
+        "reason": null,
+        "reportedEcosystem": "npm",
+        "reportedName": "demo",
+        "subpath": "",
+        "type": "npm",
+        "version": "1.0"
+      },
+      "paths": [
+        "app/package-lock.json"
+      ],
+      "scannerPresence": {
+        "grype": "not_observed",
+        "osv": "observed",
+        "trivy": "not_observed"
+      },
+      "severityAssessment": "consistent_observed",
+      "severityConflict": false,
+      "severityValues": [
+        "MEDIUM"
+      ],
+      "unknownSeverityObservationCount": 0
+    },
+    {
+      "absenceAssessments": {
+        "s0001": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0003",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        },
+        "s0002": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0003",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        }
+      },
+      "findingId": "f0003",
+      "fixConflict": false,
+      "fixStateConflict": false,
+      "fixStates": [
+        "fixed"
+      ],
+      "fixVersionConflict": false,
+      "fixVersions": [
+        "2.1"
+      ],
+      "ids": [
+        "CVE-2025-0001",
+        "GHSA-demo-0001",
+        "OSV-DEMO-0001"
+      ],
+      "inputPresence": {
+        "s0001": "not_observed",
+        "s0002": "not_observed",
+        "s0003": "observed"
+      },
+      "observationCount": 1,
+      "observations": [
+        {
+          "fix": {
+            "basis": "trivy-FixedVersion",
+            "explicitVersionSet": true,
+            "state": "fixed",
+            "versions": [
+              "2.1"
+            ]
+          },
+          "ids": [
+            "CVE-2025-0001"
+          ],
+          "observationId": "s0003#/Results/0/Vulnerabilities/1",
+          "originalId": "CVE-2025-0001",
+          "package": {
+            "identity": "pkg:npm/demo@2.0",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": "pkg:npm/demo@2.0",
+            "qualifiers": {},
+            "reason": null,
+            "reportedEcosystem": "node-pkg",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "npm",
+            "version": "2.0"
+          },
+          "paths": [
+            "app/package-lock.json"
+          ],
+          "pointer": "/Results/0/Vulnerabilities/1",
+          "rawSeverities": [
+            "LOW"
+          ],
+          "scanner": "trivy",
+          "severity": "LOW",
+          "severityValues": [
+            "LOW"
+          ],
+          "sourceId": "s0003"
+        }
+      ],
+      "observedBy": [
+        "trivy"
+      ],
+      "package": {
+        "identity": "pkg:npm/demo@2.0",
+        "known": true,
+        "name": "demo",
+        "namespace": "",
+        "purl": "pkg:npm/demo@2.0",
+        "qualifiers": {},
+        "reason": null,
+        "reportedEcosystem": "node-pkg",
+        "reportedName": "demo",
+        "subpath": "",
+        "type": "npm",
+        "version": "2.0"
+      },
+      "paths": [
+        "app/package-lock.json"
+      ],
+      "scannerPresence": {
+        "grype": "not_observed",
+        "osv": "not_observed",
+        "trivy": "observed"
+      },
+      "severityAssessment": "consistent_observed",
+      "severityConflict": false,
+      "severityValues": [
+        "LOW"
+      ],
+      "unknownSeverityObservationCount": 0
+    },
+    {
+      "absenceAssessments": {
+        "s0002": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0001",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        },
+        "s0003": {
+          "canEstablishFixed": false,
+          "comparedTo": [
+            {
+              "reasonCodes": [
+                "manifest-not-supplied"
+              ],
+              "sourceId": "s0001",
+              "status": "unknown"
+            }
+          ],
+          "reasonCodes": [
+            "manifest-not-supplied"
+          ],
+          "status": "unknown"
+        }
+      },
+      "findingId": "f0004",
+      "fixConflict": false,
+      "fixStateConflict": false,
+      "fixStates": [
+        "not-fixed"
+      ],
+      "fixVersionConflict": false,
+      "fixVersions": [],
+      "ids": [
+        "CVE-2025-0001",
+        "GHSA-demo-0001",
+        "OSV-DEMO-0001"
+      ],
+      "inputPresence": {
+        "s0001": "observed",
+        "s0002": "not_observed",
+        "s0003": "not_observed"
+      },
+      "observationCount": 1,
+      "observations": [
+        {
+          "fix": {
+            "basis": "grype-vulnerability.fix",
+            "explicitVersionSet": true,
+            "state": "not-fixed",
+            "versions": []
+          },
+          "ids": [
+            "CVE-2025-0001"
+          ],
+          "observationId": "s0001#/matches/1",
+          "originalId": "CVE-2025-0001",
+          "package": {
+            "identity": "pkg:pypi/demo@1.0",
+            "known": true,
+            "name": "demo",
+            "namespace": "",
+            "purl": "pkg:pypi/demo@1.0",
+            "qualifiers": {},
+            "reason": null,
+            "reportedEcosystem": "python",
+            "reportedName": "demo",
+            "subpath": "",
+            "type": "pypi",
+            "version": "1.0"
+          },
+          "paths": [
+            "/app/requirements.txt"
+          ],
+          "pointer": "/matches/1",
+          "rawSeverities": [
+            "Low"
+          ],
+          "scanner": "grype",
+          "severity": "LOW",
+          "severityValues": [
+            "LOW"
+          ],
+          "sourceId": "s0001"
+        }
+      ],
+      "observedBy": [
+        "grype"
+      ],
+      "package": {
+        "identity": "pkg:pypi/demo@1.0",
+        "known": true,
+        "name": "demo",
+        "namespace": "",
+        "purl": "pkg:pypi/demo@1.0",
+        "qualifiers": {},
+        "reason": null,
+        "reportedEcosystem": "python",
+        "reportedName": "demo",
+        "subpath": "",
+        "type": "pypi",
+        "version": "1.0"
+      },
+      "paths": [
+        "/app/requirements.txt"
+      ],
+      "scannerPresence": {
+        "grype": "observed",
+        "osv": "not_observed",
+        "trivy": "not_observed"
+      },
+      "severityAssessment": "consistent_observed",
+      "severityConflict": false,
+      "severityValues": [
+        "LOW"
+      ],
+      "unknownSeverityObservationCount": 0
+    }
+  ],
+  "inputCount": 3,
+  "inputs": [
+    {
+      "byteCount": 1241,
+      "coverage": {
+        "databaseIdentity": null,
+        "databaseTimestamp": null,
+        "manifestPointer": null,
+        "reasonCodes": [
+          "manifest-not-supplied"
+        ],
+        "scanComplete": null,
+        "scanPolicyIdentity": null,
+        "status": "unknown",
+        "targetIdentity": null
+      },
+      "digestKind": "file-bytes",
+      "input": "examples/fuse/grype.json",
+      "observationCount": 2,
+      "rawReport": {
+        "descriptor": {
+          "configuration": {},
+          "name": "grype",
+          "version": "synthetic"
+        },
+        "matches": [
+          {
+            "artifact": {
+              "id": "synthetic-artifact",
+              "locations": [
+                {
+                  "layerID": "synthetic-layer",
+                  "path": "/app/node_modules/demo/package.json"
+                }
+              ],
+              "name": "demo",
+              "purl": "pkg:npm/demo@1.0",
+              "type": "npm",
+              "version": "1.0"
+            },
+            "matchDetails": [
+              {
+                "matcher": "synthetic",
+                "type": "exact-direct-match"
+              }
+            ],
+            "relatedVulnerabilities": [
+              {
+                "id": "CVE-2025-0001",
+                "namespace": "nvd:cpe",
+                "severity": "High"
+              }
+            ],
+            "vulnerability": {
+              "dataSource": "https://example.invalid/synthetic",
+              "fix": {
+                "state": "fixed",
+                "versions": [
+                  "1.2"
+                ]
+              },
+              "id": "GHSA-demo-0001",
+              "namespace": "github:language:javascript",
+              "severity": "Critical"
+            }
+          },
+          {
+            "artifact": {
+              "locations": [
+                {
+                  "accessPath": "/app/requirements.txt"
+                }
+              ],
+              "name": "demo",
+              "purl": "pkg:pypi/demo@1.0",
+              "type": "python",
+              "version": "1.0"
+            },
+            "relatedVulnerabilities": [],
+            "vulnerability": {
+              "fix": {
+                "state": "not-fixed",
+                "versions": []
+              },
+              "id": "CVE-2025-0001",
+              "severity": "Low"
+            }
+          }
+        ],
+        "source": {
+          "target": "/synthetic/app",
+          "type": "directory"
+        }
+      },
+      "scanner": "grype",
+      "sha256": "6e1a645320f7d7623a1088cd8414a95d491db3c816343212d217145219c3696f",
+      "sourceId": "s0001"
+    },
+    {
+      "byteCount": 1386,
+      "coverage": {
+        "databaseIdentity": null,
+        "databaseTimestamp": null,
+        "manifestPointer": null,
+        "reasonCodes": [
+          "manifest-not-supplied"
+        ],
+        "scanComplete": null,
+        "scanPolicyIdentity": null,
+        "status": "unknown",
+        "targetIdentity": null
+      },
+      "digestKind": "file-bytes",
+      "input": "examples/fuse/osv.json",
+      "observationCount": 2,
+      "rawReport": {
+        "results": [
+          {
+            "packages": [
+              {
+                "groups": [
+                  {
+                    "aliases": [
+                      "GHSA-demo-0001"
+                    ],
+                    "experimental_analysis": "retained but not interpreted",
+                    "ids": [
+                      "OSV-DEMO-0001"
+                    ]
+                  }
+                ],
+                "package": {
+                  "ecosystem": "npm",
+                  "name": "demo",
+                  "version": "1.0"
+                },
+                "vulnerabilities": [
+                  {
+                    "affected": [
+                      {
+                        "package": {
+                          "ecosystem": "npm",
+                          "name": "demo"
+                        },
+                        "ranges": [
+                          {
+                            "events": [
+                              {
+                                "introduced": "0"
+                              },
+                              {
+                                "fixed": "1.1"
+                              }
+                            ],
+                            "type": "SEMVER"
+                          }
+                        ]
+                      },
+                      {
+                        "package": {
+                          "ecosystem": "PyPI",
+                          "name": "another-demo"
+                        },
+                        "ranges": [
+                          {
+                            "events": [
+                              {
+                                "introduced": "0"
+                              },
+                              {
+                                "fixed": "99.0"
+                              }
+                            ],
+                            "type": "ECOSYSTEM"
+                          }
+                        ]
+                      }
+                    ],
+                    "aliases": [
+                      "GHSA-demo-0001"
+                    ],
+                    "database_specific": {
+                      "severity": "HIGH"
+                    },
+                    "id": "OSV-DEMO-0001",
+                    "modified": "2025-01-01T00:00:00Z",
+                    "schema_version": "1.6.0",
+                    "severity": [
+                      {
+                        "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                        "type": "CVSS_V3"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "package": {
+                  "ecosystem": "npm",
+                  "name": "demo",
+                  "purl": "pkg:npm/demo@1.0?arch=arm64",
+                  "version": "1.0"
+                },
+                "vulnerabilities": [
+                  {
+                    "aliases": [],
+                    "database_specific": {
+                      "severity": "MODERATE"
+                    },
+                    "id": "CVE-2025-0001"
+                  }
+                ]
+              }
+            ],
+            "source": {
+              "path": "app/package-lock.json",
+              "type": "lockfile"
+            }
+          }
+        ]
+      },
+      "scanner": "osv",
+      "sha256": "566f71834a0dd853287da2b79c4395441c615bdefe06ab6d45867e85c7bd0db5",
+      "sourceId": "s0002"
+    },
+    {
+      "byteCount": 972,
+      "coverage": {
+        "databaseIdentity": null,
+        "databaseTimestamp": null,
+        "manifestPointer": null,
+        "reasonCodes": [
+          "manifest-not-supplied"
+        ],
+        "scanComplete": null,
+        "scanPolicyIdentity": null,
+        "status": "unknown",
+        "targetIdentity": null
+      },
+      "digestKind": "file-bytes",
+      "input": "examples/fuse/trivy.json",
+      "observationCount": 2,
+      "rawReport": {
+        "ArtifactName": "synthetic-demo",
+        "ArtifactType": "filesystem",
+        "Results": [
+          {
+            "Class": "lang-pkgs",
+            "Target": "app/package-lock.json",
+            "Type": "node-pkg",
+            "Vulnerabilities": [
+              {
+                "FixedVersion": "1.1",
+                "InstalledVersion": "1.0",
+                "PkgIdentifier": {
+                  "PURL": "pkg:npm/demo@1.0"
+                },
+                "PkgName": "demo",
+                "PkgPath": "node_modules/demo/package.json",
+                "Severity": "HIGH",
+                "Title": "Synthetic advisory: identical titles are not alias evidence",
+                "VendorEvidence": {
+                  "synthetic": true,
+                  "uninterpreted": "retained"
+                },
+                "VulnerabilityID": "CVE-2025-0001"
+              },
+              {
+                "FixedVersion": "2.1",
+                "InstalledVersion": "2.0",
+                "PkgIdentifier": {
+                  "PURL": "pkg:npm/demo@2.0"
+                },
+                "PkgName": "demo",
+                "Severity": "LOW",
+                "VulnerabilityID": "CVE-2025-0001"
+              }
+            ]
+          }
+        ],
+        "SchemaVersion": 2
+      },
+      "scanner": "trivy",
+      "sha256": "15b98d3ade943a1b89e6aa63a7d40256d0e8405829fdd53e73ae50b646063b0b",
+      "sourceId": "s0003"
+    }
+  ],
+  "notice": "Not observed is not proof of safety. Aliases are input assertions, not independently verified. Fixed versions are reported evidence, not remediation advice.",
+  "observationCount": 6,
+  "scannerObservationCounts": {
+    "grype": 2,
+    "osv": 2,
+    "trivy": 2
+  },
+  "schemaVersion": "vulnfuse-1",
+  "toolVersion": "0.1.0"
+}

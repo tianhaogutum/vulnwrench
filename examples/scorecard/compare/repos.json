@@ -1,0 +1,7 @@
+{
+  "pkg:npm/demo@1": "github.com/example/demo",
+  "pkg:npm/helper@1": "github.com/example/demo",
+  "pkg:npm/stale@1": "github.com/example/stale",
+  "pkg:npm/missing@1": "github.com/example/missing",
+  "pkg:npm/scanner@1": "github.com/example/scanner"
+}

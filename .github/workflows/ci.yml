@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      # Rules and per-file ignores live in [tool.ruff] in pyproject.toml.
+      - run: uvx ruff check .
+
+  test:
+    name: test (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install
+        # Every command is standard-library only; the test extra adds pytest.
+        run: python -m pip install -e ".[test]"
+      - name: Run tests
+        run: python -m pytest -q
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build wheel and sdist
+        run: |
+          python -m pip install build twine
+          python -m build
+      - name: Check distribution metadata and PyPI README
+        run: python -m twine check --strict dist/*
+      - name: Smoke-test the built wheel
+        run: |
+          python -m venv /tmp/wheel-env
+          /tmp/wheel-env/bin/python -m pip install dist/*.whl
+          cd /tmp
+          /tmp/wheel-env/bin/vulnwrench --version
+          /tmp/wheel-env/bin/vulnwrench --help
+          for command in ci fuse delta path layers scorecard ignores triage secrets exploit sarif; do
+            /tmp/wheel-env/bin/vulnwrench "$command" --version
+          done
+          /tmp/wheel-env/bin/vulnwrench sarif check "$GITHUB_WORKSPACE/examples/sarif/clean.sarif" --format markdown
+          cd "$GITHUB_WORKSPACE/examples/ci"
+          /tmp/wheel-env/bin/vulnwrench ci --trivy trivy.json --grype grype.json --osv osv.json --fail-on none
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

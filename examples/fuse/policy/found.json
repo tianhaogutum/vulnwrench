@@ -1,0 +1,17 @@
+{
+  "SchemaVersion": 2,
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-POLICY-1",
+          "PkgName": "demo",
+          "InstalledVersion": "1.0",
+          "Severity": "HIGH"
+        }
+      ]
+    }
+  ]
+}

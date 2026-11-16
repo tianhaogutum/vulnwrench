@@ -1,0 +1,176 @@
+{
+  "components": 7,
+  "comparedRepositories": 4,
+  "mappedComponents": 5,
+  "unmappedComponents": 2,
+  "unusedMappings": [],
+  "scannerChanges": {
+    "version": {
+      "changed": 1,
+      "unchanged": 2,
+      "not_comparable": 1
+    },
+    "commit": {
+      "changed": 1,
+      "unchanged": 2,
+      "not_comparable": 1
+    }
+  },
+  "comparisonStatuses": {
+    "comparable": 2,
+    "missing_both": 0,
+    "missing_after": 1,
+    "missing_before": 0,
+    "stale_after": 1,
+    "stale_before": 0,
+    "snapshot_time_regressed": 0,
+    "snapshot_time_ambiguous": 0
+  },
+  "snapshotChanges": {
+    "advanced": 3,
+    "unchanged": 0,
+    "regressed": 0,
+    "same_timestamp_changed": 0,
+    "not_comparable": 1
+  },
+  "checkChanges": {
+    "changed": 5,
+    "unchanged": 0,
+    "added": 1,
+    "deleted": 1,
+    "not_comparable": 1
+  },
+  "checkScoreChanges": {
+    "increased": 2,
+    "decreased": 0,
+    "unchanged": 1,
+    "not_comparable": 5
+  },
+  "checkObservations": {
+    "before": {
+      "known": 6,
+      "negative_score": 1,
+      "missing_score": 0,
+      "missing_check": 1,
+      "missing_snapshot": 0
+    },
+    "after": {
+      "known": 6,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 1,
+      "missing_snapshot": 1
+    }
+  },
+  "checkObservationTransitions": {
+    "known": {
+      "known": 4,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 1,
+      "missing_snapshot": 1
+    },
+    "negative_score": {
+      "known": 1,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 0,
+      "missing_snapshot": 0
+    },
+    "missing_score": {
+      "known": 0,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 0,
+      "missing_snapshot": 0
+    },
+    "missing_check": {
+      "known": 1,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 0,
+      "missing_snapshot": 0
+    },
+    "missing_snapshot": {
+      "known": 0,
+      "negative_score": 0,
+      "missing_score": 0,
+      "missing_check": 0,
+      "missing_snapshot": 0
+    }
+  },
+  "checkScoreComparability": {
+    "comparable": 3,
+    "evidence_blocked": 2,
+    "observation_blocked": 3
+  },
+  "checkScoreComparabilityByCheck": [
+    {
+      "name": "Code-Review",
+      "comparable": 2,
+      "evidence_blocked": 2,
+      "observation_blocked": 0
+    },
+    {
+      "name": "Future-Check",
+      "comparable": 0,
+      "evidence_blocked": 0,
+      "observation_blocked": 1
+    },
+    {
+      "name": "License",
+      "comparable": 1,
+      "evidence_blocked": 0,
+      "observation_blocked": 0
+    },
+    {
+      "name": "Maintained",
+      "comparable": 0,
+      "evidence_blocked": 0,
+      "observation_blocked": 1
+    },
+    {
+      "name": "Security-Policy",
+      "comparable": 0,
+      "evidence_blocked": 0,
+      "observation_blocked": 1
+    }
+  ],
+  "checkScoreChangesByCheck": [
+    {
+      "decreased": 0,
+      "increased": 2,
+      "name": "Code-Review",
+      "not_comparable": 2,
+      "unchanged": 0
+    },
+    {
+      "decreased": 0,
+      "increased": 0,
+      "name": "Future-Check",
+      "not_comparable": 1,
+      "unchanged": 0
+    },
+    {
+      "decreased": 0,
+      "increased": 0,
+      "name": "License",
+      "not_comparable": 0,
+      "unchanged": 1
+    },
+    {
+      "decreased": 0,
+      "increased": 0,
+      "name": "Maintained",
+      "not_comparable": 1,
+      "unchanged": 0
+    },
+    {
+      "decreased": 0,
+      "increased": 0,
+      "name": "Security-Policy",
+      "not_comparable": 1,
+      "unchanged": 0
+    }
+  ]
+}

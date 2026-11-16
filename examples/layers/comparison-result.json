@@ -1,0 +1,63 @@
+{
+  "baseline": {
+    "attributionErrors": 6,
+    "falseBaseAttributions": 5,
+    "method": "Name-only base package subtraction"
+  },
+  "cases": 8,
+  "casesDetail": [
+    {
+      "exactEvidence": "base",
+      "expected": "base",
+      "id": "DEMO-BASE",
+      "nameOnly": "base"
+    },
+    {
+      "exactEvidence": "app",
+      "expected": "app",
+      "id": "DEMO-APP-UPGRADE",
+      "nameOnly": "base"
+    },
+    {
+      "exactEvidence": "app",
+      "expected": "app",
+      "id": "DEMO-APP-ONLY",
+      "nameOnly": "app"
+    },
+    {
+      "exactEvidence": "unknown",
+      "expected": "unknown",
+      "id": "DEMO-MISSING-BASE-NAME",
+      "nameOnly": "base"
+    },
+    {
+      "exactEvidence": "unknown",
+      "expected": "unknown",
+      "id": "DEMO-MISSING-NEW-NAME",
+      "nameOnly": "app"
+    },
+    {
+      "exactEvidence": "unknown",
+      "expected": "unknown",
+      "id": "DEMO-DIGEST-IS-NOT-DIFFID",
+      "nameOnly": "base"
+    },
+    {
+      "exactEvidence": "unknown",
+      "expected": "unknown",
+      "id": "DEMO-UNMATCHED",
+      "nameOnly": "base"
+    },
+    {
+      "exactEvidence": "unknown",
+      "expected": "unknown",
+      "id": "DEMO-MAPPED-DIGEST",
+      "nameOnly": "base"
+    }
+  ],
+  "exactEvidence": {
+    "attributionErrors": 0,
+    "unknownRetained": 5
+  },
+  "scope": "Synthetic correctness comparison; unknown means insufficient evidence, not ground-truth origin. No throughput claim."
+}

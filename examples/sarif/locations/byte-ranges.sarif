@@ -1,0 +1,173 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic"
+        }
+      },
+      "originalUriBaseIds": {
+        "ROOT": {
+          "uri": "file:///workspace/"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic"
+          },
+          "fingerprints": {
+            "primary/v1": "A"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+                  "uriBaseId": "ROOT"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 3,
+                  "endColumn": 5,
+                  "byteOffset": 0,
+                  "byteLength": 4
+                }
+              },
+              "message": {
+                "text": "<b>literal</b>|[byte]\nnext"
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "byteOffset": 0
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+                  "uriBaseId": "ROOT"
+                },
+                "region": {
+                  "byteOffset": 9,
+                  "byteLength": 0
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "plain.py"
+                },
+                "region": {
+                  "byteOffset": -1,
+                  "byteLength": "unconsumed"
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0
+                },
+                "region": {
+                  "byteOffset": 0,
+                  "byteLength": 4
+                }
+              },
+              "message": {
+                "markdown": "related | [byte]"
+              }
+            },
+            {
+              "physicalLocation": {
+                "region": {
+                  "byteOffset": "unconsumed",
+                  "byteLength": -1
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+            "uriBaseId": "ROOT"
+          }
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Synthetic"
+        }
+      },
+      "originalUriBaseIds": {
+        "ROOT": {
+          "uri": "file:///workspace/"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "Synthetic"
+          },
+          "fingerprints": {
+            "primary/v1": "A"
+          },
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "index": 0,
+                  "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+                  "uriBaseId": "ROOT"
+                },
+                "region": {
+                  "byteOffset": 4
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "./link/../a%3Cscript%3E%7C%5Bclick%5D.py",
+            "uriBaseId": "ROOT"
+          }
+        }
+      ],
+      "columnKind": {
+        "unconsumed": true
+      }
+    }
+  ]
+}

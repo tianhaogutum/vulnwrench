@@ -1,0 +1,33 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "synthetic-demo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "app/package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "node-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2025-0001",
+          "PkgName": "demo",
+          "PkgPath": "node_modules/demo/package.json",
+          "InstalledVersion": "1.0",
+          "PkgIdentifier": {"PURL": "pkg:npm/demo@1.0"},
+          "Severity": "HIGH",
+          "FixedVersion": "1.1",
+          "Title": "Synthetic advisory: identical titles are not alias evidence",
+          "VendorEvidence": {"synthetic": true, "uninterpreted": "retained"}
+        },
+        {
+          "VulnerabilityID": "CVE-2025-0001",
+          "PkgName": "demo",
+          "InstalledVersion": "2.0",
+          "PkgIdentifier": {"PURL": "pkg:npm/demo@2.0"},
+          "Severity": "LOW",
+          "FixedVersion": "2.1"
+        }
+      ]
+    }
+  ]
+}

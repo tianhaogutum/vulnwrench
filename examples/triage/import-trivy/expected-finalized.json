@@ -1,0 +1,50 @@
+{
+  "decisions": [
+    {
+      "aliases": {},
+      "expiresOn": "2026-12-01",
+      "ids": [
+        "CVE-2099-0062"
+      ],
+      "owner": "Synthetic Review Team",
+      "package": "pkg:npm/triage-demo@1.0",
+      "reason": "Investigation: synthetic fixture",
+      "sourceRefs": [
+        "urn:triage-bridge:trivy-ignore:sha256:bf09809046f5e23c41fea2af581d50e4707821397cc69fd9fc038c79340d3c78#/vulnerabilities/0",
+        "urn:triage-bridge:import-review:sha256:697e217e5fb6ff5d7c66a971709a6ab1a33895ce02ea5a6dec0fb2e482d6e3a5#/decisionDocument/decisions/0"
+      ],
+      "status": "accepted_risk"
+    },
+    {
+      "aliases": {},
+      "expiresOn": "2026-12-01",
+      "ids": [
+        "CVE-2099-0062"
+      ],
+      "owner": "Synthetic Review Team",
+      "package": "pkg:npm/triage-demo@2.0",
+      "reason": "Investigation: synthetic fixture",
+      "sourceRefs": [
+        "urn:triage-bridge:trivy-ignore:sha256:bf09809046f5e23c41fea2af581d50e4707821397cc69fd9fc038c79340d3c78#/vulnerabilities/0",
+        "urn:triage-bridge:import-review:sha256:697e217e5fb6ff5d7c66a971709a6ab1a33895ce02ea5a6dec0fb2e482d6e3a5#/decisionDocument/decisions/1"
+      ],
+      "status": "accepted_risk"
+    },
+    {
+      "aliases": {},
+      "expiresOn": "2026-12-15",
+      "ids": [
+        "GHSA-demo-0062-0001"
+      ],
+      "owner": "Synthetic Review Team",
+      "package": "pkg:pypi/triage-demo@3.0",
+      "reason": "Reviewer's synthetic reason",
+      "sourceRefs": [
+        "urn:triage-bridge:trivy-ignore:sha256:bf09809046f5e23c41fea2af581d50e4707821397cc69fd9fc038c79340d3c78#/vulnerabilities/1",
+        "urn:triage-bridge:import-review:sha256:697e217e5fb6ff5d7c66a971709a6ab1a33895ce02ea5a6dec0fb2e482d6e3a5#/decisionDocument/decisions/2"
+      ],
+      "status": "accepted_risk"
+    }
+  ],
+  "schemaVersion": 1
+}

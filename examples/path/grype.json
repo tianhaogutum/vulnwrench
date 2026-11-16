@@ -1,0 +1,20 @@
+{
+  "matches": [
+    {
+      "vulnerability": {
+        "id": "CVE-2099-0001",
+        "dataSource": "https://example.invalid/advisories/CVE-2099-0001",
+        "namespace": "synthetic:npm",
+        "severity": "High",
+        "fix": {"versions": ["2.1"], "state": "fixed"}
+      },
+      "relatedVulnerabilities": [],
+      "matchDetails": [{"type": "exact-direct-match", "matcher": "javascript-matcher", "searchedBy": {"package": {"name": "b", "version": "2.0"}}, "found": {"versionConstraint": "< 2.1 (unknown)"}}],
+      "artifact": {"id": "grype-b", "name": "b", "version": "2.0", "type": "npm", "purl": "pkg:npm/b@2.0", "locations": [{"path": "/synthetic/package-lock.json"}], "licenses": ["MIT"]}
+    }
+  ],
+  "ignoredMatches": [],
+  "source": {"type": "directory", "target": "/synthetic"},
+  "distro": {"name": "", "version": "", "idLike": []},
+  "descriptor": {"name": "grype", "version": "synthetic-fixture", "configuration": {}}
+}

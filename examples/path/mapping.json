@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "artifacts": {"local-artifact": ["no-purl"]},
+  "note": "Explicit user assertion, not a name-based guess."
+}

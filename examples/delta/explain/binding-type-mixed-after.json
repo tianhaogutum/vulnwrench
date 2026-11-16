@@ -1,0 +1,179 @@
+{
+  "matches": [
+    {
+      "vulnerability": {
+        "id": "GHSA-SYNTH-001",
+        "dataSource": "https://example.invalid/synthetic",
+        "namespace": "github:language:javascript",
+        "severity": "High",
+        "urls": [],
+        "cvss": [],
+        "fix": {
+          "versions": [],
+          "state": "unknown"
+        },
+        "advisories": []
+      },
+      "relatedVulnerabilities": [],
+      "matchDetails": [],
+      "artifact": {
+        "id": "synthetic-demo-1.1",
+        "name": "demo",
+        "version": "1.1",
+        "type": "npm",
+        "locations": [
+          {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        ],
+        "language": "javascript",
+        "licenses": [],
+        "cpes": [],
+        "purl": "pkg:npm/demo@1.1",
+        "upstreams": []
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "UNSELECTED",
+        "dataSource": "https://example.invalid/synthetic",
+        "namespace": "github:language:javascript",
+        "severity": "High",
+        "urls": [],
+        "cvss": [],
+        "fix": {
+          "versions": [],
+          "state": "unknown"
+        },
+        "advisories": []
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "SYNTHETIC_SECRET_RELATED"
+        }
+      ],
+      "matchDetails": [],
+      "artifact": {
+        "id": "synthetic-demo-pypi-1.1",
+        "name": "demo",
+        "version": "1.1",
+        "type": "python",
+        "locations": [
+          {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        ],
+        "language": "python",
+        "licenses": [],
+        "cpes": [],
+        "purl": "pkg:pypi/demo@1.1",
+        "upstreams": []
+      },
+      "extension": {
+        "id": "SYNTHETIC_SECRET_EXTENSION"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-SYNTH-001",
+        "dataSource": "https://example.invalid/synthetic",
+        "namespace": "github:language:javascript",
+        "severity": "High",
+        "urls": [],
+        "cvss": [],
+        "fix": {
+          "versions": [],
+          "state": "unknown"
+        },
+        "advisories": []
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "SYNTHETIC_SECRET_RELATED"
+        }
+      ],
+      "matchDetails": [],
+      "artifact": {
+        "id": "synthetic-demo-pypi-1.1",
+        "name": "demo",
+        "version": "1.1",
+        "type": "python",
+        "locations": [
+          {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        ],
+        "language": "python",
+        "licenses": [],
+        "cpes": [],
+        "purl": "pkg:pypi/demo@1.1",
+        "upstreams": []
+      },
+      "extension": {
+        "id": "SYNTHETIC_SECRET_EXTENSION"
+      }
+    },
+    {
+      "vulnerability": {
+        "id": "GHSA-SYNTH-001",
+        "dataSource": "https://example.invalid/synthetic",
+        "namespace": "github:language:javascript",
+        "severity": "High",
+        "urls": [],
+        "cvss": [],
+        "fix": {
+          "versions": [],
+          "state": "unknown"
+        },
+        "advisories": []
+      },
+      "relatedVulnerabilities": [
+        {
+          "id": "SYNTHETIC_SECRET_RELATED"
+        }
+      ],
+      "matchDetails": [],
+      "artifact": {
+        "id": "synthetic-demo-pypi-1.1",
+        "name": "demo",
+        "version": "1.1",
+        "type": "python",
+        "locations": [
+          {
+            "path": "/workspace/node_modules/demo/package.json"
+          }
+        ],
+        "language": "python",
+        "licenses": [],
+        "cpes": [],
+        "purl": "pkg:pypi/demo@1.1",
+        "upstreams": []
+      },
+      "extension": {
+        "id": "SYNTHETIC_SECRET_EXTENSION"
+      }
+    }
+  ],
+  "source": {
+    "type": "directory",
+    "target": "/workspace"
+  },
+  "distro": {
+    "name": "",
+    "version": "",
+    "idLike": []
+  },
+  "descriptor": {
+    "name": "grype",
+    "version": "0.86.1",
+    "configuration": {},
+    "timestamp": "2025-01-01T00:00:00Z",
+    "db": {
+      "built": "2025-01-01T00:00:00Z",
+      "schemaVersion": 5,
+      "location": "/synthetic/grype/db/5",
+      "checksum": "sha256:synthetic-db-A",
+      "error": null
+    }
+  }
+}

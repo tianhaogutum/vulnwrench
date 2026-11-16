@@ -1,0 +1,76 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticTool",
+          "rules": []
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Synthetic finding; no real code scanned."
+          },
+          "level": "warning",
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "status": "accepted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "SyntheticTool",
+          "rules": [
+            {
+              "id": "multi",
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "Synthetic finding; no real code scanned."
+          },
+          "ruleIndex": 0,
+          "suppressions": [
+            {
+              "kind": "inSource",
+              "status": "rejected"
+            }
+          ],
+          "properties": {
+            "syntheticVendorFlag": true
+          },
+          "locations": [],
+          "x-extra": {
+            "neverDiscard": [
+              "opaque",
+              42
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {"component": {"type": "application", "bom-ref": "app", "name": "demo"}},
+  "components": [
+    {"type": "application", "bom-ref": "worker", "name": "worker"},
+    {"type": "library", "bom-ref": "left", "name": "left"},
+    {"type": "library", "bom-ref": "right", "name": "right"},
+    {"type": "library", "bom-ref": "lib-v1", "name": "lib", "version": "1.0", "purl": "pkg:npm/lib@1.0"},
+    {"type": "library", "bom-ref": "lib-v2", "name": "lib", "version": "2.0", "purl": "pkg:npm/lib@2.0"},
+    {"type": "library", "bom-ref": "orphan", "name": "orphan", "purl": "pkg:npm/orphan@1.0"},
+    {"type": "library", "bom-ref": "no-purl", "name": "local-only", "properties": [{"name": "example:note", "value": "preserve me"}]}
+  ],
+  "dependencies": [
+    {"ref": "app", "dependsOn": ["right", "left", "no-purl"]},
+    {"ref": "worker", "dependsOn": ["lib-v1", "lib-v2"]},
+    {"ref": "left", "dependsOn": ["lib-v1"]},
+    {"ref": "right", "dependsOn": ["lib-v1"]},
+    {"ref": "lib-v1", "dependsOn": ["left", "missing-node"]},
+    {"ref": "lib-v2", "dependsOn": []},
+    {"ref": "no-purl", "dependsOn": []},
+    {"ref": "unknown-source", "dependsOn": ["lib-v1"]}
+  ]
+}

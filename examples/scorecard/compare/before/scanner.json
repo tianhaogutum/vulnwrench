@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-01",
+  "repo": {
+    "name": "github.com/example/scanner",
+    "commit": "3333333333333333333333333333333333333333"
+  },
+  "scorecard": {
+    "version": "v5.0.0",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "checks": [
+    {
+      "name": "Code-Review",
+      "score": 3,
+      "reason": "Synthetic: prior scan"
+    }
+  ]
+}

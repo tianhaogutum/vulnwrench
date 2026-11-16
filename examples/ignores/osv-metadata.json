@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "rulesSha256": "9ba2aa6e504746186cb36b8329712eb257403869380585f8dc9c2df7aff06c4e",
+  "rules": {
+    "IgnoredVulns:0": {
+      "owner": "synthetic-team",
+      "reason": "Synthetic migration exception"
+    }
+  }
+}
